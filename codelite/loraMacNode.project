@@ -1,0 +1,605 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeLite_Project Name="loraMacNode" InternalType="">
+  <VirtualDirectory Name="src">
+    <VirtualDirectory Name="system">
+      <VirtualDirectory Name="crypto">
+        <File Name="../src/system/crypto/aes.c"/>
+        <File Name="../src/system/crypto/aes.h"/>
+        <File Name="../src/system/crypto/cmac.c"/>
+        <File Name="../src/system/crypto/cmac.h"/>
+      </VirtualDirectory>
+      <File Name="../src/system/adc.c"/>
+      <File Name="../src/system/adc.h"/>
+      <File Name="../src/system/delay.c"/>
+      <File Name="../src/system/delay.h"/>
+      <File Name="../src/system/eeprom.c"/>
+      <File Name="../src/system/eeprom.h"/>
+      <File Name="../src/system/fifo.c"/>
+      <File Name="../src/system/fifo.h"/>
+      <File Name="../src/system/gpio.c"/>
+      <File Name="../src/system/gpio.h"/>
+      <File Name="../src/system/gps.c"/>
+      <File Name="../src/system/gps.h"/>
+      <File Name="../src/system/i2c.c"/>
+      <File Name="../src/system/i2c.h"/>
+      <File Name="../src/system/serial.h"/>
+      <File Name="../src/system/spi.h"/>
+      <File Name="../src/system/timer.c"/>
+      <File Name="../src/system/timer.h"/>
+      <File Name="../src/system/uart.c"/>
+      <File Name="../src/system/uart.h"/>
+    </VirtualDirectory>
+    <VirtualDirectory Name="radio">
+      <VirtualDirectory Name="sx1272">
+        <File Name="../src/radio/sx1272/sx1272.c"/>
+        <File Name="../src/radio/sx1272/sx1272.h"/>
+        <File Name="../src/radio/sx1272/sx1272Regs-Fsk.h"/>
+        <File Name="../src/radio/sx1272/sx1272Regs-LoRa.h"/>
+      </VirtualDirectory>
+      <VirtualDirectory Name="sx1276">
+        <File Name="../src/radio/sx1276/sx1276.c"/>
+        <File Name="../src/radio/sx1276/sx1276.h"/>
+        <File Name="../src/radio/sx1276/sx1276Regs-Fsk.h"/>
+        <File Name="../src/radio/sx1276/sx1276Regs-LoRa.h"/>
+      </VirtualDirectory>
+      <File Name="../src/radio/radio.h"/>
+    </VirtualDirectory>
+    <VirtualDirectory Name="boards">
+      <VirtualDirectory Name="SK-iM880A">
+        <VirtualDirectory Name="cmsis">
+          <File Name="../src/boards/SK-iM880A/cmsis/stm32l1xx.h"/>
+          <File Name="../src/boards/SK-iM880A/cmsis/stm32l1xx_conf.h"/>
+          <File Name="../src/boards/SK-iM880A/cmsis/system_stm32l1xx.c"/>
+          <File Name="../src/boards/SK-iM880A/cmsis/system_stm32l1xx.h"/>
+        </VirtualDirectory>
+        <File Name="../src/boards/SK-iM880A/adc-board.c"/>
+        <File Name="../src/boards/SK-iM880A/adc-board.h"/>
+        <File Name="../src/boards/SK-iM880A/board.c"/>
+        <File Name="../src/boards/SK-iM880A/board.h"/>
+        <File Name="../src/boards/SK-iM880A/gpio-board.c"/>
+        <File Name="../src/boards/SK-iM880A/gpio-board.h"/>
+        <File Name="../src/boards/SK-iM880A/i2c-board.c"/>
+        <File Name="../src/boards/SK-iM880A/i2c-board.h"/>
+        <File Name="../src/boards/SK-iM880A/LoRaMac-board.h"/>
+        <File Name="../src/boards/SK-iM880A/pinName-board.h"/>
+        <File Name="../src/boards/SK-iM880A/pinName-ioe.h"/>
+        <File Name="../src/boards/SK-iM880A/rtc-board.c"/>
+        <File Name="../src/boards/SK-iM880A/rtc-board.h"/>
+        <File Name="../src/boards/SK-iM880A/spi-board.c"/>
+        <File Name="../src/boards/SK-iM880A/spi-board.h"/>
+        <File Name="../src/boards/SK-iM880A/sx1272-board.c"/>
+        <File Name="../src/boards/SK-iM880A/sx1272-board.h"/>
+        <File Name="../src/boards/SK-iM880A/timer-board.c"/>
+        <File Name="../src/boards/SK-iM880A/timer-board.h"/>
+        <File Name="../src/boards/SK-iM880A/uart-board.c"/>
+        <File Name="../src/boards/SK-iM880A/uart-board.h"/>
+      </VirtualDirectory>
+      <VirtualDirectory Name="SensorNode">
+        <VirtualDirectory Name="usb">
+          <VirtualDirectory Name="dfu">
+            <VirtualDirectory Name="inc">
+              <File Name="../src/boards/SensorNode/usb/dfu/inc/dfu_mal.h"/>
+              <File Name="../src/boards/SensorNode/usb/dfu/inc/flash_if.h"/>
+              <File Name="../src/boards/SensorNode/usb/dfu/inc/usb_conf.h"/>
+              <File Name="../src/boards/SensorNode/usb/dfu/inc/usb_desc.h"/>
+              <File Name="../src/boards/SensorNode/usb/dfu/inc/usb_istr.h"/>
+              <File Name="../src/boards/SensorNode/usb/dfu/inc/usb_prop.h"/>
+              <File Name="../src/boards/SensorNode/usb/dfu/inc/usb_pwr.h"/>
+            </VirtualDirectory>
+            <VirtualDirectory Name="src">
+              <File Name="../src/boards/SensorNode/usb/dfu/src/dfu_mal.c"/>
+              <File Name="../src/boards/SensorNode/usb/dfu/src/flash_if.c"/>
+              <File Name="../src/boards/SensorNode/usb/dfu/src/usb_desc.c"/>
+              <File Name="../src/boards/SensorNode/usb/dfu/src/usb_istr.c"/>
+              <File Name="../src/boards/SensorNode/usb/dfu/src/usb_prop.c"/>
+              <File Name="../src/boards/SensorNode/usb/dfu/src/usb_pwr.c"/>
+            </VirtualDirectory>
+          </VirtualDirectory>
+          <VirtualDirectory Name="cdc">
+            <VirtualDirectory Name="inc">
+              <File Name="../src/boards/SensorNode/usb/cdc/inc/usb_conf.h"/>
+              <File Name="../src/boards/SensorNode/usb/cdc/inc/usb_desc.h"/>
+              <File Name="../src/boards/SensorNode/usb/cdc/inc/usb_istr.h"/>
+              <File Name="../src/boards/SensorNode/usb/cdc/inc/usb_prop.h"/>
+              <File Name="../src/boards/SensorNode/usb/cdc/inc/usb_pwr.h"/>
+            </VirtualDirectory>
+            <VirtualDirectory Name="src">
+              <File Name="../src/boards/SensorNode/usb/cdc/src/usb_desc.c"/>
+              <File Name="../src/boards/SensorNode/usb/cdc/src/usb_endp.c"/>
+              <File Name="../src/boards/SensorNode/usb/cdc/src/usb_istr.c"/>
+              <File Name="../src/boards/SensorNode/usb/cdc/src/usb_prop.c"/>
+              <File Name="../src/boards/SensorNode/usb/cdc/src/usb_pwr.c"/>
+            </VirtualDirectory>
+          </VirtualDirectory>
+        </VirtualDirectory>
+        <VirtualDirectory Name="cmsis">
+          <File Name="../src/boards/SensorNode/cmsis/stm32l1xx.h"/>
+          <File Name="../src/boards/SensorNode/cmsis/stm32l1xx_conf.h"/>
+          <File Name="../src/boards/SensorNode/cmsis/system_stm32l1xx.c"/>
+          <File Name="../src/boards/SensorNode/cmsis/system_stm32l1xx.h"/>
+        </VirtualDirectory>
+        <File Name="../src/boards/SensorNode/adc-board.c"/>
+        <File Name="../src/boards/SensorNode/adc-board.h"/>
+        <File Name="../src/boards/SensorNode/board.c"/>
+        <File Name="../src/boards/SensorNode/board.h"/>
+        <File Name="../src/boards/SensorNode/gpio-board.c"/>
+        <File Name="../src/boards/SensorNode/gpio-board.h"/>
+        <File Name="../src/boards/SensorNode/gps-board.c"/>
+        <File Name="../src/boards/SensorNode/gps-board.h"/>
+        <File Name="../src/boards/SensorNode/i2c-board.c"/>
+        <File Name="../src/boards/SensorNode/i2c-board.h"/>
+        <File Name="../src/boards/SensorNode/LoRaMac-board.h"/>
+        <File Name="../src/boards/SensorNode/pinName-board.h"/>
+        <File Name="../src/boards/SensorNode/pinName-ioe.h"/>
+        <File Name="../src/boards/SensorNode/rtc-board.c"/>
+        <File Name="../src/boards/SensorNode/rtc-board.h"/>
+        <File Name="../src/boards/SensorNode/spi-board.c"/>
+        <File Name="../src/boards/SensorNode/spi-board.h"/>
+        <File Name="../src/boards/SensorNode/sx1276-board.c"/>
+        <File Name="../src/boards/SensorNode/sx1276-board.h"/>
+        <File Name="../src/boards/SensorNode/timer-board.c"/>
+        <File Name="../src/boards/SensorNode/timer-board.h"/>
+        <File Name="../src/boards/SensorNode/uart-board.c"/>
+        <File Name="../src/boards/SensorNode/uart-board.h"/>
+        <File Name="../src/boards/SensorNode/uart-usb-board.c"/>
+        <File Name="../src/boards/SensorNode/uart-usb-board.h"/>
+        <File Name="../src/boards/SensorNode/usb-cdc-board.c"/>
+        <File Name="../src/boards/SensorNode/usb-cdc-board.h"/>
+        <File Name="../src/boards/SensorNode/usb-dfu-board.c"/>
+        <File Name="../src/boards/SensorNode/usb-dfu-board.h"/>
+      </VirtualDirectory>
+      <VirtualDirectory Name="mcu">
+        <VirtualDirectory Name="stm32">
+          <VirtualDirectory Name="STM32_USB-FS-Device_Driver">
+            <VirtualDirectory Name="inc">
+              <File Name="../src/boards/mcu/stm32/STM32_USB-FS-Device_Driver/inc/usb_core.h"/>
+              <File Name="../src/boards/mcu/stm32/STM32_USB-FS-Device_Driver/inc/usb_def.h"/>
+              <File Name="../src/boards/mcu/stm32/STM32_USB-FS-Device_Driver/inc/usb_init.h"/>
+              <File Name="../src/boards/mcu/stm32/STM32_USB-FS-Device_Driver/inc/usb_int.h"/>
+              <File Name="../src/boards/mcu/stm32/STM32_USB-FS-Device_Driver/inc/usb_lib.h"/>
+              <File Name="../src/boards/mcu/stm32/STM32_USB-FS-Device_Driver/inc/usb_mem.h"/>
+              <File Name="../src/boards/mcu/stm32/STM32_USB-FS-Device_Driver/inc/usb_regs.h"/>
+              <File Name="../src/boards/mcu/stm32/STM32_USB-FS-Device_Driver/inc/usb_sil.h"/>
+              <File Name="../src/boards/mcu/stm32/STM32_USB-FS-Device_Driver/inc/usb_type.h"/>
+            </VirtualDirectory>
+            <VirtualDirectory Name="src">
+              <File Name="../src/boards/mcu/stm32/STM32_USB-FS-Device_Driver/src/usb_core.c"/>
+              <File Name="../src/boards/mcu/stm32/STM32_USB-FS-Device_Driver/src/usb_init.c"/>
+              <File Name="../src/boards/mcu/stm32/STM32_USB-FS-Device_Driver/src/usb_int.c"/>
+              <File Name="../src/boards/mcu/stm32/STM32_USB-FS-Device_Driver/src/usb_mem.c"/>
+              <File Name="../src/boards/mcu/stm32/STM32_USB-FS-Device_Driver/src/usb_regs.c"/>
+              <File Name="../src/boards/mcu/stm32/STM32_USB-FS-Device_Driver/src/usb_sil.c"/>
+            </VirtualDirectory>
+          </VirtualDirectory>
+          <VirtualDirectory Name="STM32L1xx_StdPeriph_Driver">
+            <VirtualDirectory Name="inc">
+              <File Name="../src/boards/mcu/stm32/STM32L1xx_StdPeriph_Driver/inc/misc.h"/>
+              <File Name="../src/boards/mcu/stm32/STM32L1xx_StdPeriph_Driver/inc/stm32l1xx_adc.h"/>
+              <File Name="../src/boards/mcu/stm32/STM32L1xx_StdPeriph_Driver/inc/stm32l1xx_aes.h"/>
+              <File Name="../src/boards/mcu/stm32/STM32L1xx_StdPeriph_Driver/inc/stm32l1xx_comp.h"/>
+              <File Name="../src/boards/mcu/stm32/STM32L1xx_StdPeriph_Driver/inc/stm32l1xx_crc.h"/>
+              <File Name="../src/boards/mcu/stm32/STM32L1xx_StdPeriph_Driver/inc/stm32l1xx_dac.h"/>
+              <File Name="../src/boards/mcu/stm32/STM32L1xx_StdPeriph_Driver/inc/stm32l1xx_dbgmcu.h"/>
+              <File Name="../src/boards/mcu/stm32/STM32L1xx_StdPeriph_Driver/inc/stm32l1xx_dma.h"/>
+              <File Name="../src/boards/mcu/stm32/STM32L1xx_StdPeriph_Driver/inc/stm32l1xx_exti.h"/>
+              <File Name="../src/boards/mcu/stm32/STM32L1xx_StdPeriph_Driver/inc/stm32l1xx_flash.h"/>
+              <File Name="../src/boards/mcu/stm32/STM32L1xx_StdPeriph_Driver/inc/stm32l1xx_fsmc.h"/>
+              <File Name="../src/boards/mcu/stm32/STM32L1xx_StdPeriph_Driver/inc/stm32l1xx_gpio.h"/>
+              <File Name="../src/boards/mcu/stm32/STM32L1xx_StdPeriph_Driver/inc/stm32l1xx_i2c.h"/>
+              <File Name="../src/boards/mcu/stm32/STM32L1xx_StdPeriph_Driver/inc/stm32l1xx_iwdg.h"/>
+              <File Name="../src/boards/mcu/stm32/STM32L1xx_StdPeriph_Driver/inc/stm32l1xx_lcd.h"/>
+              <File Name="../src/boards/mcu/stm32/STM32L1xx_StdPeriph_Driver/inc/stm32l1xx_opamp.h"/>
+              <File Name="../src/boards/mcu/stm32/STM32L1xx_StdPeriph_Driver/inc/stm32l1xx_pwr.h"/>
+              <File Name="../src/boards/mcu/stm32/STM32L1xx_StdPeriph_Driver/inc/stm32l1xx_rcc.h"/>
+              <File Name="../src/boards/mcu/stm32/STM32L1xx_StdPeriph_Driver/inc/stm32l1xx_rtc.h"/>
+              <File Name="../src/boards/mcu/stm32/STM32L1xx_StdPeriph_Driver/inc/stm32l1xx_sdio.h"/>
+              <File Name="../src/boards/mcu/stm32/STM32L1xx_StdPeriph_Driver/inc/stm32l1xx_spi.h"/>
+              <File Name="../src/boards/mcu/stm32/STM32L1xx_StdPeriph_Driver/inc/stm32l1xx_syscfg.h"/>
+              <File Name="../src/boards/mcu/stm32/STM32L1xx_StdPeriph_Driver/inc/stm32l1xx_tim.h"/>
+              <File Name="../src/boards/mcu/stm32/STM32L1xx_StdPeriph_Driver/inc/stm32l1xx_usart.h"/>
+              <File Name="../src/boards/mcu/stm32/STM32L1xx_StdPeriph_Driver/inc/stm32l1xx_wwdg.h"/>
+            </VirtualDirectory>
+            <VirtualDirectory Name="src">
+              <File Name="../src/boards/mcu/stm32/STM32L1xx_StdPeriph_Driver/src/misc.c"/>
+              <File Name="../src/boards/mcu/stm32/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_adc.c"/>
+              <File Name="../src/boards/mcu/stm32/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_aes.c"/>
+              <File Name="../src/boards/mcu/stm32/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_aes_util.c"/>
+              <File Name="../src/boards/mcu/stm32/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_comp.c"/>
+              <File Name="../src/boards/mcu/stm32/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_crc.c"/>
+              <File Name="../src/boards/mcu/stm32/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dac.c"/>
+              <File Name="../src/boards/mcu/stm32/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dbgmcu.c"/>
+              <File Name="../src/boards/mcu/stm32/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_dma.c"/>
+              <File Name="../src/boards/mcu/stm32/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_exti.c"/>
+              <File Name="../src/boards/mcu/stm32/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_flash.c"/>
+              <File Name="../src/boards/mcu/stm32/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_flash_ramfunc.c"/>
+              <File Name="../src/boards/mcu/stm32/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_fsmc.c"/>
+              <File Name="../src/boards/mcu/stm32/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_gpio.c"/>
+              <File Name="../src/boards/mcu/stm32/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_i2c.c"/>
+              <File Name="../src/boards/mcu/stm32/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_iwdg.c"/>
+              <File Name="../src/boards/mcu/stm32/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_lcd.c"/>
+              <File Name="../src/boards/mcu/stm32/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_opamp.c"/>
+              <File Name="../src/boards/mcu/stm32/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_pwr.c"/>
+              <File Name="../src/boards/mcu/stm32/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_rcc.c"/>
+              <File Name="../src/boards/mcu/stm32/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_rtc.c"/>
+              <File Name="../src/boards/mcu/stm32/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_sdio.c"/>
+              <File Name="../src/boards/mcu/stm32/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_spi.c"/>
+              <File Name="../src/boards/mcu/stm32/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_syscfg.c"/>
+              <File Name="../src/boards/mcu/stm32/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_tim.c"/>
+              <File Name="../src/boards/mcu/stm32/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_usart.c"/>
+              <File Name="../src/boards/mcu/stm32/STM32L1xx_StdPeriph_Driver/src/stm32l1xx_wwdg.c"/>
+            </VirtualDirectory>
+          </VirtualDirectory>
+          <VirtualDirectory Name="cmsis">
+            <File Name="../src/boards/mcu/stm32/cmsis/core_cm0.h"/>
+            <File Name="../src/boards/mcu/stm32/cmsis/core_cm0plus.h"/>
+            <File Name="../src/boards/mcu/stm32/cmsis/core_cm3.h"/>
+            <File Name="../src/boards/mcu/stm32/cmsis/core_cm4.h"/>
+            <File Name="../src/boards/mcu/stm32/cmsis/core_cm4_simd.h"/>
+            <File Name="../src/boards/mcu/stm32/cmsis/core_cmFunc.h"/>
+            <File Name="../src/boards/mcu/stm32/cmsis/core_cmInstr.h"/>
+          </VirtualDirectory>
+          <File Name="../src/boards/mcu/stm32/sysIrqHandlers.c"/>
+          <File Name="../src/boards/mcu/stm32/utilities.c"/>
+          <File Name="../src/boards/mcu/stm32/utilities.h"/>
+        </VirtualDirectory>
+      </VirtualDirectory>
+      <VirtualDirectory Name="LoRaMote">
+        <VirtualDirectory Name="usb">
+          <VirtualDirectory Name="dfu">
+            <VirtualDirectory Name="inc">
+              <File Name="../src/boards/LoRaMote/usb/dfu/inc/dfu_mal.h"/>
+              <File Name="../src/boards/LoRaMote/usb/dfu/inc/flash_if.h"/>
+              <File Name="../src/boards/LoRaMote/usb/dfu/inc/usb_conf.h"/>
+              <File Name="../src/boards/LoRaMote/usb/dfu/inc/usb_desc.h"/>
+              <File Name="../src/boards/LoRaMote/usb/dfu/inc/usb_istr.h"/>
+              <File Name="../src/boards/LoRaMote/usb/dfu/inc/usb_prop.h"/>
+              <File Name="../src/boards/LoRaMote/usb/dfu/inc/usb_pwr.h"/>
+            </VirtualDirectory>
+            <VirtualDirectory Name="src">
+              <File Name="../src/boards/LoRaMote/usb/dfu/src/dfu_mal.c"/>
+              <File Name="../src/boards/LoRaMote/usb/dfu/src/flash_if.c"/>
+              <File Name="../src/boards/LoRaMote/usb/dfu/src/usb_desc.c"/>
+              <File Name="../src/boards/LoRaMote/usb/dfu/src/usb_istr.c"/>
+              <File Name="../src/boards/LoRaMote/usb/dfu/src/usb_prop.c"/>
+              <File Name="../src/boards/LoRaMote/usb/dfu/src/usb_pwr.c"/>
+            </VirtualDirectory>
+          </VirtualDirectory>
+          <VirtualDirectory Name="cdc">
+            <VirtualDirectory Name="inc">
+              <File Name="../src/boards/LoRaMote/usb/cdc/inc/usb_conf.h"/>
+              <File Name="../src/boards/LoRaMote/usb/cdc/inc/usb_desc.h"/>
+              <File Name="../src/boards/LoRaMote/usb/cdc/inc/usb_istr.h"/>
+              <File Name="../src/boards/LoRaMote/usb/cdc/inc/usb_prop.h"/>
+              <File Name="../src/boards/LoRaMote/usb/cdc/inc/usb_pwr.h"/>
+            </VirtualDirectory>
+            <VirtualDirectory Name="src">
+              <File Name="../src/boards/LoRaMote/usb/cdc/src/usb_desc.c"/>
+              <File Name="../src/boards/LoRaMote/usb/cdc/src/usb_endp.c"/>
+              <File Name="../src/boards/LoRaMote/usb/cdc/src/usb_istr.c"/>
+              <File Name="../src/boards/LoRaMote/usb/cdc/src/usb_prop.c"/>
+              <File Name="../src/boards/LoRaMote/usb/cdc/src/usb_pwr.c"/>
+            </VirtualDirectory>
+          </VirtualDirectory>
+        </VirtualDirectory>
+        <VirtualDirectory Name="cmsis">
+          <File Name="../src/boards/LoRaMote/cmsis/stm32l1xx.h"/>
+          <File Name="../src/boards/LoRaMote/cmsis/stm32l1xx_conf.h"/>
+          <File Name="../src/boards/LoRaMote/cmsis/system_stm32l1xx.c"/>
+          <File Name="../src/boards/LoRaMote/cmsis/system_stm32l1xx.h"/>
+        </VirtualDirectory>
+        <File Name="../src/boards/LoRaMote/adc-board.c"/>
+        <File Name="../src/boards/LoRaMote/adc-board.h"/>
+        <File Name="../src/boards/LoRaMote/board.c"/>
+        <File Name="../src/boards/LoRaMote/board.h"/>
+        <File Name="../src/boards/LoRaMote/gpio-board.c"/>
+        <File Name="../src/boards/LoRaMote/gpio-board.h"/>
+        <File Name="../src/boards/LoRaMote/gps-board.c"/>
+        <File Name="../src/boards/LoRaMote/gps-board.h"/>
+        <File Name="../src/boards/LoRaMote/i2c-board.c"/>
+        <File Name="../src/boards/LoRaMote/i2c-board.h"/>
+        <File Name="../src/boards/LoRaMote/LoRaMac-board.h"/>
+        <File Name="../src/boards/LoRaMote/pinName-board.h"/>
+        <File Name="../src/boards/LoRaMote/pinName-ioe.h"/>
+        <File Name="../src/boards/LoRaMote/rtc-board.c"/>
+        <File Name="../src/boards/LoRaMote/rtc-board.h"/>
+        <File Name="../src/boards/LoRaMote/spi-board.c"/>
+        <File Name="../src/boards/LoRaMote/spi-board.h"/>
+        <File Name="../src/boards/LoRaMote/sx1272-board.c"/>
+        <File Name="../src/boards/LoRaMote/sx1272-board.h"/>
+        <File Name="../src/boards/LoRaMote/timer-board.c"/>
+        <File Name="../src/boards/LoRaMote/timer-board.h"/>
+        <File Name="../src/boards/LoRaMote/uart-board.c"/>
+        <File Name="../src/boards/LoRaMote/uart-board.h"/>
+        <File Name="../src/boards/LoRaMote/uart-usb-board.c"/>
+        <File Name="../src/boards/LoRaMote/uart-usb-board.h"/>
+        <File Name="../src/boards/LoRaMote/usb-cdc-board.c"/>
+        <File Name="../src/boards/LoRaMote/usb-cdc-board.h"/>
+        <File Name="../src/boards/LoRaMote/usb-dfu-board.c"/>
+        <File Name="../src/boards/LoRaMote/usb-dfu-board.h"/>
+      </VirtualDirectory>
+      <VirtualDirectory Name="Bleeper-76">
+        <VirtualDirectory Name="cmsis">
+          <File Name="../src/boards/Bleeper-76/cmsis/stm32l1xx.h"/>
+          <File Name="../src/boards/Bleeper-76/cmsis/stm32l1xx_conf.h"/>
+          <File Name="../src/boards/Bleeper-76/cmsis/system_stm32l1xx.c"/>
+          <File Name="../src/boards/Bleeper-76/cmsis/system_stm32l1xx.h"/>
+        </VirtualDirectory>
+        <File Name="../src/boards/Bleeper-76/board.c"/>
+        <File Name="../src/boards/Bleeper-76/board.h"/>
+        <File Name="../src/boards/Bleeper-76/gpio-board.c"/>
+        <File Name="../src/boards/Bleeper-76/gpio-board.h"/>
+        <File Name="../src/boards/Bleeper-76/i2c-board.c"/>
+        <File Name="../src/boards/Bleeper-76/i2c-board.h"/>
+        <File Name="../src/boards/Bleeper-76/LoRaMac-board.h"/>
+        <File Name="../src/boards/Bleeper-76/pinName-board.h"/>
+        <File Name="../src/boards/Bleeper-76/pinName-ioe.h"/>
+        <File Name="../src/boards/Bleeper-76/rtc-board.c"/>
+        <File Name="../src/boards/Bleeper-76/rtc-board.h"/>
+        <File Name="../src/boards/Bleeper-76/spi-board.c"/>
+        <File Name="../src/boards/Bleeper-76/spi-board.h"/>
+        <File Name="../src/boards/Bleeper-76/sx1276-board.c"/>
+        <File Name="../src/boards/Bleeper-76/sx1276-board.h"/>
+        <File Name="../src/boards/Bleeper-76/timer-board.c"/>
+        <File Name="../src/boards/Bleeper-76/timer-board.h"/>
+      </VirtualDirectory>
+      <VirtualDirectory Name="Bleeper-72">
+        <VirtualDirectory Name="cmsis">
+          <File Name="../src/boards/Bleeper-72/cmsis/stm32l1xx.h"/>
+          <File Name="../src/boards/Bleeper-72/cmsis/stm32l1xx_conf.h"/>
+          <File Name="../src/boards/Bleeper-72/cmsis/system_stm32l1xx.c"/>
+          <File Name="../src/boards/Bleeper-72/cmsis/system_stm32l1xx.h"/>
+        </VirtualDirectory>
+        <File Name="../src/boards/Bleeper-72/board.c"/>
+        <File Name="../src/boards/Bleeper-72/board.h"/>
+        <File Name="../src/boards/Bleeper-72/gpio-board.c"/>
+        <File Name="../src/boards/Bleeper-72/gpio-board.h"/>
+        <File Name="../src/boards/Bleeper-72/i2c-board.c"/>
+        <File Name="../src/boards/Bleeper-72/i2c-board.h"/>
+        <File Name="../src/boards/Bleeper-72/LoRaMac-board.h"/>
+        <File Name="../src/boards/Bleeper-72/pinName-board.h"/>
+        <File Name="../src/boards/Bleeper-72/pinName-ioe.h"/>
+        <File Name="../src/boards/Bleeper-72/rtc-board.c"/>
+        <File Name="../src/boards/Bleeper-72/rtc-board.h"/>
+        <File Name="../src/boards/Bleeper-72/spi-board.c"/>
+        <File Name="../src/boards/Bleeper-72/spi-board.h"/>
+        <File Name="../src/boards/Bleeper-72/sx1272-board.c"/>
+        <File Name="../src/boards/Bleeper-72/sx1272-board.h"/>
+        <File Name="../src/boards/Bleeper-72/timer-board.c"/>
+        <File Name="../src/boards/Bleeper-72/timer-board.h"/>
+      </VirtualDirectory>
+    </VirtualDirectory>
+    <VirtualDirectory Name="apps">
+      <VirtualDirectory Name="tx-cw">
+        <VirtualDirectory Name="Bleeper-72">
+          <File Name="../src/apps/tx-cw/Bleeper-72/main.c"/>
+        </VirtualDirectory>
+        <VirtualDirectory Name="Bleeper-76">
+          <File Name="../src/apps/tx-cw/Bleeper-76/main.c"/>
+        </VirtualDirectory>
+        <VirtualDirectory Name="LoRaMote">
+          <File Name="../src/apps/tx-cw/LoRaMote/main.c"/>
+        </VirtualDirectory>
+        <VirtualDirectory Name="SensorNode">
+          <File Name="../src/apps/tx-cw/SensorNode/main.c"/>
+        </VirtualDirectory>
+        <VirtualDirectory Name="SK-iM880A">
+          <File Name="../src/apps/tx-cw/SK-iM880A/main.c"/>
+        </VirtualDirectory>
+      </VirtualDirectory>
+      <VirtualDirectory Name="rx-sensi">
+        <VirtualDirectory Name="Bleeper-72">
+          <File Name="../src/apps/rx-sensi/Bleeper-72/main.c"/>
+        </VirtualDirectory>
+        <VirtualDirectory Name="Bleeper-76">
+          <File Name="../src/apps/rx-sensi/Bleeper-76/main.c"/>
+        </VirtualDirectory>
+        <VirtualDirectory Name="LoRaMote">
+          <File Name="../src/apps/rx-sensi/LoRaMote/main.c"/>
+        </VirtualDirectory>
+        <VirtualDirectory Name="SensorNode">
+          <File Name="../src/apps/rx-sensi/SensorNode/main.c"/>
+        </VirtualDirectory>
+        <VirtualDirectory Name="SK-iM880A">
+          <File Name="../src/apps/rx-sensi/SK-iM880A/main.c"/>
+        </VirtualDirectory>
+      </VirtualDirectory>
+      <VirtualDirectory Name="ping-pong">
+        <VirtualDirectory Name="Bleeper-72">
+          <File Name="../src/apps/ping-pong/Bleeper-72/main.c"/>
+        </VirtualDirectory>
+        <VirtualDirectory Name="Bleeper-76">
+          <File Name="../src/apps/ping-pong/Bleeper-76/main.c"/>
+        </VirtualDirectory>
+        <VirtualDirectory Name="LoRaMote">
+          <File Name="../src/apps/ping-pong/LoRaMote/main.c"/>
+        </VirtualDirectory>
+        <VirtualDirectory Name="SensorNode">
+          <File Name="../src/apps/ping-pong/SensorNode/main.c"/>
+        </VirtualDirectory>
+        <VirtualDirectory Name="SK-iM880A">
+          <File Name="../src/apps/ping-pong/SK-iM880A/main.c"/>
+        </VirtualDirectory>
+      </VirtualDirectory>
+      <VirtualDirectory Name="LoRaMac">
+        <VirtualDirectory Name="radioCoverageTest">
+          <VirtualDirectory Name="Bleeper-72">
+            <File Name="../src/apps/LoRaMac/radioCoverageTest/Bleeper-72/Comissioning.h"/>
+            <File Name="../src/apps/LoRaMac/radioCoverageTest/Bleeper-72/main.c"/>
+          </VirtualDirectory>
+          <VirtualDirectory Name="Bleeper-76">
+            <File Name="../src/apps/LoRaMac/radioCoverageTest/Bleeper-76/Comissioning.h"/>
+            <File Name="../src/apps/LoRaMac/radioCoverageTest/Bleeper-76/main.c"/>
+          </VirtualDirectory>
+        </VirtualDirectory>
+        <VirtualDirectory Name="classC">
+          <VirtualDirectory Name="Bleeper-72">
+            <File Name="../src/apps/LoRaMac/classC/Bleeper-72/Comissioning.h"/>
+            <File Name="../src/apps/LoRaMac/classC/Bleeper-72/main-api-v3.c"/>
+            <File Name="../src/apps/LoRaMac/classC/Bleeper-72/main.c"/>
+          </VirtualDirectory>
+          <VirtualDirectory Name="Bleeper-76">
+            <File Name="../src/apps/LoRaMac/classC/Bleeper-76/Comissioning.h"/>
+            <File Name="../src/apps/LoRaMac/classC/Bleeper-76/main-api-v3.c"/>
+            <File Name="../src/apps/LoRaMac/classC/Bleeper-76/main.c"/>
+          </VirtualDirectory>
+          <VirtualDirectory Name="LoRaMote">
+            <File Name="../src/apps/LoRaMac/classC/LoRaMote/Comissioning.h"/>
+            <File Name="../src/apps/LoRaMac/classC/LoRaMote/main-api-v3.c"/>
+            <File Name="../src/apps/LoRaMac/classC/LoRaMote/main.c"/>
+          </VirtualDirectory>
+          <VirtualDirectory Name="SensorNode">
+            <File Name="../src/apps/LoRaMac/classC/SensorNode/Comissioning.h"/>
+            <File Name="../src/apps/LoRaMac/classC/SensorNode/main-api-v3.c"/>
+            <File Name="../src/apps/LoRaMac/classC/SensorNode/main.c"/>
+          </VirtualDirectory>
+          <VirtualDirectory Name="SK-iM880A">
+            <File Name="../src/apps/LoRaMac/classC/SK-iM880A/Comissioning.h"/>
+            <File Name="../src/apps/LoRaMac/classC/SK-iM880A/main-api-v3.c"/>
+            <File Name="../src/apps/LoRaMac/classC/SK-iM880A/main.c"/>
+          </VirtualDirectory>
+        </VirtualDirectory>
+        <VirtualDirectory Name="classB">
+          <VirtualDirectory Name="Bleeper-72">
+            <File Name="../src/apps/LoRaMac/classB/Bleeper-72/Comissioning.h"/>
+            <File Name="../src/apps/LoRaMac/classB/Bleeper-72/main-api-v3.c"/>
+            <File Name="../src/apps/LoRaMac/classB/Bleeper-72/main.c"/>
+          </VirtualDirectory>
+          <VirtualDirectory Name="Bleeper-76">
+            <File Name="../src/apps/LoRaMac/classB/Bleeper-76/Comissioning.h"/>
+            <File Name="../src/apps/LoRaMac/classB/Bleeper-76/main-api-v3.c"/>
+            <File Name="../src/apps/LoRaMac/classB/Bleeper-76/main.c"/>
+          </VirtualDirectory>
+          <VirtualDirectory Name="LoRaMote">
+            <File Name="../src/apps/LoRaMac/classB/LoRaMote/Comissioning.h"/>
+            <File Name="../src/apps/LoRaMac/classB/LoRaMote/main-api-v3.c"/>
+            <File Name="../src/apps/LoRaMac/classB/LoRaMote/main.c"/>
+          </VirtualDirectory>
+          <VirtualDirectory Name="SensorNode">
+            <File Name="../src/apps/LoRaMac/classB/SensorNode/Comissioning.h"/>
+            <File Name="../src/apps/LoRaMac/classB/SensorNode/main-api-v3.c"/>
+            <File Name="../src/apps/LoRaMac/classB/SensorNode/main.c"/>
+          </VirtualDirectory>
+          <VirtualDirectory Name="SK-iM880A">
+            <File Name="../src/apps/LoRaMac/classB/SK-iM880A/Comissioning.h"/>
+            <File Name="../src/apps/LoRaMac/classB/SK-iM880A/main-api-v3.c"/>
+            <File Name="../src/apps/LoRaMac/classB/SK-iM880A/main.c"/>
+          </VirtualDirectory>
+        </VirtualDirectory>
+        <VirtualDirectory Name="classA">
+          <VirtualDirectory Name="Bleeper-72">
+            <File Name="../src/apps/LoRaMac/classA/Bleeper-72/Comissioning.h"/>
+            <File Name="../src/apps/LoRaMac/classA/Bleeper-72/main-api-v3.c"/>
+            <File Name="../src/apps/LoRaMac/classA/Bleeper-72/main.c"/>
+          </VirtualDirectory>
+          <VirtualDirectory Name="Bleeper-76">
+            <File Name="../src/apps/LoRaMac/classA/Bleeper-76/Comissioning.h"/>
+            <File Name="../src/apps/LoRaMac/classA/Bleeper-76/main-api-v3.c"/>
+            <File Name="../src/apps/LoRaMac/classA/Bleeper-76/main.c"/>
+          </VirtualDirectory>
+          <VirtualDirectory Name="LoRaMote">
+            <File Name="../src/apps/LoRaMac/classA/LoRaMote/Comissioning.h"/>
+            <File Name="../src/apps/LoRaMac/classA/LoRaMote/main-api-v3.c"/>
+            <File Name="../src/apps/LoRaMac/classA/LoRaMote/main.c"/>
+          </VirtualDirectory>
+          <VirtualDirectory Name="SensorNode">
+            <File Name="../src/apps/LoRaMac/classA/SensorNode/Comissioning.h"/>
+            <File Name="../src/apps/LoRaMac/classA/SensorNode/main-api-v3.c"/>
+            <File Name="../src/apps/LoRaMac/classA/SensorNode/main.c"/>
+          </VirtualDirectory>
+          <VirtualDirectory Name="SK-iM880A">
+            <File Name="../src/apps/LoRaMac/classA/SK-iM880A/Comissioning.h"/>
+            <File Name="../src/apps/LoRaMac/classA/SK-iM880A/main-api-v3.c"/>
+            <File Name="../src/apps/LoRaMac/classA/SK-iM880A/main.c"/>
+          </VirtualDirectory>
+        </VirtualDirectory>
+      </VirtualDirectory>
+      <VirtualDirectory Name="BootLoader">
+        <VirtualDirectory Name="LoRaMote">
+          <File Name="../src/apps/BootLoader/LoRaMote/main.c"/>
+        </VirtualDirectory>
+        <VirtualDirectory Name="SensorNode">
+          <File Name="../src/apps/BootLoader/SensorNode/main.c"/>
+        </VirtualDirectory>
+      </VirtualDirectory>
+    </VirtualDirectory>
+    <VirtualDirectory Name="mac">
+      <File Name="../src/mac/LoRaMac-api-v3.c"/>
+      <File Name="../src/mac/LoRaMac-api-v3.h"/>
+      <File Name="../src/mac/LoRaMac.c"/>
+      <File Name="../src/mac/LoRaMac.h"/>
+      <File Name="../src/mac/LoRaMacCrypto.c"/>
+      <File Name="../src/mac/LoRaMacCrypto.h"/>
+      <File Name="../src/mac/LoRaMacTest.h"/>
+    </VirtualDirectory>
+    <VirtualDirectory Name="peripherals">
+      <File Name="../src/peripherals/gpio-ioe.c"/>
+      <File Name="../src/peripherals/gpio-ioe.h"/>
+      <File Name="../src/peripherals/mag3110.c"/>
+      <File Name="../src/peripherals/mag3110.h"/>
+      <File Name="../src/peripherals/mma8451.c"/>
+      <File Name="../src/peripherals/mma8451.h"/>
+      <File Name="../src/peripherals/mpl3115.c"/>
+      <File Name="../src/peripherals/mpl3115.h"/>
+      <File Name="../src/peripherals/selector.c"/>
+      <File Name="../src/peripherals/selector.h"/>
+      <File Name="../src/peripherals/sx1509.c"/>
+      <File Name="../src/peripherals/sx1509.h"/>
+      <File Name="../src/peripherals/sx9500.c"/>
+      <File Name="../src/peripherals/sx9500.h"/>
+    </VirtualDirectory>
+  </VirtualDirectory>
+  <Description/>
+  <Dependencies/>
+  <Settings Type="Executable">
+    <GlobalSettings>
+      <Compiler Options="" C_Options="" Assembler="">
+        <IncludePath Value="."/>
+      </Compiler>
+      <Linker Options="">
+        <LibraryPath Value="."/>
+      </Linker>
+      <ResourceCompiler Options=""/>
+    </GlobalSettings>
+    <Configuration Name="Debug" CompilerType="gnu gcc" DebuggerType="GNU gdb debugger" Type="Executable" BuildCmpWithGlobalSettings="append" BuildLnkWithGlobalSettings="append" BuildResWithGlobalSettings="append">
+      <Compiler Options="-g -Wall" C_Options="" Assembler="" Required="yes" PreCompiledHeader="" PCHInCommandLine="no" PCHFlags="" PCHFlagsPolicy="0">
+        <IncludePath Value="."/>
+      </Compiler>
+      <Linker Options="-O0" Required="yes">
+        <LibraryPath Value="."/>
+        <LibraryPath Value="Debug"/>
+      </Linker>
+      <ResourceCompiler Options="" Required="no"/>
+      <General OutputFile="$(IntermediateDirectory)/$(ProjectName)" IntermediateDirectory="./Debug" Command="./$(ProjectName)" CommandArguments="" UseSeparateDebugArgs="no" DebugArguments="" WorkingDirectory="./Debug" PauseExecWhenProcTerminates="no" IsGUIProgram="no" IsEnabled="yes"/>
+      <Environment EnvVarSetName="&lt;Use Workspace Settings&gt;" DbgSetName="&lt;Use Global Settings&gt;">
+        <![CDATA[]]>
+      </Environment>
+      <Debugger IsRemote="no" RemoteHostName="" RemoteHostPort="" DebuggerPath="" IsExtended="no">
+        <DebuggerSearchPaths/>
+        <PostConnectCommands/>
+        <StartupCommands/>
+      </Debugger>
+      <PreBuild/>
+      <PostBuild/>
+      <CustomBuild Enabled="no">
+        <RebuildCommand/>
+        <CleanCommand/>
+        <BuildCommand/>
+        <PreprocessFileCommand/>
+        <SingleFileCommand/>
+        <MakefileGenerationCommand/>
+        <ThirdPartyToolName/>
+        <WorkingDirectory/>
+      </CustomBuild>
+      <AdditionalRules>
+        <CustomPostBuild/>
+        <CustomPreBuild/>
+      </AdditionalRules>
+      <Completion EnableCpp11="no" EnableCpp14="no">
+        <ClangCmpFlagsC/>
+        <ClangCmpFlags/>
+        <ClangPP/>
+        <SearchPaths/>
+      </Completion>
+    </Configuration>
+  </Settings>
+</CodeLite_Project>
