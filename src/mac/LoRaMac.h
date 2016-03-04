@@ -116,7 +116,7 @@
 /*!
  * Maximum number of times the MAC layer tries to get an acknowledge.
  */
-#define MAX_ACK_RETRIES                             8
+#define MAX_ACK_RETRIES                             3
 
 /*!
  * RSSI free threshold [dBm]

@@ -108,14 +108,9 @@ typedef struct
  */
 typedef struct SX1276_s
 {
-    Gpio_t        Reset;
-    Gpio_t        DIO0;
-    Gpio_t        DIO1;
-    Gpio_t        DIO2;
-    Gpio_t        DIO3;
-    Gpio_t        DIO4;
-    Gpio_t        DIO5;
-    Spi_t         Spi;
+    void (*hReset)( bool a_bTrue );
+    void (*hSpiNssLow)( bool a_bTrue);
+    uint8_t (*hSpiInOut)( uint8_t a_ucData );
     uint8_t       RxTx;
     RadioSettings_t Settings;
 }SX1276_t;

@@ -1,0 +1,1 @@
+F:\cscope\cscope.exe -Rbv

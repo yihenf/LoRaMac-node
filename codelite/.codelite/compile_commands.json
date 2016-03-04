@@ -43,657 +43,245 @@
   "directory": "F:\\workspace\\Lora-net\\LoRaMac-node\\codelite",
   "command": "gcc -c F:\\workspace\\Lora-net\\LoRaMac-node\\src\\system\\uart.c -o F:\\workspace\\Lora-net\\LoRaMac-node\\src\\system\\uart.c.o -I. -I."
  }, {
-  "file": "F:\\workspace\\Lora-net\\LoRaMac-node\\src\\radio\\sx1272\\sx1272.c",
-  "directory": "F:\\workspace\\Lora-net\\LoRaMac-node\\codelite",
-  "command": "gcc -c F:\\workspace\\Lora-net\\LoRaMac-node\\src\\radio\\sx1272\\sx1272.c -o F:\\workspace\\Lora-net\\LoRaMac-node\\src\\radio\\sx1272\\sx1272.c.o -I. -I."
- }, {
   "file": "F:\\workspace\\Lora-net\\LoRaMac-node\\src\\radio\\sx1276\\sx1276.c",
   "directory": "F:\\workspace\\Lora-net\\LoRaMac-node\\codelite",
   "command": "gcc -c F:\\workspace\\Lora-net\\LoRaMac-node\\src\\radio\\sx1276\\sx1276.c -o F:\\workspace\\Lora-net\\LoRaMac-node\\src\\radio\\sx1276\\sx1276.c.o -I. -I."
  }, {
-  "file": "F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\SK-iM880A\\cmsis\\system_stm32l1xx.c",
+  "file": "F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\EliSN-78\\cmsis\\stm32l0xx_hal_msp.c",
   "directory": "F:\\workspace\\Lora-net\\LoRaMac-node\\codelite",
-  "command": "gcc -c F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\SK-iM880A\\cmsis\\system_stm32l1xx.c -o F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\SK-iM880A\\cmsis\\system_stm32l1xx.c.o -I. -I."
+  "command": "gcc -c F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\EliSN-78\\cmsis\\stm32l0xx_hal_msp.c -o F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\EliSN-78\\cmsis\\stm32l0xx_hal_msp.c.o -I. -I."
  }, {
-  "file": "F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\SK-iM880A\\adc-board.c",
+  "file": "F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\EliSN-78\\cmsis\\system_stm32l0xx.c",
   "directory": "F:\\workspace\\Lora-net\\LoRaMac-node\\codelite",
-  "command": "gcc -c F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\SK-iM880A\\adc-board.c -o F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\SK-iM880A\\adc-board.c.o -I. -I."
+  "command": "gcc -c F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\EliSN-78\\cmsis\\system_stm32l0xx.c -o F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\EliSN-78\\cmsis\\system_stm32l0xx.c.o -I. -I."
  }, {
-  "file": "F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\SK-iM880A\\board.c",
+  "file": "F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\EliSN-78\\adc-board.c",
   "directory": "F:\\workspace\\Lora-net\\LoRaMac-node\\codelite",
-  "command": "gcc -c F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\SK-iM880A\\board.c -o F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\SK-iM880A\\board.c.o -I. -I."
+  "command": "gcc -c F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\EliSN-78\\adc-board.c -o F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\EliSN-78\\adc-board.c.o -I. -I."
  }, {
-  "file": "F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\SK-iM880A\\gpio-board.c",
+  "file": "F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\EliSN-78\\board.c",
   "directory": "F:\\workspace\\Lora-net\\LoRaMac-node\\codelite",
-  "command": "gcc -c F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\SK-iM880A\\gpio-board.c -o F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\SK-iM880A\\gpio-board.c.o -I. -I."
+  "command": "gcc -c F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\EliSN-78\\board.c -o F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\EliSN-78\\board.c.o -I. -I."
  }, {
-  "file": "F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\SK-iM880A\\i2c-board.c",
+  "file": "F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\EliSN-78\\gpio-board.c",
   "directory": "F:\\workspace\\Lora-net\\LoRaMac-node\\codelite",
-  "command": "gcc -c F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\SK-iM880A\\i2c-board.c -o F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\SK-iM880A\\i2c-board.c.o -I. -I."
+  "command": "gcc -c F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\EliSN-78\\gpio-board.c -o F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\EliSN-78\\gpio-board.c.o -I. -I."
  }, {
-  "file": "F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\SK-iM880A\\rtc-board.c",
+  "file": "F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\EliSN-78\\rtc-board.c",
   "directory": "F:\\workspace\\Lora-net\\LoRaMac-node\\codelite",
-  "command": "gcc -c F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\SK-iM880A\\rtc-board.c -o F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\SK-iM880A\\rtc-board.c.o -I. -I."
+  "command": "gcc -c F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\EliSN-78\\rtc-board.c -o F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\EliSN-78\\rtc-board.c.o -I. -I."
  }, {
-  "file": "F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\SK-iM880A\\spi-board.c",
+  "file": "F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\EliSN-78\\spi-board.c",
   "directory": "F:\\workspace\\Lora-net\\LoRaMac-node\\codelite",
-  "command": "gcc -c F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\SK-iM880A\\spi-board.c -o F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\SK-iM880A\\spi-board.c.o -I. -I."
+  "command": "gcc -c F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\EliSN-78\\spi-board.c -o F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\EliSN-78\\spi-board.c.o -I. -I."
  }, {
-  "file": "F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\SK-iM880A\\sx1272-board.c",
+  "file": "F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\EliSN-78\\sx1276-board.c",
   "directory": "F:\\workspace\\Lora-net\\LoRaMac-node\\codelite",
-  "command": "gcc -c F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\SK-iM880A\\sx1272-board.c -o F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\SK-iM880A\\sx1272-board.c.o -I. -I."
+  "command": "gcc -c F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\EliSN-78\\sx1276-board.c -o F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\EliSN-78\\sx1276-board.c.o -I. -I."
  }, {
-  "file": "F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\SK-iM880A\\timer-board.c",
+  "file": "F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\EliSN-78\\timer-board.c",
   "directory": "F:\\workspace\\Lora-net\\LoRaMac-node\\codelite",
-  "command": "gcc -c F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\SK-iM880A\\timer-board.c -o F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\SK-iM880A\\timer-board.c.o -I. -I."
+  "command": "gcc -c F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\EliSN-78\\timer-board.c -o F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\EliSN-78\\timer-board.c.o -I. -I."
  }, {
-  "file": "F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\SK-iM880A\\uart-board.c",
+  "file": "F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\EliSN-78\\uart-board.c",
   "directory": "F:\\workspace\\Lora-net\\LoRaMac-node\\codelite",
-  "command": "gcc -c F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\SK-iM880A\\uart-board.c -o F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\SK-iM880A\\uart-board.c.o -I. -I."
+  "command": "gcc -c F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\EliSN-78\\uart-board.c -o F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\EliSN-78\\uart-board.c.o -I. -I."
  }, {
-  "file": "F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\SensorNode\\usb\\dfu\\src\\dfu_mal.c",
+  "file": "F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\mcu\\stm32l0xx\\STM32L0xx_StdPeriph_Driver\\Src\\stm32l0xx_hal.c",
   "directory": "F:\\workspace\\Lora-net\\LoRaMac-node\\codelite",
-  "command": "gcc -c F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\SensorNode\\usb\\dfu\\src\\dfu_mal.c -o F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\SensorNode\\usb\\dfu\\src\\dfu_mal.c.o -I. -I."
+  "command": "gcc -c F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\mcu\\stm32l0xx\\STM32L0xx_StdPeriph_Driver\\Src\\stm32l0xx_hal.c -o F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\mcu\\stm32l0xx\\STM32L0xx_StdPeriph_Driver\\Src\\stm32l0xx_hal.c.o -I. -I."
  }, {
-  "file": "F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\SensorNode\\usb\\dfu\\src\\flash_if.c",
+  "file": "F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\mcu\\stm32l0xx\\STM32L0xx_StdPeriph_Driver\\Src\\stm32l0xx_hal_adc.c",
   "directory": "F:\\workspace\\Lora-net\\LoRaMac-node\\codelite",
-  "command": "gcc -c F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\SensorNode\\usb\\dfu\\src\\flash_if.c -o F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\SensorNode\\usb\\dfu\\src\\flash_if.c.o -I. -I."
+  "command": "gcc -c F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\mcu\\stm32l0xx\\STM32L0xx_StdPeriph_Driver\\Src\\stm32l0xx_hal_adc.c -o F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\mcu\\stm32l0xx\\STM32L0xx_StdPeriph_Driver\\Src\\stm32l0xx_hal_adc.c.o -I. -I."
  }, {
-  "file": "F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\SensorNode\\usb\\dfu\\src\\usb_desc.c",
+  "file": "F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\mcu\\stm32l0xx\\STM32L0xx_StdPeriph_Driver\\Src\\stm32l0xx_hal_adc_ex.c",
   "directory": "F:\\workspace\\Lora-net\\LoRaMac-node\\codelite",
-  "command": "gcc -c F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\SensorNode\\usb\\dfu\\src\\usb_desc.c -o F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\SensorNode\\usb\\dfu\\src\\usb_desc.c.o -I. -I."
+  "command": "gcc -c F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\mcu\\stm32l0xx\\STM32L0xx_StdPeriph_Driver\\Src\\stm32l0xx_hal_adc_ex.c -o F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\mcu\\stm32l0xx\\STM32L0xx_StdPeriph_Driver\\Src\\stm32l0xx_hal_adc_ex.c.o -I. -I."
  }, {
-  "file": "F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\SensorNode\\usb\\dfu\\src\\usb_istr.c",
+  "file": "F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\mcu\\stm32l0xx\\STM32L0xx_StdPeriph_Driver\\Src\\stm32l0xx_hal_comp.c",
   "directory": "F:\\workspace\\Lora-net\\LoRaMac-node\\codelite",
-  "command": "gcc -c F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\SensorNode\\usb\\dfu\\src\\usb_istr.c -o F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\SensorNode\\usb\\dfu\\src\\usb_istr.c.o -I. -I."
+  "command": "gcc -c F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\mcu\\stm32l0xx\\STM32L0xx_StdPeriph_Driver\\Src\\stm32l0xx_hal_comp.c -o F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\mcu\\stm32l0xx\\STM32L0xx_StdPeriph_Driver\\Src\\stm32l0xx_hal_comp.c.o -I. -I."
  }, {
-  "file": "F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\SensorNode\\usb\\dfu\\src\\usb_prop.c",
+  "file": "F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\mcu\\stm32l0xx\\STM32L0xx_StdPeriph_Driver\\Src\\stm32l0xx_hal_comp_ex.c",
   "directory": "F:\\workspace\\Lora-net\\LoRaMac-node\\codelite",
-  "command": "gcc -c F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\SensorNode\\usb\\dfu\\src\\usb_prop.c -o F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\SensorNode\\usb\\dfu\\src\\usb_prop.c.o -I. -I."
+  "command": "gcc -c F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\mcu\\stm32l0xx\\STM32L0xx_StdPeriph_Driver\\Src\\stm32l0xx_hal_comp_ex.c -o F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\mcu\\stm32l0xx\\STM32L0xx_StdPeriph_Driver\\Src\\stm32l0xx_hal_comp_ex.c.o -I. -I."
  }, {
-  "file": "F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\SensorNode\\usb\\dfu\\src\\usb_pwr.c",
+  "file": "F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\mcu\\stm32l0xx\\STM32L0xx_StdPeriph_Driver\\Src\\stm32l0xx_hal_cortex.c",
   "directory": "F:\\workspace\\Lora-net\\LoRaMac-node\\codelite",
-  "command": "gcc -c F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\SensorNode\\usb\\dfu\\src\\usb_pwr.c -o F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\SensorNode\\usb\\dfu\\src\\usb_pwr.c.o -I. -I."
+  "command": "gcc -c F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\mcu\\stm32l0xx\\STM32L0xx_StdPeriph_Driver\\Src\\stm32l0xx_hal_cortex.c -o F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\mcu\\stm32l0xx\\STM32L0xx_StdPeriph_Driver\\Src\\stm32l0xx_hal_cortex.c.o -I. -I."
  }, {
-  "file": "F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\SensorNode\\usb\\cdc\\src\\usb_desc.c",
+  "file": "F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\mcu\\stm32l0xx\\STM32L0xx_StdPeriph_Driver\\Src\\stm32l0xx_hal_crc.c",
   "directory": "F:\\workspace\\Lora-net\\LoRaMac-node\\codelite",
-  "command": "gcc -c F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\SensorNode\\usb\\cdc\\src\\usb_desc.c -o F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\SensorNode\\usb\\cdc\\src\\usb_desc.c.o -I. -I."
+  "command": "gcc -c F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\mcu\\stm32l0xx\\STM32L0xx_StdPeriph_Driver\\Src\\stm32l0xx_hal_crc.c -o F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\mcu\\stm32l0xx\\STM32L0xx_StdPeriph_Driver\\Src\\stm32l0xx_hal_crc.c.o -I. -I."
  }, {
-  "file": "F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\SensorNode\\usb\\cdc\\src\\usb_endp.c",
+  "file": "F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\mcu\\stm32l0xx\\STM32L0xx_StdPeriph_Driver\\Src\\stm32l0xx_hal_crc_ex.c",
   "directory": "F:\\workspace\\Lora-net\\LoRaMac-node\\codelite",
-  "command": "gcc -c F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\SensorNode\\usb\\cdc\\src\\usb_endp.c -o F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\SensorNode\\usb\\cdc\\src\\usb_endp.c.o -I. -I."
+  "command": "gcc -c F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\mcu\\stm32l0xx\\STM32L0xx_StdPeriph_Driver\\Src\\stm32l0xx_hal_crc_ex.c -o F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\mcu\\stm32l0xx\\STM32L0xx_StdPeriph_Driver\\Src\\stm32l0xx_hal_crc_ex.c.o -I. -I."
  }, {
-  "file": "F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\SensorNode\\usb\\cdc\\src\\usb_istr.c",
+  "file": "F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\mcu\\stm32l0xx\\STM32L0xx_StdPeriph_Driver\\Src\\stm32l0xx_hal_cryp.c",
   "directory": "F:\\workspace\\Lora-net\\LoRaMac-node\\codelite",
-  "command": "gcc -c F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\SensorNode\\usb\\cdc\\src\\usb_istr.c -o F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\SensorNode\\usb\\cdc\\src\\usb_istr.c.o -I. -I."
+  "command": "gcc -c F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\mcu\\stm32l0xx\\STM32L0xx_StdPeriph_Driver\\Src\\stm32l0xx_hal_cryp.c -o F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\mcu\\stm32l0xx\\STM32L0xx_StdPeriph_Driver\\Src\\stm32l0xx_hal_cryp.c.o -I. -I."
  }, {
-  "file": "F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\SensorNode\\usb\\cdc\\src\\usb_prop.c",
+  "file": "F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\mcu\\stm32l0xx\\STM32L0xx_StdPeriph_Driver\\Src\\stm32l0xx_hal_cryp_ex.c",
   "directory": "F:\\workspace\\Lora-net\\LoRaMac-node\\codelite",
-  "command": "gcc -c F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\SensorNode\\usb\\cdc\\src\\usb_prop.c -o F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\SensorNode\\usb\\cdc\\src\\usb_prop.c.o -I. -I."
+  "command": "gcc -c F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\mcu\\stm32l0xx\\STM32L0xx_StdPeriph_Driver\\Src\\stm32l0xx_hal_cryp_ex.c -o F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\mcu\\stm32l0xx\\STM32L0xx_StdPeriph_Driver\\Src\\stm32l0xx_hal_cryp_ex.c.o -I. -I."
  }, {
-  "file": "F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\SensorNode\\usb\\cdc\\src\\usb_pwr.c",
+  "file": "F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\mcu\\stm32l0xx\\STM32L0xx_StdPeriph_Driver\\Src\\stm32l0xx_hal_dac.c",
   "directory": "F:\\workspace\\Lora-net\\LoRaMac-node\\codelite",
-  "command": "gcc -c F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\SensorNode\\usb\\cdc\\src\\usb_pwr.c -o F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\SensorNode\\usb\\cdc\\src\\usb_pwr.c.o -I. -I."
+  "command": "gcc -c F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\mcu\\stm32l0xx\\STM32L0xx_StdPeriph_Driver\\Src\\stm32l0xx_hal_dac.c -o F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\mcu\\stm32l0xx\\STM32L0xx_StdPeriph_Driver\\Src\\stm32l0xx_hal_dac.c.o -I. -I."
  }, {
-  "file": "F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\SensorNode\\cmsis\\system_stm32l1xx.c",
+  "file": "F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\mcu\\stm32l0xx\\STM32L0xx_StdPeriph_Driver\\Src\\stm32l0xx_hal_dac_ex.c",
   "directory": "F:\\workspace\\Lora-net\\LoRaMac-node\\codelite",
-  "command": "gcc -c F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\SensorNode\\cmsis\\system_stm32l1xx.c -o F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\SensorNode\\cmsis\\system_stm32l1xx.c.o -I. -I."
+  "command": "gcc -c F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\mcu\\stm32l0xx\\STM32L0xx_StdPeriph_Driver\\Src\\stm32l0xx_hal_dac_ex.c -o F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\mcu\\stm32l0xx\\STM32L0xx_StdPeriph_Driver\\Src\\stm32l0xx_hal_dac_ex.c.o -I. -I."
  }, {
-  "file": "F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\SensorNode\\adc-board.c",
+  "file": "F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\mcu\\stm32l0xx\\STM32L0xx_StdPeriph_Driver\\Src\\stm32l0xx_hal_dma.c",
   "directory": "F:\\workspace\\Lora-net\\LoRaMac-node\\codelite",
-  "command": "gcc -c F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\SensorNode\\adc-board.c -o F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\SensorNode\\adc-board.c.o -I. -I."
+  "command": "gcc -c F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\mcu\\stm32l0xx\\STM32L0xx_StdPeriph_Driver\\Src\\stm32l0xx_hal_dma.c -o F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\mcu\\stm32l0xx\\STM32L0xx_StdPeriph_Driver\\Src\\stm32l0xx_hal_dma.c.o -I. -I."
  }, {
-  "file": "F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\SensorNode\\board.c",
+  "file": "F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\mcu\\stm32l0xx\\STM32L0xx_StdPeriph_Driver\\Src\\stm32l0xx_hal_firewall.c",
   "directory": "F:\\workspace\\Lora-net\\LoRaMac-node\\codelite",
-  "command": "gcc -c F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\SensorNode\\board.c -o F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\SensorNode\\board.c.o -I. -I."
+  "command": "gcc -c F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\mcu\\stm32l0xx\\STM32L0xx_StdPeriph_Driver\\Src\\stm32l0xx_hal_firewall.c -o F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\mcu\\stm32l0xx\\STM32L0xx_StdPeriph_Driver\\Src\\stm32l0xx_hal_firewall.c.o -I. -I."
  }, {
-  "file": "F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\SensorNode\\gpio-board.c",
+  "file": "F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\mcu\\stm32l0xx\\STM32L0xx_StdPeriph_Driver\\Src\\stm32l0xx_hal_flash.c",
   "directory": "F:\\workspace\\Lora-net\\LoRaMac-node\\codelite",
-  "command": "gcc -c F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\SensorNode\\gpio-board.c -o F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\SensorNode\\gpio-board.c.o -I. -I."
+  "command": "gcc -c F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\mcu\\stm32l0xx\\STM32L0xx_StdPeriph_Driver\\Src\\stm32l0xx_hal_flash.c -o F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\mcu\\stm32l0xx\\STM32L0xx_StdPeriph_Driver\\Src\\stm32l0xx_hal_flash.c.o -I. -I."
  }, {
-  "file": "F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\SensorNode\\gps-board.c",
+  "file": "F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\mcu\\stm32l0xx\\STM32L0xx_StdPeriph_Driver\\Src\\stm32l0xx_hal_flash_ex.c",
   "directory": "F:\\workspace\\Lora-net\\LoRaMac-node\\codelite",
-  "command": "gcc -c F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\SensorNode\\gps-board.c -o F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\SensorNode\\gps-board.c.o -I. -I."
+  "command": "gcc -c F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\mcu\\stm32l0xx\\STM32L0xx_StdPeriph_Driver\\Src\\stm32l0xx_hal_flash_ex.c -o F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\mcu\\stm32l0xx\\STM32L0xx_StdPeriph_Driver\\Src\\stm32l0xx_hal_flash_ex.c.o -I. -I."
  }, {
-  "file": "F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\SensorNode\\i2c-board.c",
+  "file": "F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\mcu\\stm32l0xx\\STM32L0xx_StdPeriph_Driver\\Src\\stm32l0xx_hal_flash_ramfunc.c",
   "directory": "F:\\workspace\\Lora-net\\LoRaMac-node\\codelite",
-  "command": "gcc -c F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\SensorNode\\i2c-board.c -o F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\SensorNode\\i2c-board.c.o -I. -I."
+  "command": "gcc -c F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\mcu\\stm32l0xx\\STM32L0xx_StdPeriph_Driver\\Src\\stm32l0xx_hal_flash_ramfunc.c -o F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\mcu\\stm32l0xx\\STM32L0xx_StdPeriph_Driver\\Src\\stm32l0xx_hal_flash_ramfunc.c.o -I. -I."
  }, {
-  "file": "F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\SensorNode\\rtc-board.c",
+  "file": "F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\mcu\\stm32l0xx\\STM32L0xx_StdPeriph_Driver\\Src\\stm32l0xx_hal_gpio.c",
   "directory": "F:\\workspace\\Lora-net\\LoRaMac-node\\codelite",
-  "command": "gcc -c F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\SensorNode\\rtc-board.c -o F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\SensorNode\\rtc-board.c.o -I. -I."
+  "command": "gcc -c F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\mcu\\stm32l0xx\\STM32L0xx_StdPeriph_Driver\\Src\\stm32l0xx_hal_gpio.c -o F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\mcu\\stm32l0xx\\STM32L0xx_StdPeriph_Driver\\Src\\stm32l0xx_hal_gpio.c.o -I. -I."
  }, {
-  "file": "F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\SensorNode\\spi-board.c",
+  "file": "F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\mcu\\stm32l0xx\\STM32L0xx_StdPeriph_Driver\\Src\\stm32l0xx_hal_i2c.c",
   "directory": "F:\\workspace\\Lora-net\\LoRaMac-node\\codelite",
-  "command": "gcc -c F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\SensorNode\\spi-board.c -o F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\SensorNode\\spi-board.c.o -I. -I."
+  "command": "gcc -c F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\mcu\\stm32l0xx\\STM32L0xx_StdPeriph_Driver\\Src\\stm32l0xx_hal_i2c.c -o F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\mcu\\stm32l0xx\\STM32L0xx_StdPeriph_Driver\\Src\\stm32l0xx_hal_i2c.c.o -I. -I."
  }, {
-  "file": "F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\SensorNode\\sx1276-board.c",
+  "file": "F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\mcu\\stm32l0xx\\STM32L0xx_StdPeriph_Driver\\Src\\stm32l0xx_hal_i2c_ex.c",
   "directory": "F:\\workspace\\Lora-net\\LoRaMac-node\\codelite",
-  "command": "gcc -c F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\SensorNode\\sx1276-board.c -o F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\SensorNode\\sx1276-board.c.o -I. -I."
+  "command": "gcc -c F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\mcu\\stm32l0xx\\STM32L0xx_StdPeriph_Driver\\Src\\stm32l0xx_hal_i2c_ex.c -o F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\mcu\\stm32l0xx\\STM32L0xx_StdPeriph_Driver\\Src\\stm32l0xx_hal_i2c_ex.c.o -I. -I."
  }, {
-  "file": "F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\SensorNode\\timer-board.c",
+  "file": "F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\mcu\\stm32l0xx\\STM32L0xx_StdPeriph_Driver\\Src\\stm32l0xx_hal_i2s.c",
   "directory": "F:\\workspace\\Lora-net\\LoRaMac-node\\codelite",
-  "command": "gcc -c F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\SensorNode\\timer-board.c -o F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\SensorNode\\timer-board.c.o -I. -I."
+  "command": "gcc -c F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\mcu\\stm32l0xx\\STM32L0xx_StdPeriph_Driver\\Src\\stm32l0xx_hal_i2s.c -o F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\mcu\\stm32l0xx\\STM32L0xx_StdPeriph_Driver\\Src\\stm32l0xx_hal_i2s.c.o -I. -I."
  }, {
-  "file": "F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\SensorNode\\uart-board.c",
+  "file": "F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\mcu\\stm32l0xx\\STM32L0xx_StdPeriph_Driver\\Src\\stm32l0xx_hal_irda.c",
   "directory": "F:\\workspace\\Lora-net\\LoRaMac-node\\codelite",
-  "command": "gcc -c F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\SensorNode\\uart-board.c -o F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\SensorNode\\uart-board.c.o -I. -I."
+  "command": "gcc -c F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\mcu\\stm32l0xx\\STM32L0xx_StdPeriph_Driver\\Src\\stm32l0xx_hal_irda.c -o F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\mcu\\stm32l0xx\\STM32L0xx_StdPeriph_Driver\\Src\\stm32l0xx_hal_irda.c.o -I. -I."
  }, {
-  "file": "F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\SensorNode\\uart-usb-board.c",
+  "file": "F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\mcu\\stm32l0xx\\STM32L0xx_StdPeriph_Driver\\Src\\stm32l0xx_hal_iwdg.c",
   "directory": "F:\\workspace\\Lora-net\\LoRaMac-node\\codelite",
-  "command": "gcc -c F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\SensorNode\\uart-usb-board.c -o F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\SensorNode\\uart-usb-board.c.o -I. -I."
+  "command": "gcc -c F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\mcu\\stm32l0xx\\STM32L0xx_StdPeriph_Driver\\Src\\stm32l0xx_hal_iwdg.c -o F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\mcu\\stm32l0xx\\STM32L0xx_StdPeriph_Driver\\Src\\stm32l0xx_hal_iwdg.c.o -I. -I."
  }, {
-  "file": "F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\SensorNode\\usb-cdc-board.c",
+  "file": "F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\mcu\\stm32l0xx\\STM32L0xx_StdPeriph_Driver\\Src\\stm32l0xx_hal_lcd.c",
   "directory": "F:\\workspace\\Lora-net\\LoRaMac-node\\codelite",
-  "command": "gcc -c F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\SensorNode\\usb-cdc-board.c -o F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\SensorNode\\usb-cdc-board.c.o -I. -I."
+  "command": "gcc -c F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\mcu\\stm32l0xx\\STM32L0xx_StdPeriph_Driver\\Src\\stm32l0xx_hal_lcd.c -o F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\mcu\\stm32l0xx\\STM32L0xx_StdPeriph_Driver\\Src\\stm32l0xx_hal_lcd.c.o -I. -I."
  }, {
-  "file": "F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\SensorNode\\usb-dfu-board.c",
+  "file": "F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\mcu\\stm32l0xx\\STM32L0xx_StdPeriph_Driver\\Src\\stm32l0xx_hal_lptim.c",
   "directory": "F:\\workspace\\Lora-net\\LoRaMac-node\\codelite",
-  "command": "gcc -c F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\SensorNode\\usb-dfu-board.c -o F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\SensorNode\\usb-dfu-board.c.o -I. -I."
+  "command": "gcc -c F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\mcu\\stm32l0xx\\STM32L0xx_StdPeriph_Driver\\Src\\stm32l0xx_hal_lptim.c -o F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\mcu\\stm32l0xx\\STM32L0xx_StdPeriph_Driver\\Src\\stm32l0xx_hal_lptim.c.o -I. -I."
  }, {
-  "file": "F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\mcu\\stm32\\STM32_USB-FS-Device_Driver\\src\\usb_core.c",
+  "file": "F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\mcu\\stm32l0xx\\STM32L0xx_StdPeriph_Driver\\Src\\stm32l0xx_hal_msp_template.c",
   "directory": "F:\\workspace\\Lora-net\\LoRaMac-node\\codelite",
-  "command": "gcc -c F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\mcu\\stm32\\STM32_USB-FS-Device_Driver\\src\\usb_core.c -o F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\mcu\\stm32\\STM32_USB-FS-Device_Driver\\src\\usb_core.c.o -I. -I."
+  "command": "gcc -c F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\mcu\\stm32l0xx\\STM32L0xx_StdPeriph_Driver\\Src\\stm32l0xx_hal_msp_template.c -o F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\mcu\\stm32l0xx\\STM32L0xx_StdPeriph_Driver\\Src\\stm32l0xx_hal_msp_template.c.o -I. -I."
  }, {
-  "file": "F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\mcu\\stm32\\STM32_USB-FS-Device_Driver\\src\\usb_init.c",
+  "file": "F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\mcu\\stm32l0xx\\STM32L0xx_StdPeriph_Driver\\Src\\stm32l0xx_hal_pcd.c",
   "directory": "F:\\workspace\\Lora-net\\LoRaMac-node\\codelite",
-  "command": "gcc -c F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\mcu\\stm32\\STM32_USB-FS-Device_Driver\\src\\usb_init.c -o F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\mcu\\stm32\\STM32_USB-FS-Device_Driver\\src\\usb_init.c.o -I. -I."
+  "command": "gcc -c F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\mcu\\stm32l0xx\\STM32L0xx_StdPeriph_Driver\\Src\\stm32l0xx_hal_pcd.c -o F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\mcu\\stm32l0xx\\STM32L0xx_StdPeriph_Driver\\Src\\stm32l0xx_hal_pcd.c.o -I. -I."
  }, {
-  "file": "F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\mcu\\stm32\\STM32_USB-FS-Device_Driver\\src\\usb_int.c",
+  "file": "F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\mcu\\stm32l0xx\\STM32L0xx_StdPeriph_Driver\\Src\\stm32l0xx_hal_pcd_ex.c",
   "directory": "F:\\workspace\\Lora-net\\LoRaMac-node\\codelite",
-  "command": "gcc -c F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\mcu\\stm32\\STM32_USB-FS-Device_Driver\\src\\usb_int.c -o F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\mcu\\stm32\\STM32_USB-FS-Device_Driver\\src\\usb_int.c.o -I. -I."
+  "command": "gcc -c F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\mcu\\stm32l0xx\\STM32L0xx_StdPeriph_Driver\\Src\\stm32l0xx_hal_pcd_ex.c -o F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\mcu\\stm32l0xx\\STM32L0xx_StdPeriph_Driver\\Src\\stm32l0xx_hal_pcd_ex.c.o -I. -I."
  }, {
-  "file": "F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\mcu\\stm32\\STM32_USB-FS-Device_Driver\\src\\usb_mem.c",
+  "file": "F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\mcu\\stm32l0xx\\STM32L0xx_StdPeriph_Driver\\Src\\stm32l0xx_hal_pwr.c",
   "directory": "F:\\workspace\\Lora-net\\LoRaMac-node\\codelite",
-  "command": "gcc -c F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\mcu\\stm32\\STM32_USB-FS-Device_Driver\\src\\usb_mem.c -o F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\mcu\\stm32\\STM32_USB-FS-Device_Driver\\src\\usb_mem.c.o -I. -I."
+  "command": "gcc -c F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\mcu\\stm32l0xx\\STM32L0xx_StdPeriph_Driver\\Src\\stm32l0xx_hal_pwr.c -o F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\mcu\\stm32l0xx\\STM32L0xx_StdPeriph_Driver\\Src\\stm32l0xx_hal_pwr.c.o -I. -I."
  }, {
-  "file": "F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\mcu\\stm32\\STM32_USB-FS-Device_Driver\\src\\usb_regs.c",
+  "file": "F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\mcu\\stm32l0xx\\STM32L0xx_StdPeriph_Driver\\Src\\stm32l0xx_hal_pwr_ex.c",
   "directory": "F:\\workspace\\Lora-net\\LoRaMac-node\\codelite",
-  "command": "gcc -c F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\mcu\\stm32\\STM32_USB-FS-Device_Driver\\src\\usb_regs.c -o F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\mcu\\stm32\\STM32_USB-FS-Device_Driver\\src\\usb_regs.c.o -I. -I."
+  "command": "gcc -c F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\mcu\\stm32l0xx\\STM32L0xx_StdPeriph_Driver\\Src\\stm32l0xx_hal_pwr_ex.c -o F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\mcu\\stm32l0xx\\STM32L0xx_StdPeriph_Driver\\Src\\stm32l0xx_hal_pwr_ex.c.o -I. -I."
  }, {
-  "file": "F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\mcu\\stm32\\STM32_USB-FS-Device_Driver\\src\\usb_sil.c",
+  "file": "F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\mcu\\stm32l0xx\\STM32L0xx_StdPeriph_Driver\\Src\\stm32l0xx_hal_rcc.c",
   "directory": "F:\\workspace\\Lora-net\\LoRaMac-node\\codelite",
-  "command": "gcc -c F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\mcu\\stm32\\STM32_USB-FS-Device_Driver\\src\\usb_sil.c -o F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\mcu\\stm32\\STM32_USB-FS-Device_Driver\\src\\usb_sil.c.o -I. -I."
+  "command": "gcc -c F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\mcu\\stm32l0xx\\STM32L0xx_StdPeriph_Driver\\Src\\stm32l0xx_hal_rcc.c -o F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\mcu\\stm32l0xx\\STM32L0xx_StdPeriph_Driver\\Src\\stm32l0xx_hal_rcc.c.o -I. -I."
  }, {
-  "file": "F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\mcu\\stm32\\STM32L1xx_StdPeriph_Driver\\src\\misc.c",
+  "file": "F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\mcu\\stm32l0xx\\STM32L0xx_StdPeriph_Driver\\Src\\stm32l0xx_hal_rcc_ex.c",
   "directory": "F:\\workspace\\Lora-net\\LoRaMac-node\\codelite",
-  "command": "gcc -c F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\mcu\\stm32\\STM32L1xx_StdPeriph_Driver\\src\\misc.c -o F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\mcu\\stm32\\STM32L1xx_StdPeriph_Driver\\src\\misc.c.o -I. -I."
+  "command": "gcc -c F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\mcu\\stm32l0xx\\STM32L0xx_StdPeriph_Driver\\Src\\stm32l0xx_hal_rcc_ex.c -o F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\mcu\\stm32l0xx\\STM32L0xx_StdPeriph_Driver\\Src\\stm32l0xx_hal_rcc_ex.c.o -I. -I."
  }, {
-  "file": "F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\mcu\\stm32\\STM32L1xx_StdPeriph_Driver\\src\\stm32l1xx_adc.c",
+  "file": "F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\mcu\\stm32l0xx\\STM32L0xx_StdPeriph_Driver\\Src\\stm32l0xx_hal_rng.c",
   "directory": "F:\\workspace\\Lora-net\\LoRaMac-node\\codelite",
-  "command": "gcc -c F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\mcu\\stm32\\STM32L1xx_StdPeriph_Driver\\src\\stm32l1xx_adc.c -o F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\mcu\\stm32\\STM32L1xx_StdPeriph_Driver\\src\\stm32l1xx_adc.c.o -I. -I."
+  "command": "gcc -c F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\mcu\\stm32l0xx\\STM32L0xx_StdPeriph_Driver\\Src\\stm32l0xx_hal_rng.c -o F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\mcu\\stm32l0xx\\STM32L0xx_StdPeriph_Driver\\Src\\stm32l0xx_hal_rng.c.o -I. -I."
  }, {
-  "file": "F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\mcu\\stm32\\STM32L1xx_StdPeriph_Driver\\src\\stm32l1xx_aes.c",
+  "file": "F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\mcu\\stm32l0xx\\STM32L0xx_StdPeriph_Driver\\Src\\stm32l0xx_hal_rtc.c",
   "directory": "F:\\workspace\\Lora-net\\LoRaMac-node\\codelite",
-  "command": "gcc -c F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\mcu\\stm32\\STM32L1xx_StdPeriph_Driver\\src\\stm32l1xx_aes.c -o F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\mcu\\stm32\\STM32L1xx_StdPeriph_Driver\\src\\stm32l1xx_aes.c.o -I. -I."
+  "command": "gcc -c F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\mcu\\stm32l0xx\\STM32L0xx_StdPeriph_Driver\\Src\\stm32l0xx_hal_rtc.c -o F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\mcu\\stm32l0xx\\STM32L0xx_StdPeriph_Driver\\Src\\stm32l0xx_hal_rtc.c.o -I. -I."
  }, {
-  "file": "F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\mcu\\stm32\\STM32L1xx_StdPeriph_Driver\\src\\stm32l1xx_aes_util.c",
+  "file": "F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\mcu\\stm32l0xx\\STM32L0xx_StdPeriph_Driver\\Src\\stm32l0xx_hal_rtc_ex.c",
   "directory": "F:\\workspace\\Lora-net\\LoRaMac-node\\codelite",
-  "command": "gcc -c F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\mcu\\stm32\\STM32L1xx_StdPeriph_Driver\\src\\stm32l1xx_aes_util.c -o F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\mcu\\stm32\\STM32L1xx_StdPeriph_Driver\\src\\stm32l1xx_aes_util.c.o -I. -I."
+  "command": "gcc -c F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\mcu\\stm32l0xx\\STM32L0xx_StdPeriph_Driver\\Src\\stm32l0xx_hal_rtc_ex.c -o F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\mcu\\stm32l0xx\\STM32L0xx_StdPeriph_Driver\\Src\\stm32l0xx_hal_rtc_ex.c.o -I. -I."
  }, {
-  "file": "F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\mcu\\stm32\\STM32L1xx_StdPeriph_Driver\\src\\stm32l1xx_comp.c",
+  "file": "F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\mcu\\stm32l0xx\\STM32L0xx_StdPeriph_Driver\\Src\\stm32l0xx_hal_smartcard.c",
   "directory": "F:\\workspace\\Lora-net\\LoRaMac-node\\codelite",
-  "command": "gcc -c F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\mcu\\stm32\\STM32L1xx_StdPeriph_Driver\\src\\stm32l1xx_comp.c -o F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\mcu\\stm32\\STM32L1xx_StdPeriph_Driver\\src\\stm32l1xx_comp.c.o -I. -I."
+  "command": "gcc -c F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\mcu\\stm32l0xx\\STM32L0xx_StdPeriph_Driver\\Src\\stm32l0xx_hal_smartcard.c -o F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\mcu\\stm32l0xx\\STM32L0xx_StdPeriph_Driver\\Src\\stm32l0xx_hal_smartcard.c.o -I. -I."
  }, {
-  "file": "F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\mcu\\stm32\\STM32L1xx_StdPeriph_Driver\\src\\stm32l1xx_crc.c",
+  "file": "F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\mcu\\stm32l0xx\\STM32L0xx_StdPeriph_Driver\\Src\\stm32l0xx_hal_smartcard_ex.c",
   "directory": "F:\\workspace\\Lora-net\\LoRaMac-node\\codelite",
-  "command": "gcc -c F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\mcu\\stm32\\STM32L1xx_StdPeriph_Driver\\src\\stm32l1xx_crc.c -o F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\mcu\\stm32\\STM32L1xx_StdPeriph_Driver\\src\\stm32l1xx_crc.c.o -I. -I."
+  "command": "gcc -c F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\mcu\\stm32l0xx\\STM32L0xx_StdPeriph_Driver\\Src\\stm32l0xx_hal_smartcard_ex.c -o F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\mcu\\stm32l0xx\\STM32L0xx_StdPeriph_Driver\\Src\\stm32l0xx_hal_smartcard_ex.c.o -I. -I."
  }, {
-  "file": "F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\mcu\\stm32\\STM32L1xx_StdPeriph_Driver\\src\\stm32l1xx_dac.c",
+  "file": "F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\mcu\\stm32l0xx\\STM32L0xx_StdPeriph_Driver\\Src\\stm32l0xx_hal_smbus.c",
   "directory": "F:\\workspace\\Lora-net\\LoRaMac-node\\codelite",
-  "command": "gcc -c F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\mcu\\stm32\\STM32L1xx_StdPeriph_Driver\\src\\stm32l1xx_dac.c -o F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\mcu\\stm32\\STM32L1xx_StdPeriph_Driver\\src\\stm32l1xx_dac.c.o -I. -I."
+  "command": "gcc -c F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\mcu\\stm32l0xx\\STM32L0xx_StdPeriph_Driver\\Src\\stm32l0xx_hal_smbus.c -o F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\mcu\\stm32l0xx\\STM32L0xx_StdPeriph_Driver\\Src\\stm32l0xx_hal_smbus.c.o -I. -I."
  }, {
-  "file": "F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\mcu\\stm32\\STM32L1xx_StdPeriph_Driver\\src\\stm32l1xx_dbgmcu.c",
+  "file": "F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\mcu\\stm32l0xx\\STM32L0xx_StdPeriph_Driver\\Src\\stm32l0xx_hal_spi.c",
   "directory": "F:\\workspace\\Lora-net\\LoRaMac-node\\codelite",
-  "command": "gcc -c F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\mcu\\stm32\\STM32L1xx_StdPeriph_Driver\\src\\stm32l1xx_dbgmcu.c -o F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\mcu\\stm32\\STM32L1xx_StdPeriph_Driver\\src\\stm32l1xx_dbgmcu.c.o -I. -I."
+  "command": "gcc -c F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\mcu\\stm32l0xx\\STM32L0xx_StdPeriph_Driver\\Src\\stm32l0xx_hal_spi.c -o F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\mcu\\stm32l0xx\\STM32L0xx_StdPeriph_Driver\\Src\\stm32l0xx_hal_spi.c.o -I. -I."
  }, {
-  "file": "F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\mcu\\stm32\\STM32L1xx_StdPeriph_Driver\\src\\stm32l1xx_dma.c",
+  "file": "F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\mcu\\stm32l0xx\\STM32L0xx_StdPeriph_Driver\\Src\\stm32l0xx_hal_tim.c",
   "directory": "F:\\workspace\\Lora-net\\LoRaMac-node\\codelite",
-  "command": "gcc -c F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\mcu\\stm32\\STM32L1xx_StdPeriph_Driver\\src\\stm32l1xx_dma.c -o F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\mcu\\stm32\\STM32L1xx_StdPeriph_Driver\\src\\stm32l1xx_dma.c.o -I. -I."
+  "command": "gcc -c F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\mcu\\stm32l0xx\\STM32L0xx_StdPeriph_Driver\\Src\\stm32l0xx_hal_tim.c -o F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\mcu\\stm32l0xx\\STM32L0xx_StdPeriph_Driver\\Src\\stm32l0xx_hal_tim.c.o -I. -I."
  }, {
-  "file": "F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\mcu\\stm32\\STM32L1xx_StdPeriph_Driver\\src\\stm32l1xx_exti.c",
+  "file": "F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\mcu\\stm32l0xx\\STM32L0xx_StdPeriph_Driver\\Src\\stm32l0xx_hal_tim_ex.c",
   "directory": "F:\\workspace\\Lora-net\\LoRaMac-node\\codelite",
-  "command": "gcc -c F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\mcu\\stm32\\STM32L1xx_StdPeriph_Driver\\src\\stm32l1xx_exti.c -o F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\mcu\\stm32\\STM32L1xx_StdPeriph_Driver\\src\\stm32l1xx_exti.c.o -I. -I."
+  "command": "gcc -c F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\mcu\\stm32l0xx\\STM32L0xx_StdPeriph_Driver\\Src\\stm32l0xx_hal_tim_ex.c -o F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\mcu\\stm32l0xx\\STM32L0xx_StdPeriph_Driver\\Src\\stm32l0xx_hal_tim_ex.c.o -I. -I."
  }, {
-  "file": "F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\mcu\\stm32\\STM32L1xx_StdPeriph_Driver\\src\\stm32l1xx_flash.c",
+  "file": "F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\mcu\\stm32l0xx\\STM32L0xx_StdPeriph_Driver\\Src\\stm32l0xx_hal_tsc.c",
   "directory": "F:\\workspace\\Lora-net\\LoRaMac-node\\codelite",
-  "command": "gcc -c F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\mcu\\stm32\\STM32L1xx_StdPeriph_Driver\\src\\stm32l1xx_flash.c -o F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\mcu\\stm32\\STM32L1xx_StdPeriph_Driver\\src\\stm32l1xx_flash.c.o -I. -I."
+  "command": "gcc -c F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\mcu\\stm32l0xx\\STM32L0xx_StdPeriph_Driver\\Src\\stm32l0xx_hal_tsc.c -o F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\mcu\\stm32l0xx\\STM32L0xx_StdPeriph_Driver\\Src\\stm32l0xx_hal_tsc.c.o -I. -I."
  }, {
-  "file": "F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\mcu\\stm32\\STM32L1xx_StdPeriph_Driver\\src\\stm32l1xx_flash_ramfunc.c",
+  "file": "F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\mcu\\stm32l0xx\\STM32L0xx_StdPeriph_Driver\\Src\\stm32l0xx_hal_uart.c",
   "directory": "F:\\workspace\\Lora-net\\LoRaMac-node\\codelite",
-  "command": "gcc -c F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\mcu\\stm32\\STM32L1xx_StdPeriph_Driver\\src\\stm32l1xx_flash_ramfunc.c -o F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\mcu\\stm32\\STM32L1xx_StdPeriph_Driver\\src\\stm32l1xx_flash_ramfunc.c.o -I. -I."
+  "command": "gcc -c F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\mcu\\stm32l0xx\\STM32L0xx_StdPeriph_Driver\\Src\\stm32l0xx_hal_uart.c -o F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\mcu\\stm32l0xx\\STM32L0xx_StdPeriph_Driver\\Src\\stm32l0xx_hal_uart.c.o -I. -I."
  }, {
-  "file": "F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\mcu\\stm32\\STM32L1xx_StdPeriph_Driver\\src\\stm32l1xx_fsmc.c",
+  "file": "F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\mcu\\stm32l0xx\\STM32L0xx_StdPeriph_Driver\\Src\\stm32l0xx_hal_uart_ex.c",
   "directory": "F:\\workspace\\Lora-net\\LoRaMac-node\\codelite",
-  "command": "gcc -c F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\mcu\\stm32\\STM32L1xx_StdPeriph_Driver\\src\\stm32l1xx_fsmc.c -o F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\mcu\\stm32\\STM32L1xx_StdPeriph_Driver\\src\\stm32l1xx_fsmc.c.o -I. -I."
+  "command": "gcc -c F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\mcu\\stm32l0xx\\STM32L0xx_StdPeriph_Driver\\Src\\stm32l0xx_hal_uart_ex.c -o F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\mcu\\stm32l0xx\\STM32L0xx_StdPeriph_Driver\\Src\\stm32l0xx_hal_uart_ex.c.o -I. -I."
  }, {
-  "file": "F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\mcu\\stm32\\STM32L1xx_StdPeriph_Driver\\src\\stm32l1xx_gpio.c",
+  "file": "F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\mcu\\stm32l0xx\\STM32L0xx_StdPeriph_Driver\\Src\\stm32l0xx_hal_usart.c",
   "directory": "F:\\workspace\\Lora-net\\LoRaMac-node\\codelite",
-  "command": "gcc -c F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\mcu\\stm32\\STM32L1xx_StdPeriph_Driver\\src\\stm32l1xx_gpio.c -o F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\mcu\\stm32\\STM32L1xx_StdPeriph_Driver\\src\\stm32l1xx_gpio.c.o -I. -I."
+  "command": "gcc -c F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\mcu\\stm32l0xx\\STM32L0xx_StdPeriph_Driver\\Src\\stm32l0xx_hal_usart.c -o F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\mcu\\stm32l0xx\\STM32L0xx_StdPeriph_Driver\\Src\\stm32l0xx_hal_usart.c.o -I. -I."
  }, {
-  "file": "F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\mcu\\stm32\\STM32L1xx_StdPeriph_Driver\\src\\stm32l1xx_i2c.c",
+  "file": "F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\mcu\\stm32l0xx\\STM32L0xx_StdPeriph_Driver\\Src\\stm32l0xx_hal_wwdg.c",
   "directory": "F:\\workspace\\Lora-net\\LoRaMac-node\\codelite",
-  "command": "gcc -c F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\mcu\\stm32\\STM32L1xx_StdPeriph_Driver\\src\\stm32l1xx_i2c.c -o F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\mcu\\stm32\\STM32L1xx_StdPeriph_Driver\\src\\stm32l1xx_i2c.c.o -I. -I."
+  "command": "gcc -c F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\mcu\\stm32l0xx\\STM32L0xx_StdPeriph_Driver\\Src\\stm32l0xx_hal_wwdg.c -o F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\mcu\\stm32l0xx\\STM32L0xx_StdPeriph_Driver\\Src\\stm32l0xx_hal_wwdg.c.o -I. -I."
  }, {
-  "file": "F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\mcu\\stm32\\STM32L1xx_StdPeriph_Driver\\src\\stm32l1xx_iwdg.c",
+  "file": "F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\mcu\\stm32l0xx\\stm32l0xx_it.c",
   "directory": "F:\\workspace\\Lora-net\\LoRaMac-node\\codelite",
-  "command": "gcc -c F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\mcu\\stm32\\STM32L1xx_StdPeriph_Driver\\src\\stm32l1xx_iwdg.c -o F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\mcu\\stm32\\STM32L1xx_StdPeriph_Driver\\src\\stm32l1xx_iwdg.c.o -I. -I."
+  "command": "gcc -c F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\mcu\\stm32l0xx\\stm32l0xx_it.c -o F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\mcu\\stm32l0xx\\stm32l0xx_it.c.o -I. -I."
  }, {
-  "file": "F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\mcu\\stm32\\STM32L1xx_StdPeriph_Driver\\src\\stm32l1xx_lcd.c",
+  "file": "F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\mcu\\stm32l0xx\\utilities.c",
   "directory": "F:\\workspace\\Lora-net\\LoRaMac-node\\codelite",
-  "command": "gcc -c F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\mcu\\stm32\\STM32L1xx_StdPeriph_Driver\\src\\stm32l1xx_lcd.c -o F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\mcu\\stm32\\STM32L1xx_StdPeriph_Driver\\src\\stm32l1xx_lcd.c.o -I. -I."
+  "command": "gcc -c F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\mcu\\stm32l0xx\\utilities.c -o F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\mcu\\stm32l0xx\\utilities.c.o -I. -I."
  }, {
-  "file": "F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\mcu\\stm32\\STM32L1xx_StdPeriph_Driver\\src\\stm32l1xx_opamp.c",
+  "file": "F:\\workspace\\Lora-net\\LoRaMac-node\\src\\apps\\LoRaMac\\classA\\EliSN-78\\main.c",
   "directory": "F:\\workspace\\Lora-net\\LoRaMac-node\\codelite",
-  "command": "gcc -c F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\mcu\\stm32\\STM32L1xx_StdPeriph_Driver\\src\\stm32l1xx_opamp.c -o F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\mcu\\stm32\\STM32L1xx_StdPeriph_Driver\\src\\stm32l1xx_opamp.c.o -I. -I."
- }, {
-  "file": "F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\mcu\\stm32\\STM32L1xx_StdPeriph_Driver\\src\\stm32l1xx_pwr.c",
-  "directory": "F:\\workspace\\Lora-net\\LoRaMac-node\\codelite",
-  "command": "gcc -c F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\mcu\\stm32\\STM32L1xx_StdPeriph_Driver\\src\\stm32l1xx_pwr.c -o F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\mcu\\stm32\\STM32L1xx_StdPeriph_Driver\\src\\stm32l1xx_pwr.c.o -I. -I."
- }, {
-  "file": "F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\mcu\\stm32\\STM32L1xx_StdPeriph_Driver\\src\\stm32l1xx_rcc.c",
-  "directory": "F:\\workspace\\Lora-net\\LoRaMac-node\\codelite",
-  "command": "gcc -c F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\mcu\\stm32\\STM32L1xx_StdPeriph_Driver\\src\\stm32l1xx_rcc.c -o F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\mcu\\stm32\\STM32L1xx_StdPeriph_Driver\\src\\stm32l1xx_rcc.c.o -I. -I."
- }, {
-  "file": "F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\mcu\\stm32\\STM32L1xx_StdPeriph_Driver\\src\\stm32l1xx_rtc.c",
-  "directory": "F:\\workspace\\Lora-net\\LoRaMac-node\\codelite",
-  "command": "gcc -c F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\mcu\\stm32\\STM32L1xx_StdPeriph_Driver\\src\\stm32l1xx_rtc.c -o F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\mcu\\stm32\\STM32L1xx_StdPeriph_Driver\\src\\stm32l1xx_rtc.c.o -I. -I."
- }, {
-  "file": "F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\mcu\\stm32\\STM32L1xx_StdPeriph_Driver\\src\\stm32l1xx_sdio.c",
-  "directory": "F:\\workspace\\Lora-net\\LoRaMac-node\\codelite",
-  "command": "gcc -c F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\mcu\\stm32\\STM32L1xx_StdPeriph_Driver\\src\\stm32l1xx_sdio.c -o F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\mcu\\stm32\\STM32L1xx_StdPeriph_Driver\\src\\stm32l1xx_sdio.c.o -I. -I."
- }, {
-  "file": "F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\mcu\\stm32\\STM32L1xx_StdPeriph_Driver\\src\\stm32l1xx_spi.c",
-  "directory": "F:\\workspace\\Lora-net\\LoRaMac-node\\codelite",
-  "command": "gcc -c F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\mcu\\stm32\\STM32L1xx_StdPeriph_Driver\\src\\stm32l1xx_spi.c -o F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\mcu\\stm32\\STM32L1xx_StdPeriph_Driver\\src\\stm32l1xx_spi.c.o -I. -I."
- }, {
-  "file": "F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\mcu\\stm32\\STM32L1xx_StdPeriph_Driver\\src\\stm32l1xx_syscfg.c",
-  "directory": "F:\\workspace\\Lora-net\\LoRaMac-node\\codelite",
-  "command": "gcc -c F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\mcu\\stm32\\STM32L1xx_StdPeriph_Driver\\src\\stm32l1xx_syscfg.c -o F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\mcu\\stm32\\STM32L1xx_StdPeriph_Driver\\src\\stm32l1xx_syscfg.c.o -I. -I."
- }, {
-  "file": "F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\mcu\\stm32\\STM32L1xx_StdPeriph_Driver\\src\\stm32l1xx_tim.c",
-  "directory": "F:\\workspace\\Lora-net\\LoRaMac-node\\codelite",
-  "command": "gcc -c F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\mcu\\stm32\\STM32L1xx_StdPeriph_Driver\\src\\stm32l1xx_tim.c -o F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\mcu\\stm32\\STM32L1xx_StdPeriph_Driver\\src\\stm32l1xx_tim.c.o -I. -I."
- }, {
-  "file": "F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\mcu\\stm32\\STM32L1xx_StdPeriph_Driver\\src\\stm32l1xx_usart.c",
-  "directory": "F:\\workspace\\Lora-net\\LoRaMac-node\\codelite",
-  "command": "gcc -c F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\mcu\\stm32\\STM32L1xx_StdPeriph_Driver\\src\\stm32l1xx_usart.c -o F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\mcu\\stm32\\STM32L1xx_StdPeriph_Driver\\src\\stm32l1xx_usart.c.o -I. -I."
- }, {
-  "file": "F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\mcu\\stm32\\STM32L1xx_StdPeriph_Driver\\src\\stm32l1xx_wwdg.c",
-  "directory": "F:\\workspace\\Lora-net\\LoRaMac-node\\codelite",
-  "command": "gcc -c F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\mcu\\stm32\\STM32L1xx_StdPeriph_Driver\\src\\stm32l1xx_wwdg.c -o F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\mcu\\stm32\\STM32L1xx_StdPeriph_Driver\\src\\stm32l1xx_wwdg.c.o -I. -I."
- }, {
-  "file": "F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\mcu\\stm32\\sysIrqHandlers.c",
-  "directory": "F:\\workspace\\Lora-net\\LoRaMac-node\\codelite",
-  "command": "gcc -c F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\mcu\\stm32\\sysIrqHandlers.c -o F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\mcu\\stm32\\sysIrqHandlers.c.o -I. -I."
- }, {
-  "file": "F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\mcu\\stm32\\utilities.c",
-  "directory": "F:\\workspace\\Lora-net\\LoRaMac-node\\codelite",
-  "command": "gcc -c F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\mcu\\stm32\\utilities.c -o F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\mcu\\stm32\\utilities.c.o -I. -I."
- }, {
-  "file": "F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\LoRaMote\\usb\\dfu\\src\\dfu_mal.c",
-  "directory": "F:\\workspace\\Lora-net\\LoRaMac-node\\codelite",
-  "command": "gcc -c F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\LoRaMote\\usb\\dfu\\src\\dfu_mal.c -o F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\LoRaMote\\usb\\dfu\\src\\dfu_mal.c.o -I. -I."
- }, {
-  "file": "F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\LoRaMote\\usb\\dfu\\src\\flash_if.c",
-  "directory": "F:\\workspace\\Lora-net\\LoRaMac-node\\codelite",
-  "command": "gcc -c F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\LoRaMote\\usb\\dfu\\src\\flash_if.c -o F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\LoRaMote\\usb\\dfu\\src\\flash_if.c.o -I. -I."
- }, {
-  "file": "F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\LoRaMote\\usb\\dfu\\src\\usb_desc.c",
-  "directory": "F:\\workspace\\Lora-net\\LoRaMac-node\\codelite",
-  "command": "gcc -c F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\LoRaMote\\usb\\dfu\\src\\usb_desc.c -o F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\LoRaMote\\usb\\dfu\\src\\usb_desc.c.o -I. -I."
- }, {
-  "file": "F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\LoRaMote\\usb\\dfu\\src\\usb_istr.c",
-  "directory": "F:\\workspace\\Lora-net\\LoRaMac-node\\codelite",
-  "command": "gcc -c F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\LoRaMote\\usb\\dfu\\src\\usb_istr.c -o F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\LoRaMote\\usb\\dfu\\src\\usb_istr.c.o -I. -I."
- }, {
-  "file": "F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\LoRaMote\\usb\\dfu\\src\\usb_prop.c",
-  "directory": "F:\\workspace\\Lora-net\\LoRaMac-node\\codelite",
-  "command": "gcc -c F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\LoRaMote\\usb\\dfu\\src\\usb_prop.c -o F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\LoRaMote\\usb\\dfu\\src\\usb_prop.c.o -I. -I."
- }, {
-  "file": "F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\LoRaMote\\usb\\dfu\\src\\usb_pwr.c",
-  "directory": "F:\\workspace\\Lora-net\\LoRaMac-node\\codelite",
-  "command": "gcc -c F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\LoRaMote\\usb\\dfu\\src\\usb_pwr.c -o F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\LoRaMote\\usb\\dfu\\src\\usb_pwr.c.o -I. -I."
- }, {
-  "file": "F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\LoRaMote\\usb\\cdc\\src\\usb_desc.c",
-  "directory": "F:\\workspace\\Lora-net\\LoRaMac-node\\codelite",
-  "command": "gcc -c F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\LoRaMote\\usb\\cdc\\src\\usb_desc.c -o F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\LoRaMote\\usb\\cdc\\src\\usb_desc.c.o -I. -I."
- }, {
-  "file": "F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\LoRaMote\\usb\\cdc\\src\\usb_endp.c",
-  "directory": "F:\\workspace\\Lora-net\\LoRaMac-node\\codelite",
-  "command": "gcc -c F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\LoRaMote\\usb\\cdc\\src\\usb_endp.c -o F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\LoRaMote\\usb\\cdc\\src\\usb_endp.c.o -I. -I."
- }, {
-  "file": "F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\LoRaMote\\usb\\cdc\\src\\usb_istr.c",
-  "directory": "F:\\workspace\\Lora-net\\LoRaMac-node\\codelite",
-  "command": "gcc -c F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\LoRaMote\\usb\\cdc\\src\\usb_istr.c -o F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\LoRaMote\\usb\\cdc\\src\\usb_istr.c.o -I. -I."
- }, {
-  "file": "F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\LoRaMote\\usb\\cdc\\src\\usb_prop.c",
-  "directory": "F:\\workspace\\Lora-net\\LoRaMac-node\\codelite",
-  "command": "gcc -c F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\LoRaMote\\usb\\cdc\\src\\usb_prop.c -o F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\LoRaMote\\usb\\cdc\\src\\usb_prop.c.o -I. -I."
- }, {
-  "file": "F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\LoRaMote\\usb\\cdc\\src\\usb_pwr.c",
-  "directory": "F:\\workspace\\Lora-net\\LoRaMac-node\\codelite",
-  "command": "gcc -c F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\LoRaMote\\usb\\cdc\\src\\usb_pwr.c -o F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\LoRaMote\\usb\\cdc\\src\\usb_pwr.c.o -I. -I."
- }, {
-  "file": "F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\LoRaMote\\cmsis\\system_stm32l1xx.c",
-  "directory": "F:\\workspace\\Lora-net\\LoRaMac-node\\codelite",
-  "command": "gcc -c F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\LoRaMote\\cmsis\\system_stm32l1xx.c -o F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\LoRaMote\\cmsis\\system_stm32l1xx.c.o -I. -I."
- }, {
-  "file": "F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\LoRaMote\\adc-board.c",
-  "directory": "F:\\workspace\\Lora-net\\LoRaMac-node\\codelite",
-  "command": "gcc -c F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\LoRaMote\\adc-board.c -o F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\LoRaMote\\adc-board.c.o -I. -I."
- }, {
-  "file": "F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\LoRaMote\\board.c",
-  "directory": "F:\\workspace\\Lora-net\\LoRaMac-node\\codelite",
-  "command": "gcc -c F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\LoRaMote\\board.c -o F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\LoRaMote\\board.c.o -I. -I."
- }, {
-  "file": "F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\LoRaMote\\gpio-board.c",
-  "directory": "F:\\workspace\\Lora-net\\LoRaMac-node\\codelite",
-  "command": "gcc -c F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\LoRaMote\\gpio-board.c -o F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\LoRaMote\\gpio-board.c.o -I. -I."
- }, {
-  "file": "F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\LoRaMote\\gps-board.c",
-  "directory": "F:\\workspace\\Lora-net\\LoRaMac-node\\codelite",
-  "command": "gcc -c F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\LoRaMote\\gps-board.c -o F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\LoRaMote\\gps-board.c.o -I. -I."
- }, {
-  "file": "F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\LoRaMote\\i2c-board.c",
-  "directory": "F:\\workspace\\Lora-net\\LoRaMac-node\\codelite",
-  "command": "gcc -c F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\LoRaMote\\i2c-board.c -o F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\LoRaMote\\i2c-board.c.o -I. -I."
- }, {
-  "file": "F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\LoRaMote\\rtc-board.c",
-  "directory": "F:\\workspace\\Lora-net\\LoRaMac-node\\codelite",
-  "command": "gcc -c F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\LoRaMote\\rtc-board.c -o F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\LoRaMote\\rtc-board.c.o -I. -I."
- }, {
-  "file": "F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\LoRaMote\\spi-board.c",
-  "directory": "F:\\workspace\\Lora-net\\LoRaMac-node\\codelite",
-  "command": "gcc -c F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\LoRaMote\\spi-board.c -o F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\LoRaMote\\spi-board.c.o -I. -I."
- }, {
-  "file": "F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\LoRaMote\\sx1272-board.c",
-  "directory": "F:\\workspace\\Lora-net\\LoRaMac-node\\codelite",
-  "command": "gcc -c F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\LoRaMote\\sx1272-board.c -o F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\LoRaMote\\sx1272-board.c.o -I. -I."
- }, {
-  "file": "F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\LoRaMote\\timer-board.c",
-  "directory": "F:\\workspace\\Lora-net\\LoRaMac-node\\codelite",
-  "command": "gcc -c F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\LoRaMote\\timer-board.c -o F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\LoRaMote\\timer-board.c.o -I. -I."
- }, {
-  "file": "F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\LoRaMote\\uart-board.c",
-  "directory": "F:\\workspace\\Lora-net\\LoRaMac-node\\codelite",
-  "command": "gcc -c F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\LoRaMote\\uart-board.c -o F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\LoRaMote\\uart-board.c.o -I. -I."
- }, {
-  "file": "F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\LoRaMote\\uart-usb-board.c",
-  "directory": "F:\\workspace\\Lora-net\\LoRaMac-node\\codelite",
-  "command": "gcc -c F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\LoRaMote\\uart-usb-board.c -o F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\LoRaMote\\uart-usb-board.c.o -I. -I."
- }, {
-  "file": "F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\LoRaMote\\usb-cdc-board.c",
-  "directory": "F:\\workspace\\Lora-net\\LoRaMac-node\\codelite",
-  "command": "gcc -c F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\LoRaMote\\usb-cdc-board.c -o F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\LoRaMote\\usb-cdc-board.c.o -I. -I."
- }, {
-  "file": "F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\LoRaMote\\usb-dfu-board.c",
-  "directory": "F:\\workspace\\Lora-net\\LoRaMac-node\\codelite",
-  "command": "gcc -c F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\LoRaMote\\usb-dfu-board.c -o F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\LoRaMote\\usb-dfu-board.c.o -I. -I."
- }, {
-  "file": "F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\Bleeper-76\\cmsis\\system_stm32l1xx.c",
-  "directory": "F:\\workspace\\Lora-net\\LoRaMac-node\\codelite",
-  "command": "gcc -c F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\Bleeper-76\\cmsis\\system_stm32l1xx.c -o F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\Bleeper-76\\cmsis\\system_stm32l1xx.c.o -I. -I."
- }, {
-  "file": "F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\Bleeper-76\\board.c",
-  "directory": "F:\\workspace\\Lora-net\\LoRaMac-node\\codelite",
-  "command": "gcc -c F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\Bleeper-76\\board.c -o F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\Bleeper-76\\board.c.o -I. -I."
- }, {
-  "file": "F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\Bleeper-76\\gpio-board.c",
-  "directory": "F:\\workspace\\Lora-net\\LoRaMac-node\\codelite",
-  "command": "gcc -c F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\Bleeper-76\\gpio-board.c -o F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\Bleeper-76\\gpio-board.c.o -I. -I."
- }, {
-  "file": "F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\Bleeper-76\\i2c-board.c",
-  "directory": "F:\\workspace\\Lora-net\\LoRaMac-node\\codelite",
-  "command": "gcc -c F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\Bleeper-76\\i2c-board.c -o F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\Bleeper-76\\i2c-board.c.o -I. -I."
- }, {
-  "file": "F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\Bleeper-76\\rtc-board.c",
-  "directory": "F:\\workspace\\Lora-net\\LoRaMac-node\\codelite",
-  "command": "gcc -c F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\Bleeper-76\\rtc-board.c -o F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\Bleeper-76\\rtc-board.c.o -I. -I."
- }, {
-  "file": "F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\Bleeper-76\\spi-board.c",
-  "directory": "F:\\workspace\\Lora-net\\LoRaMac-node\\codelite",
-  "command": "gcc -c F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\Bleeper-76\\spi-board.c -o F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\Bleeper-76\\spi-board.c.o -I. -I."
- }, {
-  "file": "F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\Bleeper-76\\sx1276-board.c",
-  "directory": "F:\\workspace\\Lora-net\\LoRaMac-node\\codelite",
-  "command": "gcc -c F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\Bleeper-76\\sx1276-board.c -o F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\Bleeper-76\\sx1276-board.c.o -I. -I."
- }, {
-  "file": "F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\Bleeper-76\\timer-board.c",
-  "directory": "F:\\workspace\\Lora-net\\LoRaMac-node\\codelite",
-  "command": "gcc -c F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\Bleeper-76\\timer-board.c -o F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\Bleeper-76\\timer-board.c.o -I. -I."
- }, {
-  "file": "F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\Bleeper-72\\cmsis\\system_stm32l1xx.c",
-  "directory": "F:\\workspace\\Lora-net\\LoRaMac-node\\codelite",
-  "command": "gcc -c F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\Bleeper-72\\cmsis\\system_stm32l1xx.c -o F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\Bleeper-72\\cmsis\\system_stm32l1xx.c.o -I. -I."
- }, {
-  "file": "F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\Bleeper-72\\board.c",
-  "directory": "F:\\workspace\\Lora-net\\LoRaMac-node\\codelite",
-  "command": "gcc -c F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\Bleeper-72\\board.c -o F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\Bleeper-72\\board.c.o -I. -I."
- }, {
-  "file": "F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\Bleeper-72\\gpio-board.c",
-  "directory": "F:\\workspace\\Lora-net\\LoRaMac-node\\codelite",
-  "command": "gcc -c F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\Bleeper-72\\gpio-board.c -o F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\Bleeper-72\\gpio-board.c.o -I. -I."
- }, {
-  "file": "F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\Bleeper-72\\i2c-board.c",
-  "directory": "F:\\workspace\\Lora-net\\LoRaMac-node\\codelite",
-  "command": "gcc -c F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\Bleeper-72\\i2c-board.c -o F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\Bleeper-72\\i2c-board.c.o -I. -I."
- }, {
-  "file": "F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\Bleeper-72\\rtc-board.c",
-  "directory": "F:\\workspace\\Lora-net\\LoRaMac-node\\codelite",
-  "command": "gcc -c F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\Bleeper-72\\rtc-board.c -o F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\Bleeper-72\\rtc-board.c.o -I. -I."
- }, {
-  "file": "F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\Bleeper-72\\spi-board.c",
-  "directory": "F:\\workspace\\Lora-net\\LoRaMac-node\\codelite",
-  "command": "gcc -c F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\Bleeper-72\\spi-board.c -o F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\Bleeper-72\\spi-board.c.o -I. -I."
- }, {
-  "file": "F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\Bleeper-72\\sx1272-board.c",
-  "directory": "F:\\workspace\\Lora-net\\LoRaMac-node\\codelite",
-  "command": "gcc -c F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\Bleeper-72\\sx1272-board.c -o F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\Bleeper-72\\sx1272-board.c.o -I. -I."
- }, {
-  "file": "F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\Bleeper-72\\timer-board.c",
-  "directory": "F:\\workspace\\Lora-net\\LoRaMac-node\\codelite",
-  "command": "gcc -c F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\Bleeper-72\\timer-board.c -o F:\\workspace\\Lora-net\\LoRaMac-node\\src\\boards\\Bleeper-72\\timer-board.c.o -I. -I."
- }, {
-  "file": "F:\\workspace\\Lora-net\\LoRaMac-node\\src\\apps\\tx-cw\\Bleeper-72\\main.c",
-  "directory": "F:\\workspace\\Lora-net\\LoRaMac-node\\codelite",
-  "command": "gcc -c F:\\workspace\\Lora-net\\LoRaMac-node\\src\\apps\\tx-cw\\Bleeper-72\\main.c -o F:\\workspace\\Lora-net\\LoRaMac-node\\src\\apps\\tx-cw\\Bleeper-72\\main.c.o -I. -I."
- }, {
-  "file": "F:\\workspace\\Lora-net\\LoRaMac-node\\src\\apps\\tx-cw\\Bleeper-76\\main.c",
-  "directory": "F:\\workspace\\Lora-net\\LoRaMac-node\\codelite",
-  "command": "gcc -c F:\\workspace\\Lora-net\\LoRaMac-node\\src\\apps\\tx-cw\\Bleeper-76\\main.c -o F:\\workspace\\Lora-net\\LoRaMac-node\\src\\apps\\tx-cw\\Bleeper-76\\main.c.o -I. -I."
- }, {
-  "file": "F:\\workspace\\Lora-net\\LoRaMac-node\\src\\apps\\tx-cw\\LoRaMote\\main.c",
-  "directory": "F:\\workspace\\Lora-net\\LoRaMac-node\\codelite",
-  "command": "gcc -c F:\\workspace\\Lora-net\\LoRaMac-node\\src\\apps\\tx-cw\\LoRaMote\\main.c -o F:\\workspace\\Lora-net\\LoRaMac-node\\src\\apps\\tx-cw\\LoRaMote\\main.c.o -I. -I."
- }, {
-  "file": "F:\\workspace\\Lora-net\\LoRaMac-node\\src\\apps\\tx-cw\\SensorNode\\main.c",
-  "directory": "F:\\workspace\\Lora-net\\LoRaMac-node\\codelite",
-  "command": "gcc -c F:\\workspace\\Lora-net\\LoRaMac-node\\src\\apps\\tx-cw\\SensorNode\\main.c -o F:\\workspace\\Lora-net\\LoRaMac-node\\src\\apps\\tx-cw\\SensorNode\\main.c.o -I. -I."
- }, {
-  "file": "F:\\workspace\\Lora-net\\LoRaMac-node\\src\\apps\\tx-cw\\SK-iM880A\\main.c",
-  "directory": "F:\\workspace\\Lora-net\\LoRaMac-node\\codelite",
-  "command": "gcc -c F:\\workspace\\Lora-net\\LoRaMac-node\\src\\apps\\tx-cw\\SK-iM880A\\main.c -o F:\\workspace\\Lora-net\\LoRaMac-node\\src\\apps\\tx-cw\\SK-iM880A\\main.c.o -I. -I."
- }, {
-  "file": "F:\\workspace\\Lora-net\\LoRaMac-node\\src\\apps\\rx-sensi\\Bleeper-72\\main.c",
-  "directory": "F:\\workspace\\Lora-net\\LoRaMac-node\\codelite",
-  "command": "gcc -c F:\\workspace\\Lora-net\\LoRaMac-node\\src\\apps\\rx-sensi\\Bleeper-72\\main.c -o F:\\workspace\\Lora-net\\LoRaMac-node\\src\\apps\\rx-sensi\\Bleeper-72\\main.c.o -I. -I."
- }, {
-  "file": "F:\\workspace\\Lora-net\\LoRaMac-node\\src\\apps\\rx-sensi\\Bleeper-76\\main.c",
-  "directory": "F:\\workspace\\Lora-net\\LoRaMac-node\\codelite",
-  "command": "gcc -c F:\\workspace\\Lora-net\\LoRaMac-node\\src\\apps\\rx-sensi\\Bleeper-76\\main.c -o F:\\workspace\\Lora-net\\LoRaMac-node\\src\\apps\\rx-sensi\\Bleeper-76\\main.c.o -I. -I."
- }, {
-  "file": "F:\\workspace\\Lora-net\\LoRaMac-node\\src\\apps\\rx-sensi\\LoRaMote\\main.c",
-  "directory": "F:\\workspace\\Lora-net\\LoRaMac-node\\codelite",
-  "command": "gcc -c F:\\workspace\\Lora-net\\LoRaMac-node\\src\\apps\\rx-sensi\\LoRaMote\\main.c -o F:\\workspace\\Lora-net\\LoRaMac-node\\src\\apps\\rx-sensi\\LoRaMote\\main.c.o -I. -I."
- }, {
-  "file": "F:\\workspace\\Lora-net\\LoRaMac-node\\src\\apps\\rx-sensi\\SensorNode\\main.c",
-  "directory": "F:\\workspace\\Lora-net\\LoRaMac-node\\codelite",
-  "command": "gcc -c F:\\workspace\\Lora-net\\LoRaMac-node\\src\\apps\\rx-sensi\\SensorNode\\main.c -o F:\\workspace\\Lora-net\\LoRaMac-node\\src\\apps\\rx-sensi\\SensorNode\\main.c.o -I. -I."
- }, {
-  "file": "F:\\workspace\\Lora-net\\LoRaMac-node\\src\\apps\\rx-sensi\\SK-iM880A\\main.c",
-  "directory": "F:\\workspace\\Lora-net\\LoRaMac-node\\codelite",
-  "command": "gcc -c F:\\workspace\\Lora-net\\LoRaMac-node\\src\\apps\\rx-sensi\\SK-iM880A\\main.c -o F:\\workspace\\Lora-net\\LoRaMac-node\\src\\apps\\rx-sensi\\SK-iM880A\\main.c.o -I. -I."
- }, {
-  "file": "F:\\workspace\\Lora-net\\LoRaMac-node\\src\\apps\\ping-pong\\Bleeper-72\\main.c",
-  "directory": "F:\\workspace\\Lora-net\\LoRaMac-node\\codelite",
-  "command": "gcc -c F:\\workspace\\Lora-net\\LoRaMac-node\\src\\apps\\ping-pong\\Bleeper-72\\main.c -o F:\\workspace\\Lora-net\\LoRaMac-node\\src\\apps\\ping-pong\\Bleeper-72\\main.c.o -I. -I."
- }, {
-  "file": "F:\\workspace\\Lora-net\\LoRaMac-node\\src\\apps\\ping-pong\\Bleeper-76\\main.c",
-  "directory": "F:\\workspace\\Lora-net\\LoRaMac-node\\codelite",
-  "command": "gcc -c F:\\workspace\\Lora-net\\LoRaMac-node\\src\\apps\\ping-pong\\Bleeper-76\\main.c -o F:\\workspace\\Lora-net\\LoRaMac-node\\src\\apps\\ping-pong\\Bleeper-76\\main.c.o -I. -I."
- }, {
-  "file": "F:\\workspace\\Lora-net\\LoRaMac-node\\src\\apps\\ping-pong\\LoRaMote\\main.c",
-  "directory": "F:\\workspace\\Lora-net\\LoRaMac-node\\codelite",
-  "command": "gcc -c F:\\workspace\\Lora-net\\LoRaMac-node\\src\\apps\\ping-pong\\LoRaMote\\main.c -o F:\\workspace\\Lora-net\\LoRaMac-node\\src\\apps\\ping-pong\\LoRaMote\\main.c.o -I. -I."
- }, {
-  "file": "F:\\workspace\\Lora-net\\LoRaMac-node\\src\\apps\\ping-pong\\SensorNode\\main.c",
-  "directory": "F:\\workspace\\Lora-net\\LoRaMac-node\\codelite",
-  "command": "gcc -c F:\\workspace\\Lora-net\\LoRaMac-node\\src\\apps\\ping-pong\\SensorNode\\main.c -o F:\\workspace\\Lora-net\\LoRaMac-node\\src\\apps\\ping-pong\\SensorNode\\main.c.o -I. -I."
- }, {
-  "file": "F:\\workspace\\Lora-net\\LoRaMac-node\\src\\apps\\ping-pong\\SK-iM880A\\main.c",
-  "directory": "F:\\workspace\\Lora-net\\LoRaMac-node\\codelite",
-  "command": "gcc -c F:\\workspace\\Lora-net\\LoRaMac-node\\src\\apps\\ping-pong\\SK-iM880A\\main.c -o F:\\workspace\\Lora-net\\LoRaMac-node\\src\\apps\\ping-pong\\SK-iM880A\\main.c.o -I. -I."
- }, {
-  "file": "F:\\workspace\\Lora-net\\LoRaMac-node\\src\\apps\\LoRaMac\\radioCoverageTest\\Bleeper-72\\main.c",
-  "directory": "F:\\workspace\\Lora-net\\LoRaMac-node\\codelite",
-  "command": "gcc -c F:\\workspace\\Lora-net\\LoRaMac-node\\src\\apps\\LoRaMac\\radioCoverageTest\\Bleeper-72\\main.c -o F:\\workspace\\Lora-net\\LoRaMac-node\\src\\apps\\LoRaMac\\radioCoverageTest\\Bleeper-72\\main.c.o -I. -I."
- }, {
-  "file": "F:\\workspace\\Lora-net\\LoRaMac-node\\src\\apps\\LoRaMac\\radioCoverageTest\\Bleeper-76\\main.c",
-  "directory": "F:\\workspace\\Lora-net\\LoRaMac-node\\codelite",
-  "command": "gcc -c F:\\workspace\\Lora-net\\LoRaMac-node\\src\\apps\\LoRaMac\\radioCoverageTest\\Bleeper-76\\main.c -o F:\\workspace\\Lora-net\\LoRaMac-node\\src\\apps\\LoRaMac\\radioCoverageTest\\Bleeper-76\\main.c.o -I. -I."
- }, {
-  "file": "F:\\workspace\\Lora-net\\LoRaMac-node\\src\\apps\\LoRaMac\\classC\\Bleeper-72\\main-api-v3.c",
-  "directory": "F:\\workspace\\Lora-net\\LoRaMac-node\\codelite",
-  "command": "gcc -c F:\\workspace\\Lora-net\\LoRaMac-node\\src\\apps\\LoRaMac\\classC\\Bleeper-72\\main-api-v3.c -o F:\\workspace\\Lora-net\\LoRaMac-node\\src\\apps\\LoRaMac\\classC\\Bleeper-72\\main-api-v3.c.o -I. -I."
- }, {
-  "file": "F:\\workspace\\Lora-net\\LoRaMac-node\\src\\apps\\LoRaMac\\classC\\Bleeper-72\\main.c",
-  "directory": "F:\\workspace\\Lora-net\\LoRaMac-node\\codelite",
-  "command": "gcc -c F:\\workspace\\Lora-net\\LoRaMac-node\\src\\apps\\LoRaMac\\classC\\Bleeper-72\\main.c -o F:\\workspace\\Lora-net\\LoRaMac-node\\src\\apps\\LoRaMac\\classC\\Bleeper-72\\main.c.o -I. -I."
- }, {
-  "file": "F:\\workspace\\Lora-net\\LoRaMac-node\\src\\apps\\LoRaMac\\classC\\Bleeper-76\\main-api-v3.c",
-  "directory": "F:\\workspace\\Lora-net\\LoRaMac-node\\codelite",
-  "command": "gcc -c F:\\workspace\\Lora-net\\LoRaMac-node\\src\\apps\\LoRaMac\\classC\\Bleeper-76\\main-api-v3.c -o F:\\workspace\\Lora-net\\LoRaMac-node\\src\\apps\\LoRaMac\\classC\\Bleeper-76\\main-api-v3.c.o -I. -I."
- }, {
-  "file": "F:\\workspace\\Lora-net\\LoRaMac-node\\src\\apps\\LoRaMac\\classC\\Bleeper-76\\main.c",
-  "directory": "F:\\workspace\\Lora-net\\LoRaMac-node\\codelite",
-  "command": "gcc -c F:\\workspace\\Lora-net\\LoRaMac-node\\src\\apps\\LoRaMac\\classC\\Bleeper-76\\main.c -o F:\\workspace\\Lora-net\\LoRaMac-node\\src\\apps\\LoRaMac\\classC\\Bleeper-76\\main.c.o -I. -I."
- }, {
-  "file": "F:\\workspace\\Lora-net\\LoRaMac-node\\src\\apps\\LoRaMac\\classC\\LoRaMote\\main-api-v3.c",
-  "directory": "F:\\workspace\\Lora-net\\LoRaMac-node\\codelite",
-  "command": "gcc -c F:\\workspace\\Lora-net\\LoRaMac-node\\src\\apps\\LoRaMac\\classC\\LoRaMote\\main-api-v3.c -o F:\\workspace\\Lora-net\\LoRaMac-node\\src\\apps\\LoRaMac\\classC\\LoRaMote\\main-api-v3.c.o -I. -I."
- }, {
-  "file": "F:\\workspace\\Lora-net\\LoRaMac-node\\src\\apps\\LoRaMac\\classC\\LoRaMote\\main.c",
-  "directory": "F:\\workspace\\Lora-net\\LoRaMac-node\\codelite",
-  "command": "gcc -c F:\\workspace\\Lora-net\\LoRaMac-node\\src\\apps\\LoRaMac\\classC\\LoRaMote\\main.c -o F:\\workspace\\Lora-net\\LoRaMac-node\\src\\apps\\LoRaMac\\classC\\LoRaMote\\main.c.o -I. -I."
- }, {
-  "file": "F:\\workspace\\Lora-net\\LoRaMac-node\\src\\apps\\LoRaMac\\classC\\SensorNode\\main-api-v3.c",
-  "directory": "F:\\workspace\\Lora-net\\LoRaMac-node\\codelite",
-  "command": "gcc -c F:\\workspace\\Lora-net\\LoRaMac-node\\src\\apps\\LoRaMac\\classC\\SensorNode\\main-api-v3.c -o F:\\workspace\\Lora-net\\LoRaMac-node\\src\\apps\\LoRaMac\\classC\\SensorNode\\main-api-v3.c.o -I. -I."
- }, {
-  "file": "F:\\workspace\\Lora-net\\LoRaMac-node\\src\\apps\\LoRaMac\\classC\\SensorNode\\main.c",
-  "directory": "F:\\workspace\\Lora-net\\LoRaMac-node\\codelite",
-  "command": "gcc -c F:\\workspace\\Lora-net\\LoRaMac-node\\src\\apps\\LoRaMac\\classC\\SensorNode\\main.c -o F:\\workspace\\Lora-net\\LoRaMac-node\\src\\apps\\LoRaMac\\classC\\SensorNode\\main.c.o -I. -I."
- }, {
-  "file": "F:\\workspace\\Lora-net\\LoRaMac-node\\src\\apps\\LoRaMac\\classC\\SK-iM880A\\main-api-v3.c",
-  "directory": "F:\\workspace\\Lora-net\\LoRaMac-node\\codelite",
-  "command": "gcc -c F:\\workspace\\Lora-net\\LoRaMac-node\\src\\apps\\LoRaMac\\classC\\SK-iM880A\\main-api-v3.c -o F:\\workspace\\Lora-net\\LoRaMac-node\\src\\apps\\LoRaMac\\classC\\SK-iM880A\\main-api-v3.c.o -I. -I."
- }, {
-  "file": "F:\\workspace\\Lora-net\\LoRaMac-node\\src\\apps\\LoRaMac\\classC\\SK-iM880A\\main.c",
-  "directory": "F:\\workspace\\Lora-net\\LoRaMac-node\\codelite",
-  "command": "gcc -c F:\\workspace\\Lora-net\\LoRaMac-node\\src\\apps\\LoRaMac\\classC\\SK-iM880A\\main.c -o F:\\workspace\\Lora-net\\LoRaMac-node\\src\\apps\\LoRaMac\\classC\\SK-iM880A\\main.c.o -I. -I."
- }, {
-  "file": "F:\\workspace\\Lora-net\\LoRaMac-node\\src\\apps\\LoRaMac\\classB\\Bleeper-72\\main-api-v3.c",
-  "directory": "F:\\workspace\\Lora-net\\LoRaMac-node\\codelite",
-  "command": "gcc -c F:\\workspace\\Lora-net\\LoRaMac-node\\src\\apps\\LoRaMac\\classB\\Bleeper-72\\main-api-v3.c -o F:\\workspace\\Lora-net\\LoRaMac-node\\src\\apps\\LoRaMac\\classB\\Bleeper-72\\main-api-v3.c.o -I. -I."
- }, {
-  "file": "F:\\workspace\\Lora-net\\LoRaMac-node\\src\\apps\\LoRaMac\\classB\\Bleeper-72\\main.c",
-  "directory": "F:\\workspace\\Lora-net\\LoRaMac-node\\codelite",
-  "command": "gcc -c F:\\workspace\\Lora-net\\LoRaMac-node\\src\\apps\\LoRaMac\\classB\\Bleeper-72\\main.c -o F:\\workspace\\Lora-net\\LoRaMac-node\\src\\apps\\LoRaMac\\classB\\Bleeper-72\\main.c.o -I. -I."
- }, {
-  "file": "F:\\workspace\\Lora-net\\LoRaMac-node\\src\\apps\\LoRaMac\\classB\\Bleeper-76\\main-api-v3.c",
-  "directory": "F:\\workspace\\Lora-net\\LoRaMac-node\\codelite",
-  "command": "gcc -c F:\\workspace\\Lora-net\\LoRaMac-node\\src\\apps\\LoRaMac\\classB\\Bleeper-76\\main-api-v3.c -o F:\\workspace\\Lora-net\\LoRaMac-node\\src\\apps\\LoRaMac\\classB\\Bleeper-76\\main-api-v3.c.o -I. -I."
- }, {
-  "file": "F:\\workspace\\Lora-net\\LoRaMac-node\\src\\apps\\LoRaMac\\classB\\Bleeper-76\\main.c",
-  "directory": "F:\\workspace\\Lora-net\\LoRaMac-node\\codelite",
-  "command": "gcc -c F:\\workspace\\Lora-net\\LoRaMac-node\\src\\apps\\LoRaMac\\classB\\Bleeper-76\\main.c -o F:\\workspace\\Lora-net\\LoRaMac-node\\src\\apps\\LoRaMac\\classB\\Bleeper-76\\main.c.o -I. -I."
- }, {
-  "file": "F:\\workspace\\Lora-net\\LoRaMac-node\\src\\apps\\LoRaMac\\classB\\LoRaMote\\main-api-v3.c",
-  "directory": "F:\\workspace\\Lora-net\\LoRaMac-node\\codelite",
-  "command": "gcc -c F:\\workspace\\Lora-net\\LoRaMac-node\\src\\apps\\LoRaMac\\classB\\LoRaMote\\main-api-v3.c -o F:\\workspace\\Lora-net\\LoRaMac-node\\src\\apps\\LoRaMac\\classB\\LoRaMote\\main-api-v3.c.o -I. -I."
- }, {
-  "file": "F:\\workspace\\Lora-net\\LoRaMac-node\\src\\apps\\LoRaMac\\classB\\LoRaMote\\main.c",
-  "directory": "F:\\workspace\\Lora-net\\LoRaMac-node\\codelite",
-  "command": "gcc -c F:\\workspace\\Lora-net\\LoRaMac-node\\src\\apps\\LoRaMac\\classB\\LoRaMote\\main.c -o F:\\workspace\\Lora-net\\LoRaMac-node\\src\\apps\\LoRaMac\\classB\\LoRaMote\\main.c.o -I. -I."
- }, {
-  "file": "F:\\workspace\\Lora-net\\LoRaMac-node\\src\\apps\\LoRaMac\\classB\\SensorNode\\main-api-v3.c",
-  "directory": "F:\\workspace\\Lora-net\\LoRaMac-node\\codelite",
-  "command": "gcc -c F:\\workspace\\Lora-net\\LoRaMac-node\\src\\apps\\LoRaMac\\classB\\SensorNode\\main-api-v3.c -o F:\\workspace\\Lora-net\\LoRaMac-node\\src\\apps\\LoRaMac\\classB\\SensorNode\\main-api-v3.c.o -I. -I."
- }, {
-  "file": "F:\\workspace\\Lora-net\\LoRaMac-node\\src\\apps\\LoRaMac\\classB\\SensorNode\\main.c",
-  "directory": "F:\\workspace\\Lora-net\\LoRaMac-node\\codelite",
-  "command": "gcc -c F:\\workspace\\Lora-net\\LoRaMac-node\\src\\apps\\LoRaMac\\classB\\SensorNode\\main.c -o F:\\workspace\\Lora-net\\LoRaMac-node\\src\\apps\\LoRaMac\\classB\\SensorNode\\main.c.o -I. -I."
- }, {
-  "file": "F:\\workspace\\Lora-net\\LoRaMac-node\\src\\apps\\LoRaMac\\classB\\SK-iM880A\\main-api-v3.c",
-  "directory": "F:\\workspace\\Lora-net\\LoRaMac-node\\codelite",
-  "command": "gcc -c F:\\workspace\\Lora-net\\LoRaMac-node\\src\\apps\\LoRaMac\\classB\\SK-iM880A\\main-api-v3.c -o F:\\workspace\\Lora-net\\LoRaMac-node\\src\\apps\\LoRaMac\\classB\\SK-iM880A\\main-api-v3.c.o -I. -I."
- }, {
-  "file": "F:\\workspace\\Lora-net\\LoRaMac-node\\src\\apps\\LoRaMac\\classB\\SK-iM880A\\main.c",
-  "directory": "F:\\workspace\\Lora-net\\LoRaMac-node\\codelite",
-  "command": "gcc -c F:\\workspace\\Lora-net\\LoRaMac-node\\src\\apps\\LoRaMac\\classB\\SK-iM880A\\main.c -o F:\\workspace\\Lora-net\\LoRaMac-node\\src\\apps\\LoRaMac\\classB\\SK-iM880A\\main.c.o -I. -I."
- }, {
-  "file": "F:\\workspace\\Lora-net\\LoRaMac-node\\src\\apps\\LoRaMac\\classA\\Bleeper-72\\main-api-v3.c",
-  "directory": "F:\\workspace\\Lora-net\\LoRaMac-node\\codelite",
-  "command": "gcc -c F:\\workspace\\Lora-net\\LoRaMac-node\\src\\apps\\LoRaMac\\classA\\Bleeper-72\\main-api-v3.c -o F:\\workspace\\Lora-net\\LoRaMac-node\\src\\apps\\LoRaMac\\classA\\Bleeper-72\\main-api-v3.c.o -I. -I."
- }, {
-  "file": "F:\\workspace\\Lora-net\\LoRaMac-node\\src\\apps\\LoRaMac\\classA\\Bleeper-72\\main.c",
-  "directory": "F:\\workspace\\Lora-net\\LoRaMac-node\\codelite",
-  "command": "gcc -c F:\\workspace\\Lora-net\\LoRaMac-node\\src\\apps\\LoRaMac\\classA\\Bleeper-72\\main.c -o F:\\workspace\\Lora-net\\LoRaMac-node\\src\\apps\\LoRaMac\\classA\\Bleeper-72\\main.c.o -I. -I."
- }, {
-  "file": "F:\\workspace\\Lora-net\\LoRaMac-node\\src\\apps\\LoRaMac\\classA\\Bleeper-76\\main-api-v3.c",
-  "directory": "F:\\workspace\\Lora-net\\LoRaMac-node\\codelite",
-  "command": "gcc -c F:\\workspace\\Lora-net\\LoRaMac-node\\src\\apps\\LoRaMac\\classA\\Bleeper-76\\main-api-v3.c -o F:\\workspace\\Lora-net\\LoRaMac-node\\src\\apps\\LoRaMac\\classA\\Bleeper-76\\main-api-v3.c.o -I. -I."
- }, {
-  "file": "F:\\workspace\\Lora-net\\LoRaMac-node\\src\\apps\\LoRaMac\\classA\\Bleeper-76\\main.c",
-  "directory": "F:\\workspace\\Lora-net\\LoRaMac-node\\codelite",
-  "command": "gcc -c F:\\workspace\\Lora-net\\LoRaMac-node\\src\\apps\\LoRaMac\\classA\\Bleeper-76\\main.c -o F:\\workspace\\Lora-net\\LoRaMac-node\\src\\apps\\LoRaMac\\classA\\Bleeper-76\\main.c.o -I. -I."
- }, {
-  "file": "F:\\workspace\\Lora-net\\LoRaMac-node\\src\\apps\\LoRaMac\\classA\\LoRaMote\\main-api-v3.c",
-  "directory": "F:\\workspace\\Lora-net\\LoRaMac-node\\codelite",
-  "command": "gcc -c F:\\workspace\\Lora-net\\LoRaMac-node\\src\\apps\\LoRaMac\\classA\\LoRaMote\\main-api-v3.c -o F:\\workspace\\Lora-net\\LoRaMac-node\\src\\apps\\LoRaMac\\classA\\LoRaMote\\main-api-v3.c.o -I. -I."
- }, {
-  "file": "F:\\workspace\\Lora-net\\LoRaMac-node\\src\\apps\\LoRaMac\\classA\\LoRaMote\\main.c",
-  "directory": "F:\\workspace\\Lora-net\\LoRaMac-node\\codelite",
-  "command": "gcc -c F:\\workspace\\Lora-net\\LoRaMac-node\\src\\apps\\LoRaMac\\classA\\LoRaMote\\main.c -o F:\\workspace\\Lora-net\\LoRaMac-node\\src\\apps\\LoRaMac\\classA\\LoRaMote\\main.c.o -I. -I."
- }, {
-  "file": "F:\\workspace\\Lora-net\\LoRaMac-node\\src\\apps\\LoRaMac\\classA\\SensorNode\\main-api-v3.c",
-  "directory": "F:\\workspace\\Lora-net\\LoRaMac-node\\codelite",
-  "command": "gcc -c F:\\workspace\\Lora-net\\LoRaMac-node\\src\\apps\\LoRaMac\\classA\\SensorNode\\main-api-v3.c -o F:\\workspace\\Lora-net\\LoRaMac-node\\src\\apps\\LoRaMac\\classA\\SensorNode\\main-api-v3.c.o -I. -I."
- }, {
-  "file": "F:\\workspace\\Lora-net\\LoRaMac-node\\src\\apps\\LoRaMac\\classA\\SensorNode\\main.c",
-  "directory": "F:\\workspace\\Lora-net\\LoRaMac-node\\codelite",
-  "command": "gcc -c F:\\workspace\\Lora-net\\LoRaMac-node\\src\\apps\\LoRaMac\\classA\\SensorNode\\main.c -o F:\\workspace\\Lora-net\\LoRaMac-node\\src\\apps\\LoRaMac\\classA\\SensorNode\\main.c.o -I. -I."
- }, {
-  "file": "F:\\workspace\\Lora-net\\LoRaMac-node\\src\\apps\\LoRaMac\\classA\\SK-iM880A\\main-api-v3.c",
-  "directory": "F:\\workspace\\Lora-net\\LoRaMac-node\\codelite",
-  "command": "gcc -c F:\\workspace\\Lora-net\\LoRaMac-node\\src\\apps\\LoRaMac\\classA\\SK-iM880A\\main-api-v3.c -o F:\\workspace\\Lora-net\\LoRaMac-node\\src\\apps\\LoRaMac\\classA\\SK-iM880A\\main-api-v3.c.o -I. -I."
- }, {
-  "file": "F:\\workspace\\Lora-net\\LoRaMac-node\\src\\apps\\LoRaMac\\classA\\SK-iM880A\\main.c",
-  "directory": "F:\\workspace\\Lora-net\\LoRaMac-node\\codelite",
-  "command": "gcc -c F:\\workspace\\Lora-net\\LoRaMac-node\\src\\apps\\LoRaMac\\classA\\SK-iM880A\\main.c -o F:\\workspace\\Lora-net\\LoRaMac-node\\src\\apps\\LoRaMac\\classA\\SK-iM880A\\main.c.o -I. -I."
- }, {
-  "file": "F:\\workspace\\Lora-net\\LoRaMac-node\\src\\apps\\BootLoader\\LoRaMote\\main.c",
-  "directory": "F:\\workspace\\Lora-net\\LoRaMac-node\\codelite",
-  "command": "gcc -c F:\\workspace\\Lora-net\\LoRaMac-node\\src\\apps\\BootLoader\\LoRaMote\\main.c -o F:\\workspace\\Lora-net\\LoRaMac-node\\src\\apps\\BootLoader\\LoRaMote\\main.c.o -I. -I."
- }, {
-  "file": "F:\\workspace\\Lora-net\\LoRaMac-node\\src\\apps\\BootLoader\\SensorNode\\main.c",
-  "directory": "F:\\workspace\\Lora-net\\LoRaMac-node\\codelite",
-  "command": "gcc -c F:\\workspace\\Lora-net\\LoRaMac-node\\src\\apps\\BootLoader\\SensorNode\\main.c -o F:\\workspace\\Lora-net\\LoRaMac-node\\src\\apps\\BootLoader\\SensorNode\\main.c.o -I. -I."
- }, {
-  "file": "F:\\workspace\\Lora-net\\LoRaMac-node\\src\\mac\\LoRaMac-api-v3.c",
-  "directory": "F:\\workspace\\Lora-net\\LoRaMac-node\\codelite",
-  "command": "gcc -c F:\\workspace\\Lora-net\\LoRaMac-node\\src\\mac\\LoRaMac-api-v3.c -o F:\\workspace\\Lora-net\\LoRaMac-node\\src\\mac\\LoRaMac-api-v3.c.o -I. -I."
+  "command": "gcc -c F:\\workspace\\Lora-net\\LoRaMac-node\\src\\apps\\LoRaMac\\classA\\EliSN-78\\main.c -o F:\\workspace\\Lora-net\\LoRaMac-node\\src\\apps\\LoRaMac\\classA\\EliSN-78\\main.c.o -I. -I."
  }, {
   "file": "F:\\workspace\\Lora-net\\LoRaMac-node\\src\\mac\\LoRaMac.c",
   "directory": "F:\\workspace\\Lora-net\\LoRaMac-node\\codelite",
@@ -702,32 +290,4 @@
   "file": "F:\\workspace\\Lora-net\\LoRaMac-node\\src\\mac\\LoRaMacCrypto.c",
   "directory": "F:\\workspace\\Lora-net\\LoRaMac-node\\codelite",
   "command": "gcc -c F:\\workspace\\Lora-net\\LoRaMac-node\\src\\mac\\LoRaMacCrypto.c -o F:\\workspace\\Lora-net\\LoRaMac-node\\src\\mac\\LoRaMacCrypto.c.o -I. -I."
- }, {
-  "file": "F:\\workspace\\Lora-net\\LoRaMac-node\\src\\peripherals\\gpio-ioe.c",
-  "directory": "F:\\workspace\\Lora-net\\LoRaMac-node\\codelite",
-  "command": "gcc -c F:\\workspace\\Lora-net\\LoRaMac-node\\src\\peripherals\\gpio-ioe.c -o F:\\workspace\\Lora-net\\LoRaMac-node\\src\\peripherals\\gpio-ioe.c.o -I. -I."
- }, {
-  "file": "F:\\workspace\\Lora-net\\LoRaMac-node\\src\\peripherals\\mag3110.c",
-  "directory": "F:\\workspace\\Lora-net\\LoRaMac-node\\codelite",
-  "command": "gcc -c F:\\workspace\\Lora-net\\LoRaMac-node\\src\\peripherals\\mag3110.c -o F:\\workspace\\Lora-net\\LoRaMac-node\\src\\peripherals\\mag3110.c.o -I. -I."
- }, {
-  "file": "F:\\workspace\\Lora-net\\LoRaMac-node\\src\\peripherals\\mma8451.c",
-  "directory": "F:\\workspace\\Lora-net\\LoRaMac-node\\codelite",
-  "command": "gcc -c F:\\workspace\\Lora-net\\LoRaMac-node\\src\\peripherals\\mma8451.c -o F:\\workspace\\Lora-net\\LoRaMac-node\\src\\peripherals\\mma8451.c.o -I. -I."
- }, {
-  "file": "F:\\workspace\\Lora-net\\LoRaMac-node\\src\\peripherals\\mpl3115.c",
-  "directory": "F:\\workspace\\Lora-net\\LoRaMac-node\\codelite",
-  "command": "gcc -c F:\\workspace\\Lora-net\\LoRaMac-node\\src\\peripherals\\mpl3115.c -o F:\\workspace\\Lora-net\\LoRaMac-node\\src\\peripherals\\mpl3115.c.o -I. -I."
- }, {
-  "file": "F:\\workspace\\Lora-net\\LoRaMac-node\\src\\peripherals\\selector.c",
-  "directory": "F:\\workspace\\Lora-net\\LoRaMac-node\\codelite",
-  "command": "gcc -c F:\\workspace\\Lora-net\\LoRaMac-node\\src\\peripherals\\selector.c -o F:\\workspace\\Lora-net\\LoRaMac-node\\src\\peripherals\\selector.c.o -I. -I."
- }, {
-  "file": "F:\\workspace\\Lora-net\\LoRaMac-node\\src\\peripherals\\sx1509.c",
-  "directory": "F:\\workspace\\Lora-net\\LoRaMac-node\\codelite",
-  "command": "gcc -c F:\\workspace\\Lora-net\\LoRaMac-node\\src\\peripherals\\sx1509.c -o F:\\workspace\\Lora-net\\LoRaMac-node\\src\\peripherals\\sx1509.c.o -I. -I."
- }, {
-  "file": "F:\\workspace\\Lora-net\\LoRaMac-node\\src\\peripherals\\sx9500.c",
-  "directory": "F:\\workspace\\Lora-net\\LoRaMac-node\\codelite",
-  "command": "gcc -c F:\\workspace\\Lora-net\\LoRaMac-node\\src\\peripherals\\sx9500.c -o F:\\workspace\\Lora-net\\LoRaMac-node\\src\\peripherals\\sx9500.c.o -I. -I."
  }]

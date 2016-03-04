@@ -1190,14 +1190,13 @@ int16_t SX1276ReadRssi( RadioModems_t modem )
 void SX1276Reset( void )
 {
     // Set RESET pin to 0
-    GpioInit( &SX1276.Reset, RADIO_RESET, PIN_OUTPUT, PIN_PUSH_PULL, PIN_NO_PULL, 0 );
-
+    SX1276.hReset( true );
+    
     // Wait 1 ms
     DelayMs( 1 );
 
-    // Configure RESET as input
-    GpioInit( &SX1276.Reset, RADIO_RESET, PIN_INPUT, PIN_PUSH_PULL, PIN_NO_PULL, 1 );
-
+    SX1276.hReset( false );
+    
     // Wait 6 ms
     DelayMs( 6 );
 }
@@ -1231,7 +1230,7 @@ void SX1276SetOpMode( uint8_t opMode )
 
 void SX1276SetModem( RadioModems_t modem )
 {
-    if( SX1276.Spi.Spi == NULL )
+    if( (SX1276.hSpiInOut == NULL) || (SX1276.hSpiNssLow == NULL) )
     {
         while( 1 );
     }
@@ -1277,17 +1276,16 @@ void SX1276WriteBuffer( uint8_t addr, uint8_t *buffer, uint8_t size )
 {
     uint8_t i;
 
-    //NSS = 0;
-    GpioWrite( &SX1276.Spi.Nss, 0 );
 
-    SpiInOut( &SX1276.Spi, addr | 0x80 );
+    SX1276.hSpiNssLow( true );
+
+    SX1276.hSpiInOut( addr | 0x80 );
     for( i = 0; i < size; i++ )
     {
-        SpiInOut( &SX1276.Spi, buffer[i] );
+        SX1276.hSpiInOut( buffer[i] );
     }
 
-    //NSS = 1;
-    GpioWrite( &SX1276.Spi.Nss, 1 );
+    SX1276.hSpiNssLow( false );
 }
 
 void SX1276ReadBuffer( uint8_t addr, uint8_t *buffer, uint8_t size )
@@ -1295,17 +1293,17 @@ void SX1276ReadBuffer( uint8_t addr, uint8_t *buffer, uint8_t size )
     uint8_t i;
 
     //NSS = 0;
-    GpioWrite( &SX1276.Spi.Nss, 0 );
+    SX1276.hSpiNssLow( true );
 
-    SpiInOut( &SX1276.Spi, addr & 0x7F );
+    SX1276.hSpiInOut( addr & 0x7F );
 
     for( i = 0; i < size; i++ )
     {
-        buffer[i] = SpiInOut( &SX1276.Spi, 0 );
+        buffer[i] = SX1276.hSpiInOut( 0 );
     }
 
     //NSS = 1;
-    GpioWrite( &SX1276.Spi.Nss, 1 );
+    SX1276.hSpiNssLow( false );
 }
 
 void SX1276WriteFifo( uint8_t *buffer, uint8_t size )
