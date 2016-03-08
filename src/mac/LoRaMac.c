@@ -1073,6 +1073,8 @@ static void OnRadioRxDone( uint8_t *payload, uint16_t size, int16_t rssi, int8_t
                 micRx |= ( ( uint32_t )payload[size - LORAMAC_MFR_LEN + 2] << 16 );
                 micRx |= ( ( uint32_t )payload[size - LORAMAC_MFR_LEN + 3] << 24 );
 
+#define MODIFICATION_FOR_MIC_RESET_IN_SERVER    //by liucp
+#ifdef MODIFICATION_FOR_MIC_RESET_IN_SERVER
                 sequenceCounterPrev = ( uint16_t )downLinkCounter;
                 sequenceCounterDiff = ( sequenceCounter - sequenceCounterPrev );
 
@@ -1095,7 +1097,42 @@ static void OnRadioRxDone( uint8_t *payload, uint16_t size, int16_t rssi, int8_t
                         isMicOk = true;
                         downLinkCounter = downLinkCounterTmp;
                     }
+                    else        /* 反转有可能是服务器中的downcount被重置引起 */
+                    {
+                        downLinkCounterTmp = sequenceCounter;
+                        LoRaMacComputeMic( payload, size - LORAMAC_MFR_LEN, nwkSKey, address, DOWN_LINK, downLinkCounterTmp, &mic );
+                        if( micRx == mic )
+                        {
+                            isMicOk = true;
+                            downLinkCounter = downLinkCounterTmp;
+                        }
+                    }
                 }
+#else
+                sequenceCounterPrev = ( uint16_t )downLinkCounter;
+                sequenceCounterDiff = ( sequenceCounter - sequenceCounterPrev );
+                if( sequenceCounterDiff < ( 1 << 15 ) )
+                {
+                    downLinkCounter += sequenceCounterDiff;
+                    LoRaMacComputeMic( payload, size - LORAMAC_MFR_LEN, nwkSKey, address, DOWN_LINK, downLinkCounter, &mic );
+                    if( micRx == mic )
+                    {
+                        isMicOk = true;
+                    }
+                }
+                else
+                {
+                    // check for sequence roll-over
+                    uint32_t  downLinkCounterTmp = downLinkCounter + 0x10000 + ( int16_t )sequenceCounterDiff;
+                    LoRaMacComputeMic( payload, size - LORAMAC_MFR_LEN, nwkSKey, address, DOWN_LINK, downLinkCounterTmp, &mic );
+                    if( micRx == mic )
+                    {
+                        isMicOk = true;
+                        downLinkCounter = downLinkCounterTmp;
+                    }
+                }
+
+#endif
 
                 if( isMicOk == true )
                 {
@@ -1169,6 +1206,7 @@ static void OnRadioRxDone( uint8_t *payload, uint16_t size, int16_t rssi, int8_t
                     {
                         McpsConfirm.AckReceived = true;
                         McpsIndication.AckReceived = true;
+                        LoRaMacState &= ~MAC_ACK_REQ;   //add by liucp
 
                         // Stop the AckTimeout timer as no more retransmissions
                         // are needed.
@@ -1598,11 +1636,6 @@ static void OnAckTimeoutTimerEvent( void )
     {
         LoRaMacFlags.Bits.MacDone = 1;
     }
-    
-    /* @wait fixed: 此处添加的调用可能不符合规范，但是为了避免Ack lost导致的无法上行， 暂时如此处理 */
-    LoRaMacFlags.Bits.MacDone = 1;
-    OnMacStateCheckTimerEvent();
-    /* @wait fixed end */
 }
 
 static TimerTime_t SetNextChannel( void )
@@ -1904,9 +1937,11 @@ static bool AdrNextDr( bool adrEnabled, bool updateChannelMask, int8_t* datarate
 
             if( updateChannelMask == true )
             {
-#if defined( USE_BAND_433 ) || defined( USE_BAND_780 ) || defined( USE_BAND_868 ) || defined( USE_BAND_CN433 )
+#if defined( USE_BAND_433 ) || defined( USE_BAND_780 ) || defined( USE_BAND_868 )
                 // Re-enable default channels LC1, LC2, LC3
                 ChannelsMask[0] = ChannelsMask[0] | ( LC( 1 ) + LC( 2 ) + LC( 3 ) );
+#elif  defined( USE_BAND_CN433 )
+                ChannelsMask[0] = 0x01FF;
 #elif defined( USE_BAND_915 ) || defined( USE_BAND_915_HYBRID )
 #if defined( USE_BAND_915 )
                 // Re-enable default channels
@@ -2612,7 +2647,13 @@ LoRaMacStatus_t SendFrameOnChannel( ChannelParams_t channel )
 
     // Send now
     Radio.Send( LoRaMacBuffer, LoRaMacBufferPktLen );
-
+    
+    // add by liucp: 由于ACK timeout与MAC State check是异步的，
+    if ( McpsConfirm.McpsRequest == MCPS_CONFIRMED )
+    {
+        LoRaMacState |= MAC_ACK_REQ;
+    }
+    // end
     LoRaMacState |= MAC_TX_RUNNING;
 
     return LORAMAC_STATUS_OK;
@@ -2755,7 +2796,7 @@ LoRaMacStatus_t LoRaMacInitialization( LoRaMacPrimitives_t *primitives, LoRaMacC
 }
 
 /**
- * add by liucp: 查询发送可能性，实际查询ADR下一个速率是否有效
+ * add by liucp: 查询发送可能性，实际是对buffer size进行了检查
  * @param size
  * @param txInfo
  * @return 
@@ -3440,7 +3481,9 @@ LoRaMacStatus_t LoRaMacMcpsRequest( McpsReq_t *mcpsRequest )
         return LORAMAC_STATUS_PARAMETER_INVALID;
     }
     if( ( ( LoRaMacState & MAC_TX_RUNNING ) == MAC_TX_RUNNING ) ||
-        ( ( LoRaMacState & MAC_TX_DELAYED ) == MAC_TX_DELAYED ) )
+        ( ( LoRaMacState & MAC_TX_DELAYED ) == MAC_TX_DELAYED )
+        || ( ( LoRaMacState & MAC_ACK_REQ ) == MAC_ACK_REQ )    // add by liucp: 19.1 在收到ACK后（或者重传多次失败），节点可以自由发送下一帧
+        )
     {
         return LORAMAC_STATUS_BUSY;
     }
@@ -3474,6 +3517,7 @@ LoRaMacStatus_t LoRaMacMcpsRequest( McpsReq_t *mcpsRequest )
             fBuffer = mcpsRequest->Req.Confirmed.fBuffer;
             fBufferSize = mcpsRequest->Req.Confirmed.fBufferSize;
             datarate = mcpsRequest->Req.Confirmed.Datarate;
+            
             break;
         }
         case MCPS_PROPRIETARY:

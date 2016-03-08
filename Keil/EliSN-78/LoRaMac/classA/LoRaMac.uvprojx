@@ -371,7 +371,7 @@
             <vShortWch>0</vShortWch>
             <VariousControls>
               <MiscControls></MiscControls>
-              <Define>USE_DEBUGGER LOW_POWER_MODE_ENABLE_DIS USE_BAND_433</Define>
+              <Define>USE_DEBUGGER LOW_POWER_MODE_ENABLE_DIS USE_BAND_CN433</Define>
               <Undefine></Undefine>
               <IncludePath>..\..\..\..\src;..\..\..\..\src\boards\EliSN-78;..\..\..\..\src\boards\EliSN-78\cmsis;..\..\..\..\src\boards\mcu\stm32l0xx;..\..\..\..\src\boards\mcu\stm32l0xx\cmsis;..\..\..\..\src\boards\mcu\stm32l0xx\STM32L0xx_StdPeriph_Driver\Inc;..\..\..\..\src\mac;..\..\..\..\src\peripherals;..\..\..\..\src\radio;..\..\..\..\src\system;..\..\..\..\src\system\crypto</IncludePath>
             </VariousControls>

@@ -25,6 +25,7 @@ Maintainer: Miguel Luis and Gregory Cristian
 /*!
  * IO Extander pins objects
  */
+
 #define LED1_PORT                                   (GPIOB)
 #define LED1_PIN                                    (GPIO_PIN_6)
 #define LED1_EN_CLK()                               __GPIOB_CLK_ENABLE()
@@ -48,7 +49,7 @@ void BoardInitPeriph( void )
     GPIO_InitTypeDef tGpioInit;
     
     /* Init the GPIO extender pins */
-    tGpioInit.Mode = GPIO_MODE_INPUT;
+    tGpioInit.Mode = GPIO_MODE_OUTPUT_PP;
     tGpioInit.Pull = GPIO_PULLUP;
     tGpioInit.Speed = GPIO_SPEED_FAST;
     tGpioInit.Pin = LED1_PIN;
@@ -299,4 +300,17 @@ static void BoardUnusedIoInit( void )
     HAL_GPIO_Init( GPIOA, &tGpioInit );
 
 #endif
+}
+
+
+void BoardCtrlLedSts( uint8_t a_ucId, bool a_bOn )
+{
+    switch ( a_ucId )
+    {
+        case LED1_ID:
+            HAL_GPIO_WritePin( LED1_PORT, LED1_PIN, a_bOn == true ? GPIO_PIN_RESET : GPIO_PIN_SET );
+        break;
+        default:
+        break;
+    }
 }

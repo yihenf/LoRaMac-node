@@ -47,7 +47,7 @@ Maintainer: Miguel Luis and Gregory Cristian
 #define FAIL                                        0  
 #endif
 
-
+#define LED1_ID                                     (0)
 
 /*!
  * \brief Initializes the target board peripherals.
@@ -85,6 +85,9 @@ uint32_t BoardGetRandomSeed( void );
  * \param [IN] id Pointer to an array that will contain the Unique ID
  */
 void BoardGetUniqueId( uint8_t *id );
+
+
+void BoardCtrlLedSts( uint8_t a_ucId, bool a_bOn );
 
 void Error_Handler(void);
 #endif // __BOARD_H__

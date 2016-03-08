@@ -186,25 +186,23 @@ static void PrepareTxFrame( uint8_t port )
     case 2:
         {
 #if defined( USE_BAND_433 ) || defined( USE_BAND_780 ) || defined( USE_BAND_868 ) || defined( USE_BAND_CN433 )
-            uint16_t pressure = 0;
+            static uint32_t pressure = 0;
             int16_t altitudeBar = 0;
-            int16_t temperature = 0;
             int32_t latitude, longitude = 0;
             uint16_t altitudeGps = 0xFFFF;
             uint8_t batteryLevel = 0;
 
-            pressure = ( uint16_t )( 100 );             // in hPa / 10 ---- for test
-            temperature = ( int16_t )( 200 );       // in °C * 100  ---- for test
+            pressure++;
             altitudeBar = ( int16_t )( 300 );           // in m * 10    ---- for test
             batteryLevel = 100;//BoardGetBatteryLevel( );                             // 1 (very low) to 254 (fully charged)
             //GpsGetLatestGpsPositionBinary( &latitude, &longitude );
             altitudeGps = 4;//GpsGetLatestGpsAltitude( );                           // in m
 
             AppData[0] = AppLedStateOn;
-            AppData[1] = ( pressure >> 8 ) & 0xFF;
-            AppData[2] = pressure & 0xFF;
-            AppData[3] = ( temperature >> 8 ) & 0xFF;
-            AppData[4] = temperature & 0xFF;
+            AppData[1] = ( pressure >> 24 ) & 0xFF;
+            AppData[2] = ( pressure >> 16 ) & 0xFF;
+            AppData[3] = ( pressure >> 8 ) & 0xFF;
+            AppData[4] = ( pressure >> 0 ) & 0xFF;
             AppData[5] = ( altitudeBar >> 8 ) & 0xFF;
             AppData[6] = altitudeBar & 0xFF;
             AppData[7] = batteryLevel;
@@ -320,6 +318,7 @@ static bool SendFrame( void )
 
 /*!
  * \brief Function executed on TxNextPacket Timeout event
+ * 当发送时间超时时，产生该事件：
  * 先通过Mib请求入网状态，如果已经入网，则设备状态设置为发送状态，否则为Join状态
  */
 static void OnTxNextPacketTimerEvent( void )
@@ -376,6 +375,7 @@ static void McpsConfirm( McpsConfirm_t *McpsConfirm )
             }
             case MCPS_CONFIRMED:
             {
+                BoardCtrlLedSts( LED1_ID, false );
                 // Check Datarate
                 // Check TxPower
                 // Check AckReceived
@@ -390,9 +390,6 @@ static void McpsConfirm( McpsConfirm_t *McpsConfirm )
                 break;
         }
 
-        // Switch LED 1 ON
-
-        TimerStart( &Led1Timer );
     }
     NextTx = true;
 }
@@ -456,6 +453,7 @@ static void McpsIndication( McpsIndication_t *McpsIndication )
             if( McpsIndication->BufferSize == 1 )
             {
                 AppLedStateOn = McpsIndication->Buffer[0] & 0x01;
+                BoardCtrlLedSts( LED1_ID, AppLedStateOn == 0x00 ? false : true );
             }
             break;
         case 224:
@@ -689,6 +687,7 @@ int main( void )
                     PrepareTxFrame( AppPort );
 
                     NextTx = SendFrame( );
+                    BoardCtrlLedSts( LED1_ID,  true );
                 }
                 if( ComplianceTest.Running == true )
                 {
