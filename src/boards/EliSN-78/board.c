@@ -80,14 +80,7 @@ void BoardInitMcu( void )
 #endif
         BoardUnusedIoInit( );
 
-        if( TimerGetLowPowerEnable( ) == true )
-        {
-            RtcInit( );
-        }
-        else
-        {
-            TimerHwInit( );
-        }
+        RtcInit( );
         McuInitialized = true;
     }
 }

@@ -383,14 +383,7 @@ void TimerSetValue( TimerEvent_t *obj, uint32_t value )
 
     TimerStop( obj );
 
-    if( LowPowerModeEnable == true )
-    {
-        minValue = RtcGetMinimumTimeout( );
-    }
-    else
-    {
-        minValue = TimerHwGetMinimumTimeout( );
-    }
+    minValue = RtcGetMinimumTimeout( );
     
     if( value < minValue )
     {
@@ -403,40 +396,19 @@ void TimerSetValue( TimerEvent_t *obj, uint32_t value )
 
 uint32_t TimerGetValue( void )
 {
-    if( LowPowerModeEnable == true )
-    {
-        return RtcGetTimerElapsedTime( );
-    }
-    else
-    {
-        return TimerHwGetElapsedTime( );
-    }
+    return RtcGetTimerElapsedTime( );
 }
 
 TimerTime_t TimerGetCurrentTime( void )
 {
-    if( LowPowerModeEnable == true )
-    {
-        return RtcGetTimerValue( );
-    }
-    else
-    {
-        return TimerHwGetTime( );
-    }
+    return RtcGetTimerValue( );
 }
 
 static void TimerSetTimeout( TimerEvent_t *obj )
 {
     HasLoopedThroughMain = 0;
 
-    if( LowPowerModeEnable == true )
-    {
-        RtcSetTimeout( obj->Timestamp );
-    }
-    else
-    {
-        TimerHwStart( obj->Timestamp );
-    }
+    RtcSetTimeout( obj->Timestamp );
 }
 
 void TimerLowPowerHandler( void )
@@ -451,13 +423,14 @@ void TimerLowPowerHandler( void )
         { 
             HasLoopedThroughMain = 0;
     
+            /* TODO */
             if( LowPowerModeEnable == true )
             {
                 RtcEnterLowPowerStopMode( );
             }
             else
             {
-                TimerHwEnterLowPowerStopMode( );
+                //TimerHwEnterLowPowerStopMode( );
             }
         }
     }

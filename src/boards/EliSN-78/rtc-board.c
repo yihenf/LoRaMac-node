@@ -274,6 +274,9 @@ static void RtcClearStatus( void )
     HAL_RTC_DeactivateAlarm( &RtcHandle, RTC_ALARM_A);
 }
 
+int WakeReqCnt = 0;
+int WakeRspCnt = 0;
+
 static void RtcStartWakeUpAlarm( uint32_t timeoutValue )
 {
     uint16_t rtcSeconds = 0;
@@ -356,11 +359,19 @@ static void RtcStartWakeUpAlarm( uint32_t timeoutValue )
     RTC_AlarmStructure.AlarmTime.TimeFormat     = RTC_TimeStruct.TimeFormat;
     RTC_AlarmStructure.AlarmDateWeekDaySel   = RTC_ALARMDATEWEEKDAYSEL_DATE;  
     RTC_AlarmStructure.AlarmMask             = RTC_ALARMMASK_NONE;
+    RTC_AlarmStructure.AlarmTime.SubSeconds = 0;
+    RTC_AlarmStructure.AlarmSubSecondMask = RTC_ALARMSUBSECONDMASK_ALL;
+    RTC_AlarmStructure.Alarm = RTC_ALARM_A;
 
     HAL_RTC_SetAlarm_IT( &RtcHandle, &RTC_AlarmStructure, RTC_FORMAT_BIN);
-    
+    WakeReqCnt ++;
     /* Wait for RTC APB registers synchronisation */
     HAL_RTC_WaitForSynchro( &RtcHandle );
+    
+    if( WakeReqCnt == 2 )
+    {
+        WakeReqCnt = WakeReqCnt;
+    }
 
 }
 
@@ -454,15 +465,17 @@ void RtcRecoverMcuStatus( void )
  */
 void RTC_IRQHandler( void )
 {
-    if( __HAL_RTC_ALARM_GET_IT_SOURCE(&RtcHandle, RTC_IT_ALRA) != RESET )
-    {   
-        RtcRecoverMcuStatus( );
-    
-        TimerIrqHandler( );
-
-        __HAL_RTC_ALARM_CLEAR_FLAG(&RtcHandle, RTC_FLAG_ALRAF);
-    }
+    HAL_RTC_AlarmIRQHandler( &RtcHandle );
 }
+
+void HAL_RTC_AlarmAEventCallback(RTC_HandleTypeDef *hrtc)
+{
+    WakeRspCnt ++;
+    RtcRecoverMcuStatus( );
+    
+    TimerIrqHandler( );
+}
+
 
 void BlockLowPowerDuringTask( bool status )
 {
@@ -488,6 +501,7 @@ void RtcDelayMs( uint32_t delay )
     }
 }
 
+/* 获取RTC时间，并转成“秒”单位，实际上，此处“秒”为最小计时单位 */
 TimerTime_t RtcGetCalendarValue( void )
 {
     TimerTime_t calendarValue = 0;
