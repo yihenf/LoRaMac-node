@@ -1291,7 +1291,7 @@ static void OnRadioRxDone( uint8_t *payload, uint16_t size, int16_t rssi, int8_t
         default:
             LoRaMacFlags.Bits.McpsInd = 1;
             McpsIndication.Status = LORAMAC_EVENT_INFO_STATUS_ERROR;
-            LoRaMacState &= ~MAC_TX_RUNNING;
+            //LoRaMacState &= ~MAC_TX_RUNNING;
             break;
     }
 
@@ -1438,6 +1438,7 @@ static void OnMacStateCheckTimerEvent( void )
 
         if( ( AckTimeoutRetry == true ) && ( ( LoRaMacState & MAC_TX_DELAYED ) == 0 ) )
         {
+            LoRaMacState &= ~MAC_ACK_REQ;
             AckTimeoutRetry = false;
             if( ( AckTimeoutRetriesCounter < AckTimeoutRetries ) && ( AckTimeoutRetriesCounter <= MAX_ACK_RETRIES ) )
             {
@@ -1630,7 +1631,7 @@ static void OnAckTimeoutTimerEvent( void )
     if( NodeAckRequested == true )
     {
         AckTimeoutRetry = true;
-        LoRaMacState &= ~MAC_ACK_REQ;
+        //LoRaMacState &= ~MAC_ACK_REQ;
     }
     if( LoRaMacDeviceClass == CLASS_C )
     {

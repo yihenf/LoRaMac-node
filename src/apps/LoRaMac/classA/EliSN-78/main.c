@@ -175,7 +175,7 @@ struct ComplianceTest_s
     uint8_t DemodMargin;
     uint8_t NbGateways;
 }ComplianceTest;
-
+static uint32_t pressure = 0;
 /*!
  * \brief   Prepares the payload of the frame
  */
@@ -186,13 +186,13 @@ static void PrepareTxFrame( uint8_t port )
     case 2:
         {
 #if defined( USE_BAND_433 ) || defined( USE_BAND_780 ) || defined( USE_BAND_868 ) || defined( USE_BAND_CN433 )
-            static uint32_t pressure = 0;
+            
             int16_t altitudeBar = 0;
             int32_t latitude, longitude = 0;
             uint16_t altitudeGps = 0xFFFF;
             uint8_t batteryLevel = 0;
 
-            pressure++;
+            
             altitudeBar = ( int16_t )( 300 );           // in m * 10    ---- for test
             batteryLevel = 100;//BoardGetBatteryLevel( );                             // 1 (very low) to 254 (fully charged)
             //GpsGetLatestGpsPositionBinary( &latitude, &longitude );
@@ -687,6 +687,10 @@ int main( void )
                     PrepareTxFrame( AppPort );
 
                     NextTx = SendFrame( );
+                    if( false == NextTx )
+                    {
+                        pressure ++;
+                    }
                     BoardCtrlLedSts( LED1_ID,  true );
                 }
                 if( ComplianceTest.Running == true )

@@ -18,3 +18,4 @@ bin/
 *.pbxproj
 *.cogui
 *.comarker
+codelite/.codelite/
