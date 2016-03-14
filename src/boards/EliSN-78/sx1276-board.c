@@ -149,13 +149,14 @@ void SX1276InitStruct( SX1276_t *a_ptSx1276 )
 
 void SX1276IoInit( void )
 {
+    extern DioIrqHandler *DioIrq[];
     GPIO_InitTypeDef tGpioInit;
 
-    g_hDioIrq[0] = NULL;
-    g_hDioIrq[1] = NULL;
-    g_hDioIrq[2] = NULL;
-    g_hDioIrq[3] = NULL;
-    g_hDioIrq[4] = NULL;
+    g_hDioIrq[0] = DioIrq[0];
+    g_hDioIrq[1] = DioIrq[1];
+    g_hDioIrq[2] = DioIrq[2];
+    g_hDioIrq[3] = DioIrq[3];
+    g_hDioIrq[4] = DioIrq[0];
     g_hDioIrq[5] = NULL;
     
     tGpioInit.Mode      = GPIO_MODE_IT_RISING;
@@ -212,12 +213,39 @@ void SX1276IoIrqInit( DioIrqHandler **irqHandlers )
     
     for ( i = 0; i < 6; i++ )
     {
-        g_hDioIrq[i] = irqHandlers[0];
+        g_hDioIrq[i] = irqHandlers[i];
     }
 }
 
 void SX1276IoDeInit( void )
 {
+    /*  radio sleep */
+    if ( true == RadioIsActive )
+    {
+        GPIO_InitTypeDef tGpioInit;
+        tGpioInit.Mode      = GPIO_MODE_ANALOG;
+        tGpioInit.Pull      = GPIO_NOPULL;
+        tGpioInit.Speed     = GPIO_SPEED_LOW;
+
+        tGpioInit.Pin       = DIO0_PIN;
+        HAL_GPIO_DeInit( DIO0_IOPORT, DIO0_PIN);
+        HAL_GPIO_Init(DIO0_IOPORT, &tGpioInit);
+        tGpioInit.Pin       = DIO1_PIN;
+        HAL_GPIO_DeInit( DIO1_IOPORT, DIO1_PIN);
+        HAL_GPIO_Init(DIO1_IOPORT, &tGpioInit);
+        tGpioInit.Pin       = DIO2_PIN;
+        HAL_GPIO_DeInit( DIO2_IOPORT, DIO2_PIN);
+        HAL_GPIO_Init(DIO2_IOPORT, &tGpioInit);
+        tGpioInit.Pin       = DIO3_PIN;
+        HAL_GPIO_DeInit( DIO3_IOPORT, DIO3_PIN);
+        HAL_GPIO_Init(DIO3_IOPORT, &tGpioInit);
+        tGpioInit.Pin       = DIO4_PIN;
+        HAL_GPIO_DeInit( DIO4_IOPORT, DIO4_PIN);
+        HAL_GPIO_Init(DIO4_IOPORT, &tGpioInit);
+        tGpioInit.Pin       = DIO5_PIN;
+        HAL_GPIO_DeInit( DIO5_IOPORT, DIO5_PIN);
+        HAL_GPIO_Init(DIO5_IOPORT, &tGpioInit);
+    }
     #if 0        /* wait to do */
     GpioInit( &SX1276.DIO0, RADIO_DIO_0, PIN_INPUT, PIN_PUSH_PULL, PIN_NO_PULL, 0 );
     GpioInit( &SX1276.DIO1, RADIO_DIO_1, PIN_INPUT, PIN_PUSH_PULL, PIN_NO_PULL, 0 );
@@ -383,6 +411,7 @@ void SX1276AntSwInit( void )
     GPIO_InitTypeDef tGpioInit;
     CTRL1_CLK_ENABLE();
     tGpioInit.Mode = GPIO_MODE_OUTPUT_PP;
+    tGpioInit.Pull = GPIO_PULLDOWN;
     tGpioInit.Pin       = CTRL1_PIN;
     HAL_GPIO_Init(CTRL1_IOPORT, &tGpioInit);
     

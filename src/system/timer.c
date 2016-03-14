@@ -414,13 +414,13 @@ static void TimerSetTimeout( TimerEvent_t *obj )
 void TimerLowPowerHandler( void )
 {
     if( ( TimerListHead != NULL ) && ( TimerListHead->IsRunning == true ) ) 
-    {    
+    {
         if( HasLoopedThroughMain < 5 )
         {
             HasLoopedThroughMain++;
         }
         else
-        { 
+        {
             HasLoopedThroughMain = 0;
     
             /* TODO */

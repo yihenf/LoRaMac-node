@@ -48,6 +48,8 @@ void BoardInitPeriph( void )
 {
     GPIO_InitTypeDef tGpioInit;
     
+    RtcInit( );
+    
     /* Init the GPIO extender pins */
     tGpioInit.Mode = GPIO_MODE_OUTPUT_PP;
     tGpioInit.Pull = GPIO_PULLUP;
@@ -57,6 +59,7 @@ void BoardInitPeriph( void )
     HAL_GPIO_Init( LED1_PORT, &tGpioInit );
     // Switch LED 1 OFF
     HAL_GPIO_WritePin( LED1_PORT, LED1_PIN, GPIO_PIN_SET );
+
 }
 
 void BoardInitMcu( void )
@@ -65,13 +68,11 @@ void BoardInitMcu( void )
     {
         HAL_Init();
         
-        
         SystemClock_Config();
 
         SX1276SpiInit();
         SX1276IoInit( );
         SX1276InitStruct( &SX1276 );
-
 
 #if defined( LOW_POWER_MODE_ENABLE )
         TimerSetLowPowerEnable( true );
@@ -79,8 +80,7 @@ void BoardInitMcu( void )
         TimerSetLowPowerEnable( false );
 #endif
         BoardUnusedIoInit( );
-
-        RtcInit( );
+        
         McuInitialized = true;
     }
 }
@@ -113,10 +113,11 @@ static void SystemClock_Config(void)
     __HAL_PWR_VOLTAGESCALING_CONFIG(PWR_REGULATOR_VOLTAGE_SCALE1);
 
     /* Enable HSI Oscillator */
-    RCC_OscInitStruct.OscillatorType = RCC_OSCILLATORTYPE_HSI | RCC_OSCILLATORTYPE_LSI;
+    RCC_OscInitStruct.OscillatorType = RCC_OSCILLATORTYPE_HSI | /*RCC_OSCILLATORTYPE_MSI |*/ RCC_OSCILLATORTYPE_LSI;
     RCC_OscInitStruct.LSIState = RCC_LSI_ON;
     RCC_OscInitStruct.HSICalibrationValue = 16;
     RCC_OscInitStruct.HSIState = RCC_HSI_ON;
+    //RCC_OscInitStruct.MSIState = RCC_MSI_OFF;
     RCC_OscInitStruct.PLL.PLLSource = RCC_PLLSOURCE_HSI;
     RCC_OscInitStruct.PLL.PLLMUL = RCC_PLLMUL_8;
     RCC_OscInitStruct.PLL.PLLDIV = RCC_PLLDIV_4;
@@ -139,10 +140,6 @@ static void SystemClock_Config(void)
         /* Initialization Error */
         Error_Handler();
     }
-
-    /* update tick */
-    //HAL_SYSTICK_Config(HAL_RCC_GetHCLKFreq()/1000);
-    //HAL_SYSTICK_CLKSourceConfig(SYSTICK_CLKSOURCE_HCLK);
 }
 
 /**
@@ -270,6 +267,7 @@ uint8_t BoardGetBatteryLevel( void )
 static void BoardUnusedIoInit( void )
 {
 #if defined( USE_DEBUGGER )
+    __HAL_RCC_DBGMCU_CLK_ENABLE();
     HAL_DBGMCU_EnableDBGSleepMode();
     HAL_DBGMCU_EnableDBGStopMode();
     HAL_DBGMCU_EnableDBGStandbyMode();
