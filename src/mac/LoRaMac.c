@@ -89,11 +89,13 @@ static MulticastParams_t *MulticastChannels = NULL;
 
 /*!
  * Actual device class
+ * 设备类型， 初始化时进行赋值
  */
 static DeviceClass_t LoRaMacDeviceClass;
 
 /*!
  * Indicates if the node is connected to a private or public network
+ * 网络类型，分为LoRaWAN网络和其他网络（publicetwork)
  */
 static bool PublicNetwork;
 
@@ -104,6 +106,7 @@ static bool RepeaterSupport;
 
 /*!
  * Buffer containing the data to be sent or received.
+ * 直接用于发送与接收
  */
 static uint8_t LoRaMacBuffer[LORAMAC_PHY_MAXPAYLOAD];
 
@@ -114,6 +117,8 @@ static uint16_t LoRaMacBufferPktLen = 0;
 
 /*!
  * Buffer containing the upper layer data.
+ * LoRaMacPayload是编码后的payload
+ * LoRaacRxPayload是解码收的Payload
  */
 static uint8_t LoRaMacPayload[LORAMAC_PHY_MAXPAYLOAD];
 static uint8_t LoRaMacRxPayload[LORAMAC_PHY_MAXPAYLOAD];
@@ -175,6 +180,7 @@ static bool MacCommandsInNextTx = false;
 
 /*!
  * Contains the current MacCommandsBuffer index
+ * 实际为macCommand长度
  */
 static uint8_t MacCommandsBufferIndex = 0;
 
@@ -221,6 +227,52 @@ static ChannelParams_t Channels[LORA_MAX_NB_CHANNELS] =
     LC2,
     LC3,
 };
+
+#elif defined( USE_BAND_CN433 )
+/*!
+ * Data rates table definition
+ */
+const uint8_t Datarates[]  = { 12, 11, 10,  9,  8,  7,  7, 50 };
+
+/*!
+ * Maximum payload with respect to the datarate index. Cannot operate with repeater.
+ */
+const uint8_t MaxPayloadOfDatarate[] = { 59, 59, 59, 123, 250, 250, 250, 250 };
+
+/*!
+ * Maximum payload with respect to the datarate index. Can operate with repeater.
+ */
+const uint8_t MaxPayloadOfDatarateRepeater[] = { 59, 59, 59, 123, 230, 230, 230, 230 };
+
+/*!
+ * Tx output powers table definition
+ */
+const int8_t TxPowers[]    = { 20, 14, 11,  8,  5,  2 };
+
+/*!
+ * LoRaMac bands
+ */
+static Band_t Bands[LORA_MAX_NB_BANDS] =
+{
+    BAND0,
+};
+
+/*!
+ * LoRaMAC channels
+ */
+static ChannelParams_t Channels[LORA_MAX_NB_CHANNELS] =
+{
+    LC1,
+    LC2,
+    LC3,
+    LC4,
+    LC5,
+    LC6,
+    LC7,
+    LC8,
+    LC9,
+};
+
 #elif defined( USE_BAND_780 )
 /*!
  * Data rates table definition
@@ -1021,6 +1073,8 @@ static void OnRadioRxDone( uint8_t *payload, uint16_t size, int16_t rssi, int8_t
                 micRx |= ( ( uint32_t )payload[size - LORAMAC_MFR_LEN + 2] << 16 );
                 micRx |= ( ( uint32_t )payload[size - LORAMAC_MFR_LEN + 3] << 24 );
 
+#define MODIFICATION_FOR_MIC_RESET_IN_SERVER    //by liucp
+#ifdef MODIFICATION_FOR_MIC_RESET_IN_SERVER
                 sequenceCounterPrev = ( uint16_t )downLinkCounter;
                 sequenceCounterDiff = ( sequenceCounter - sequenceCounterPrev );
 
@@ -1043,7 +1097,42 @@ static void OnRadioRxDone( uint8_t *payload, uint16_t size, int16_t rssi, int8_t
                         isMicOk = true;
                         downLinkCounter = downLinkCounterTmp;
                     }
+                    else        /* 反转有可能是服务器中的downcount被重置引起 */
+                    {
+                        downLinkCounterTmp = sequenceCounter;
+                        LoRaMacComputeMic( payload, size - LORAMAC_MFR_LEN, nwkSKey, address, DOWN_LINK, downLinkCounterTmp, &mic );
+                        if( micRx == mic )
+                        {
+                            isMicOk = true;
+                            downLinkCounter = downLinkCounterTmp;
+                        }
+                    }
                 }
+#else
+                sequenceCounterPrev = ( uint16_t )downLinkCounter;
+                sequenceCounterDiff = ( sequenceCounter - sequenceCounterPrev );
+                if( sequenceCounterDiff < ( 1 << 15 ) )
+                {
+                    downLinkCounter += sequenceCounterDiff;
+                    LoRaMacComputeMic( payload, size - LORAMAC_MFR_LEN, nwkSKey, address, DOWN_LINK, downLinkCounter, &mic );
+                    if( micRx == mic )
+                    {
+                        isMicOk = true;
+                    }
+                }
+                else
+                {
+                    // check for sequence roll-over
+                    uint32_t  downLinkCounterTmp = downLinkCounter + 0x10000 + ( int16_t )sequenceCounterDiff;
+                    LoRaMacComputeMic( payload, size - LORAMAC_MFR_LEN, nwkSKey, address, DOWN_LINK, downLinkCounterTmp, &mic );
+                    if( micRx == mic )
+                    {
+                        isMicOk = true;
+                        downLinkCounter = downLinkCounterTmp;
+                    }
+                }
+
+#endif
 
                 if( isMicOk == true )
                 {
@@ -1117,6 +1206,7 @@ static void OnRadioRxDone( uint8_t *payload, uint16_t size, int16_t rssi, int8_t
                     {
                         McpsConfirm.AckReceived = true;
                         McpsIndication.AckReceived = true;
+                        LoRaMacState &= ~MAC_ACK_REQ;   //add by liucp
 
                         // Stop the AckTimeout timer as no more retransmissions
                         // are needed.
@@ -1201,7 +1291,7 @@ static void OnRadioRxDone( uint8_t *payload, uint16_t size, int16_t rssi, int8_t
         default:
             LoRaMacFlags.Bits.McpsInd = 1;
             McpsIndication.Status = LORAMAC_EVENT_INFO_STATUS_ERROR;
-            LoRaMacState &= ~MAC_TX_RUNNING;
+            //LoRaMacState &= ~MAC_TX_RUNNING;
             break;
     }
 
@@ -1348,6 +1438,7 @@ static void OnMacStateCheckTimerEvent( void )
 
         if( ( AckTimeoutRetry == true ) && ( ( LoRaMacState & MAC_TX_DELAYED ) == 0 ) )
         {
+            LoRaMacState &= ~MAC_ACK_REQ;
             AckTimeoutRetry = false;
             if( ( AckTimeoutRetriesCounter < AckTimeoutRetries ) && ( AckTimeoutRetriesCounter <= MAX_ACK_RETRIES ) )
             {
@@ -1366,6 +1457,8 @@ static void OnMacStateCheckTimerEvent( void )
 #if defined( USE_BAND_433 ) || defined( USE_BAND_780 ) || defined( USE_BAND_868 )
                 // Re-enable default channels LC1, LC2, LC3
                 ChannelsMask[0] = ChannelsMask[0] | ( LC( 1 ) + LC( 2 ) + LC( 3 ) );
+#elif  defined( USE_BAND_CN433 )
+                ChannelsMask[0] = 0x01FF;
 #elif defined( USE_BAND_915 )
                 // Re-enable default channels
                 ChannelsMask[0] = 0xFFFF;
@@ -1452,7 +1545,7 @@ static void OnRxWindow1TimerEvent( void )
         Radio.Standby( );
     }
 
-#if defined( USE_BAND_433 ) || defined( USE_BAND_780 ) || defined( USE_BAND_868 )
+#if defined( USE_BAND_433 ) || defined( USE_BAND_780 ) || defined( USE_BAND_868 ) || defined( USE_BAND_CN433 )
     datarate = ChannelsDatarate - Rx1DrOffset;
     if( datarate < 0 )
     {
@@ -1498,7 +1591,7 @@ static void OnRxWindow2TimerEvent( void )
     TimerStop( &RxWindowTimer2 );
     RxSlot = 1;
 
-#if defined( USE_BAND_433 ) || defined( USE_BAND_780 ) || defined( USE_BAND_868 )
+#if defined( USE_BAND_433 ) || defined( USE_BAND_780 ) || defined( USE_BAND_868 ) || defined( USE_BAND_CN433 )
     // For higher datarates, we increase the number of symbols generating a Rx Timeout
     if( Rx2Channel.Datarate >= DR_3 )
     { // DR_6, DR_5, DR_4, DR_3
@@ -1538,7 +1631,7 @@ static void OnAckTimeoutTimerEvent( void )
     if( NodeAckRequested == true )
     {
         AckTimeoutRetry = true;
-        LoRaMacState &= ~MAC_ACK_REQ;
+        //LoRaMacState &= ~MAC_ACK_REQ;
     }
     if( LoRaMacDeviceClass == CLASS_C )
     {
@@ -1647,6 +1740,9 @@ static TimerTime_t SetNextChannel( void )
     }
 }
 
+/**
+ * add by liucp: 设置网络类型，通过sync word来设置，用以区分LoRaWan和非LoRaWAN
+ */
 static void SetPublicNetwork( bool enable )
 {
     PublicNetwork = enable;
@@ -1663,6 +1759,10 @@ static void SetPublicNetwork( bool enable )
     }
 }
 
+
+/**
+ * add by liucp: 设置接收窗口的射频参数与工作模式(单次接收or连续接收)
+ */
 static void RxWindowSetup( uint32_t freq, int8_t datarate, uint32_t bandwidth, uint16_t timeout, bool rxContinuous )
 {
     uint8_t downlinkDatarate = Datarates[datarate];
@@ -1675,7 +1775,7 @@ static void RxWindowSetup( uint32_t freq, int8_t datarate, uint32_t bandwidth, u
         // Store downlink datarate
         McpsIndication.RxDatarate = ( uint8_t ) datarate;
 
-#if defined( USE_BAND_433 ) || defined( USE_BAND_780 ) || defined( USE_BAND_868 )
+#if defined( USE_BAND_433 ) || defined( USE_BAND_780 ) || defined( USE_BAND_868 ) || defined( USE_BAND_CN433 )
         if( datarate == DR_7 )
         {
             modem = MODEM_FSK;
@@ -1711,6 +1811,10 @@ static void RxWindowSetup( uint32_t freq, int8_t datarate, uint32_t bandwidth, u
     }
 }
 
+
+/**
+ * add by liucp: 验证payload的长度
+ */
 static bool ValidatePayloadLength( uint8_t lenN, int8_t datarate, uint8_t fOptsLen )
 {
     uint16_t maxN = 0;
@@ -1738,6 +1842,10 @@ static bool ValidatePayloadLength( uint8_t lenN, int8_t datarate, uint8_t fOptsL
 }
 
 #if defined( USE_BAND_915 ) || defined( USE_BAND_915_HYBRID )
+/**
+ * add by liucp: 计算使能的125kHz信道数目, 915MHz专用
+ * 
+ */
 static uint8_t CountNbEnabled125kHzChannels( uint16_t *channelsMask )
 {
     uint8_t nb125kHzChannels = 0;
@@ -1757,6 +1865,11 @@ static uint8_t CountNbEnabled125kHzChannels( uint16_t *channelsMask )
 }
 #endif
 
+/**
+ * add by liucp: 限制发送功率，对于915MHz，如果功率低于对应速率下的最高功率，则
+ * 限定为该速率下的最高功率，否则，选择输入参数的功率
+ * 对于其他频段，则选择输入参数功率
+ */
 static int8_t LimitTxPower( int8_t txPower )
 {
     int8_t resultTxPower = txPower;
@@ -1777,6 +1890,9 @@ static int8_t LimitTxPower( int8_t txPower )
     return resultTxPower;
 }
 
+/**
+ * add by liucp: 验证数值是否在给定的范围之内
+ */
 static bool ValueInRange( int8_t value, int8_t min, int8_t max )
 {
     if( ( value >= min ) && ( value <= max ) )
@@ -1786,6 +1902,9 @@ static bool ValueInRange( int8_t value, int8_t min, int8_t max )
     return false;
 }
 
+/**
+ * add by liucp: 禁止Mask中的某个信道，注意信道id的范围限制
+ */
 static bool DisableChannelInMask( uint8_t id, uint16_t* mask )
 {
     uint8_t index = 0;
@@ -1802,6 +1921,9 @@ static bool DisableChannelInMask( uint8_t id, uint16_t* mask )
     return true;
 }
 
+/**
+ * add by liucp: ADR下一个速率，即降低一个速率级别
+ */
 static bool AdrNextDr( bool adrEnabled, bool updateChannelMask, int8_t* datarateOut )
 {
     bool adrAckReq = false;
@@ -1819,6 +1941,8 @@ static bool AdrNextDr( bool adrEnabled, bool updateChannelMask, int8_t* datarate
 #if defined( USE_BAND_433 ) || defined( USE_BAND_780 ) || defined( USE_BAND_868 )
                 // Re-enable default channels LC1, LC2, LC3
                 ChannelsMask[0] = ChannelsMask[0] | ( LC( 1 ) + LC( 2 ) + LC( 3 ) );
+#elif  defined( USE_BAND_CN433 )
+                ChannelsMask[0] = 0x01FF;
 #elif defined( USE_BAND_915 ) || defined( USE_BAND_915_HYBRID )
 #if defined( USE_BAND_915 )
                 // Re-enable default channels
@@ -1855,7 +1979,7 @@ static bool AdrNextDr( bool adrEnabled, bool updateChannelMask, int8_t* datarate
             if( AdrAckCounter > ( ADR_ACK_LIMIT + ADR_ACK_DELAY ) )
             {
                 AdrAckCounter = 0;
-#if defined( USE_BAND_433 ) || defined( USE_BAND_780 ) || defined( USE_BAND_868 )
+#if defined( USE_BAND_433 ) || defined( USE_BAND_780 ) || defined( USE_BAND_868 ) || defined( USE_BAND_CN433 )
                 if( datarate > LORAMAC_MIN_DATARATE )
                 {
                     datarate--;
@@ -2012,7 +2136,7 @@ static void ProcessMacCommands( uint8_t *payload, uint8_t macIndex, uint8_t comm
                     {
                         nbRep = 1;
                     }
-#if defined( USE_BAND_433 ) || defined( USE_BAND_780 ) || defined( USE_BAND_868 )
+#if defined( USE_BAND_433 ) || defined( USE_BAND_780 ) || defined( USE_BAND_868 ) || defined( USE_BAND_CN433 )
                     if( ( chMaskCntl == 0 ) && ( chMask == 0 ) )
                     {
                         status &= 0xFE; // Channel mask KO
@@ -2245,6 +2369,9 @@ static void ProcessMacCommands( uint8_t *payload, uint8_t macIndex, uint8_t comm
     }
 }
 
+/**
+ * add by liucp: 发送数据，但是不是立即发送，通过scheduleTx来发送 
+ */
 LoRaMacStatus_t Send( LoRaMacHeader_t *macHdr, uint8_t fPort, void *fBuffer, uint16_t fBufferSize )
 {
     LoRaMacFrameCtrl_t fCtrl;
@@ -2276,6 +2403,10 @@ LoRaMacStatus_t Send( LoRaMacHeader_t *macHdr, uint8_t fPort, void *fBuffer, uin
     return status;
 }
 
+/**
+ * add by liucp: 调度发送， 当dutyCycleTimeOff = 0时，发送数据，否则，开启定时
+ * 时间到后再调度本接口
+ */
 static LoRaMacStatus_t ScheduleTx( )
 {
     TimerTime_t dutyCycleTimeOff = 0;
@@ -2461,7 +2592,7 @@ LoRaMacStatus_t SendFrameOnChannel( ChannelParams_t channel )
 {
     int8_t datarate = Datarates[ChannelsDatarate];
     int8_t txPower = 0;
-
+    
     ChannelsTxPower = LimitTxPower( ChannelsTxPower );
     txPower = TxPowers[ChannelsTxPower];
 
@@ -2472,7 +2603,7 @@ LoRaMacStatus_t SendFrameOnChannel( ChannelParams_t channel )
 
     Radio.SetChannel( channel.Frequency );
 
-#if defined( USE_BAND_433 ) || defined( USE_BAND_780 ) || defined( USE_BAND_868 )
+#if defined( USE_BAND_433 ) || defined( USE_BAND_780 ) || defined( USE_BAND_868 ) || defined( USE_BAND_CN433 )
     if( ChannelsDatarate == DR_7 )
     { // High Speed FSK channel
         Radio.SetMaxPayloadLength( MODEM_FSK, LoRaMacBufferPktLen );
@@ -2517,7 +2648,13 @@ LoRaMacStatus_t SendFrameOnChannel( ChannelParams_t channel )
 
     // Send now
     Radio.Send( LoRaMacBuffer, LoRaMacBufferPktLen );
-
+    
+    // add by liucp: 由于ACK timeout与MAC State check是异步的，
+    if ( McpsConfirm.McpsRequest == MCPS_CONFIRMED )
+    {
+        LoRaMacState |= MAC_ACK_REQ;
+    }
+    // end
     LoRaMacState |= MAC_TX_RUNNING;
 
     return LORAMAC_STATUS_OK;
@@ -2555,6 +2692,8 @@ LoRaMacStatus_t LoRaMacInitialization( LoRaMacPrimitives_t *primitives, LoRaMacC
 
 #if defined( USE_BAND_433 )
     ChannelsMask[0] = LC( 1 ) + LC( 2 ) + LC( 3 );
+#elif defined( USE_BAND_CN433 )
+    ChannelsMask[0] = 0x01FF; 
 #elif defined( USE_BAND_780 )
     ChannelsMask[0] = LC( 1 ) + LC( 2 ) + LC( 3 );
 #elif defined( USE_BAND_868 )
@@ -2610,6 +2749,8 @@ LoRaMacStatus_t LoRaMacInitialization( LoRaMacPrimitives_t *primitives, LoRaMacC
 
 #if defined( USE_BAND_433 )
     DutyCycleOn = false;
+#elif defined( USE_BAND_CN433 )
+    DutyCycleOn = false;
 #elif defined( USE_BAND_780 )
     DutyCycleOn = false;
 #elif defined( USE_BAND_868 )
@@ -2655,6 +2796,12 @@ LoRaMacStatus_t LoRaMacInitialization( LoRaMacPrimitives_t *primitives, LoRaMacC
     return LORAMAC_STATUS_OK;
 }
 
+/**
+ * add by liucp: 查询发送可能性，实际是对buffer size进行了检查
+ * @param size
+ * @param txInfo
+ * @return 
+ */
 LoRaMacStatus_t LoRaMacQueryTxPossible( uint8_t size, LoRaMacTxInfo_t* txInfo )
 {
     int8_t datarate = ChannelsDefaultDatarate;
@@ -3070,7 +3217,7 @@ LoRaMacStatus_t LoRaMacChannelAdd( uint8_t id, ChannelParams_t params )
 #if ( defined( USE_BAND_915 ) || defined( USE_BAND_915_HYBRID ) )
     return LORAMAC_STATUS_PARAMETER_INVALID;
 #else
-#if defined( USE_BAND_433 ) || defined( USE_BAND_780 )
+#if defined( USE_BAND_433 ) || defined( USE_BAND_780 )  || defined( USE_BAND_CN433 )
     Channels[id] = params;
     Channels[id].Band = 0; // No duty cycle on EU433 and CN470 bands
 #elif defined( USE_BAND_868 )
@@ -3335,7 +3482,9 @@ LoRaMacStatus_t LoRaMacMcpsRequest( McpsReq_t *mcpsRequest )
         return LORAMAC_STATUS_PARAMETER_INVALID;
     }
     if( ( ( LoRaMacState & MAC_TX_RUNNING ) == MAC_TX_RUNNING ) ||
-        ( ( LoRaMacState & MAC_TX_DELAYED ) == MAC_TX_DELAYED ) )
+        ( ( LoRaMacState & MAC_TX_DELAYED ) == MAC_TX_DELAYED )
+        || ( ( LoRaMacState & MAC_ACK_REQ ) == MAC_ACK_REQ )    // add by liucp: 19.1 在收到ACK后（或者重传多次失败），节点可以自由发送下一帧
+        )
     {
         return LORAMAC_STATUS_BUSY;
     }
@@ -3369,6 +3518,7 @@ LoRaMacStatus_t LoRaMacMcpsRequest( McpsReq_t *mcpsRequest )
             fBuffer = mcpsRequest->Req.Confirmed.fBuffer;
             fBufferSize = mcpsRequest->Req.Confirmed.fBufferSize;
             datarate = mcpsRequest->Req.Confirmed.Datarate;
+            
             break;
         }
         case MCPS_PROPRIETARY:

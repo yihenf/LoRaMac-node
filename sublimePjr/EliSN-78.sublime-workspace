@@ -1,0 +1,478 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"print",
+				"Printf	n int, err error ƒ"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "/F/workspace/shiyanlou/shiyanlou_cs485/sec8.go",
+			"settings":
+			{
+				"buffer_size": 839,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/F/workspace/shiyanlou/shiyanlou_cs485/sec7.go",
+			"settings":
+			{
+				"buffer_size": 1347,
+				"line_ending": "Windows"
+			}
+		}
+	],
+	"build_system": "Packages/C++/C++ Single File.sublime-build",
+	"build_system_choices":
+	[
+		[
+			[
+				[
+					"Packages/C++/C++ Single File.sublime-build",
+					""
+				],
+				[
+					"Packages/C++/C++ Single File.sublime-build",
+					"Run"
+				]
+			],
+			[
+				"Packages/C++/C++ Single File.sublime-build",
+				""
+			]
+		]
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 392.0,
+		"last_filter": "Package Control: ",
+		"selected_items":
+		[
+			[
+				"Package Control: ",
+				"Package Control: Install Package"
+			],
+			[
+				"pcip",
+				"Package Control: Install Package"
+			],
+			[
+				"in",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: ins",
+				"Package Control: Install Package"
+			],
+			[
+				"Cscope: ",
+				"Cscope: Look up symbol"
+			],
+			[
+				"Cscope: Look",
+				"Cscope: Look up symbol"
+			],
+			[
+				"package control: remove package",
+				"Package Control: Remove Package"
+			],
+			[
+				"list pack",
+				"Package Control: List Packages"
+			],
+			[
+				"install pack",
+				"Package Control: Install Package"
+			],
+			[
+				"Package control: list pack",
+				"Package Control: List Packages"
+			],
+			[
+				"install package",
+				"Package Control: Install Package"
+			],
+			[
+				"perferecces",
+				"Preferences: Package Control Settings – Default"
+			],
+			[
+				"Package Control: list packages",
+				"Package Control: List Packages"
+			],
+			[
+				"Package Control: install",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: removep",
+				"Package Control: Remove Package"
+			],
+			[
+				"Package Control: remove",
+				"Package Control: Remove Repository"
+			],
+			[
+				"Package Control: install package",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: remove pa",
+				"Package Control: Remove Package"
+			],
+			[
+				"Package Control: install Package",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 400.0
+	},
+	"console":
+	{
+		"height": 181.0,
+		"history":
+		[
+			"sublime_api.window_extract_variables(self.window_id)",
+			"sublime.Window.extract_variables(self.windows_id)",
+			"sublime.Window.extract_variables(\"$project_path\")",
+			"sublime.Window.extract_variables(\"project_path\")",
+			"sublime.Window.extract_variables(project_path)",
+			"sublime.Window.extract_variables(self)",
+			"sublime.Window.extract_variables()",
+			"sublime.Window.extract_variables(file)",
+			"sublime.window.extract_variables(file)",
+			"sublime.windows.extract_variables(file)",
+			"extract_variables(file_path)",
+			"extract_variables()",
+			"view.run_command('insert_signature')",
+			"view.run_command('test')",
+			"view.run_command('ExampleCommand')",
+			"view.run_command(ExampleCommand)",
+			"view.run_command('ExampleCommand')",
+			"view.run_command('test')",
+			"print(sublime.dir)",
+			"print(sublime_path)",
+			"print(sublime.path)",
+			"print(sublime)",
+			"print(root)",
+			"print(rout)",
+			"print(rouut)",
+			"print(os.path)",
+			"os.system(\"F:\\workspace\\Lora-net\\LoRaMac-node\\buildCscope.bat\")",
+			"start(\"F:\\workspace\\Lora-net\\LoRaMac-node\\buildCscope.bat\")",
+			"print(\"F:\\workspace\\Lora-net\\LoRaMac-node\\buildCscope.bat\")",
+			"print(F:\\workspace\\Lora-net\\LoRaMac-node\\buildCscope.bat)",
+			"print(path)",
+			"print(help)",
+			"print(root)",
+			"print(/workspace)",
+			"print(workspace)",
+			"print($project_base_path)",
+			"print(\"$project_base_path\")",
+			"print(os.path)",
+			"print(os.paht)",
+			"print(ntpath)",
+			"print(os.path)",
+			"print(path)",
+			"os.system(\"F:\\cscope\\cscope.exe\")",
+			"os.system(F:\\cscope\\cscope.exe)",
+			"os.system(dir)",
+			"os.system(\"dir\")",
+			"start",
+			"start a.bat",
+			"dir",
+			"import os",
+			"run()",
+			"start()",
+			"start",
+			"run",
+			"cscope -b",
+			"help()",
+			"help",
+			"print( 'Please restart Sublime Text to finish installation')",
+			"\"F:\\workspace\\Lora-net\\LoRaMac-node\\BuildCscope.bat\"",
+			"F:\\workspace\\Lora-net\\LoRaMac-node\\BuildCscope.exe",
+			"reloading /F/workspace/Lora-net/LoRaMac-node/src/mac/LoRaMac.c",
+			"\"F:\\workspace\\Lora-net\\LoRaMac-node\" > \"F:\\cscope\\cscope.exe\" \"-Rbv\"",
+			"\"path\" > \"F:\\cscope\\cscope.exe\" \"-Rbv\"",
+			"\"path\" > \"F:\\cscope\\cscope.exe\"",
+			"path > \"F:\\cscope\\cscope.exe\"",
+			"$project_base_path > \"F:\\cscope\\cscope.exe\"",
+			"\"$project_base_path\" > \"F:\\cscope\\cscope.exe\"",
+			"\"F:\\workspace\\Lora-net\\LoRaMac-node\" > \"F:\\cscope\\cscope.exe\" \"-Rbv\"",
+			"dir F",
+			"dir F:",
+			"dir \"F:\"",
+			"dir \"F:\\\"",
+			"\"F:\\workspace\\Lora-net\\LoRaMac-node\" > \"F:\\cscope\\cscope.exe\"",
+			"F:\\workspace\\Lora-net\\LoRaMac-node > F:\\cscope\\cscope.exe",
+			"\"CscopeSublime_executable\"",
+			"CscopeSublime_executable",
+			"import urllib.request,os,hashlib; h = '2915d1851351e5ee549c20394736b442' + '8bc59f460fa1548d1514676163dafc88'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/F/workspace/Lora-net/LoRaMac-node/src",
+		"/F/workspace/Lora-net/LoRaMac-node/src/boards",
+		"/F/workspace/Lora-net/LoRaMac-node/src/boards/EliSN-78",
+		"/F/workspace/Lora-net/LoRaMac-node/src/boards/mcu",
+		"/F/workspace/Lora-net/LoRaMac-node/src/system"
+	],
+	"file_history":
+	[
+		"/F/workspace/Lora-net/LoRaMac-node/src/apps/LoRaMac/classA/EliSN-78/main.c",
+		"/F/workspace/Lora-net/LoRaMac-node/src/system/timer.c",
+		"/F/workspace/Lora-net/LoRaMac-node/src/system/timer.h",
+		"/F/workspace/shiyanlou/shiyanlou_cs485/sec7.go",
+		"/F/workspace/Lora-net/LoRaMac-node/src/boards/EliSN-78/timer-board.c",
+		"/F/workspace/Lora-net/LoRaMac-node/src/boards/EliSN-78/rtc-board.c",
+		"/F/workspace/Lora-net/LoRaMac-node/src/boards/mcu/stm32l0xx/STM32L0xx_StdPeriph_Driver/Src/stm32l0xx_hal_rtc.c",
+		"/F/workspace/shiyanlou/shiyanlou_cs485/func1.go",
+		"/F/workspace/shiyanlou/shiyanlou_cs485/func2.go",
+		"/F/workspace/Lora-net/LoRaMac-node/src/apps/LoRaMac/classA/Bleeper-72/main.c",
+		"/F/workspace/shiyanlou/shiyanlou_cs485/array-1.go",
+		"/F/workspace/shiyanlou/shiyanlou_cs485/array_slice.go",
+		"/F/workspace/shiyanlou/shiyanlou_cs485/map.go",
+		"/D/Program Files/Sublime Text Build 3103 x64/Data/Packages/User/Package Control.sublime-settings",
+		"/D/Program Files/Sublime Text Build 3103 x64/Data/Packages/Package Control/Package Control.sublime-settings",
+		"/F/workspace/shiyanlou/shiyanlou_cs485/switch.go",
+		"/F/workspace/ubuntuGo/if-else.go",
+		"/F/workspace/shiyanlou/shiyanlou_cs485/if-else.go",
+		"/F/workspace/Lora-net/LoRaMac-node/src/mac/LoRaMac.c",
+		"/F/workspace/Lora-net/LoRaMac-node/src/mac/LoRaMac-api-v3.c",
+		"/D/Program Files/Sublime Text Build 3103 x64/Data/Packages/User/GoSublime.sublime-settings",
+		"/F/workspace/myGo/src/hello.go",
+		"/D/Program Files/Sublime Text Build 3103 x64/Data/Packages/GoSublime/CHANGELOG.md",
+		"/D/Program Files/Sublime Text Build 3103 x64/Data/Packages/GoSublime/USAGE.md",
+		"/F/workspace/Lora-net/LoRaMac-node/src/boards/SensorNode/timer-board.c",
+		"/D/Program Files/Sublime Text Build 3103 x64/Data/Packages/ClangAutoComplete/ClangAutoComplete.sublime-settings",
+		"/F/workspace/Lora-net/LoRaMac-node/src/boards/SensorNode/board.c",
+		"/D/Program Files/Sublime Text Build 3103 x64/Data/Packages/User/insert_signature.py",
+		"/F/workspace/Lora-net/LoRaMac-node/sublimePjr/EliSN-78.sublime-project",
+		"/F/workspace/Lora-net/LoRaMac-node/src/boards/Bleeper-72/cmsis/stm32l1xx.h",
+		"/D/Program Files/Sublime Text Build 3103 x64/Data/Packages/User/Lookup Results.sublime-settings",
+		"/D/Program Files/Sublime Text Build 3103 x64/Data/Packages/Default/Preferences.sublime-settings",
+		"/D/Program Files/Sublime Text Build 3103 x64/Data/Packages/User/Preferences.sublime-settings",
+		"/F/workspace/Lora-net/LoRaMac-node/src/boards/EliSN-78/board.h",
+		"/D/Program Files/Sublime Text Build 3103 x64/Data/Packages/Laravel 5 Artisan/Laravel 5 Artisan.sublime-settings",
+		"/F/workspace/Lora-net/LoRaMac-node/src/apps/LoRaMac/classA/EliSN-78/a.js",
+		"/D/Program Files/Sublime Text Build 3103 x64/Data/Packages/SublimeCodeIntel/SublimeCodeIntel.sublime-settings",
+		"/D/Program Files/Sublime Text Build 3103 x64/Data/Packages/SublimeCodeIntel/Default (Windows).sublime-mousemap",
+		"/D/Program Files/Sublime Text Build 3103 x64/Data/Packages/User/SublimeCodeIntel.sublime-settings",
+		"/D/Program Files/Sublime Text Build 3103 x64/Data/Packages/SublimeCodeIntel/Default (Windows).sublime-keymap"
+	],
+	"find":
+	{
+		"height": 31.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"sync",
+			"TIM_IT_Update",
+			"OnMacStateCheckTimerEvent",
+			"OnAckTimeoutTimerEvent",
+			"OnRxWindow1TimerEvent",
+			"onRadioRxDone"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "/F/workspace/shiyanlou/shiyanlou_cs485/sec8.go",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 839,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								746,
+								746
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/GoSublime/syntax/GoSublime-Go.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 483.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "/F/workspace/shiyanlou/shiyanlou_cs485/sec7.go",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1347,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								220,
+								166
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/GoSublime/syntax/GoSublime-Go.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 31.0
+	},
+	"input":
+	{
+		"height": 31.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.GoSublime-output":
+	{
+		"height": 148.0
+	},
+	"output.MarGo-output":
+	{
+		"height": 148.0
+	},
+	"output.exec":
+	{
+		"height": 148.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "EliSN-78.sublime-project",
+	"replace":
+	{
+		"height": 58.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 402.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
