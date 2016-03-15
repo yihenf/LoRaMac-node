@@ -98,9 +98,10 @@ static const uint16_t DaysInYear = 365;
 static const uint16_t DaysInLeapYear = 366;
 
 /*!
- * Number of days in a century
+ * Number of days in a century = 36524.219，但是stm32的RTC实际时间为2000~2099年
+ * 之间循环 故一个世纪天数为366*25+365*75 = 36525
  */
-static const double DaysInCentury = 36524.219;
+static const double DaysInCentury = 36525;
 
 /*!
  * Number of days in each month on a normal year
@@ -120,9 +121,9 @@ static uint8_t PreviousYear = 0;
 RTC_HandleTypeDef RtcHandle;
 
 /*!
- * Century counter
+ * Century counter：由于最小时间单位为122.07us，所以计时的真正最大时间为8个世纪
  */
-static uint8_t Century = 0;
+static uint16_t Century = 0;
 
 void RtcInit( void )
 {
@@ -165,8 +166,7 @@ static void RTC_AlarmConfig( void )
     }
 #if 1
     /*##-2- Configure the RTC Alarm peripheral #################################*/
-    /* Set Alarm to 02:20:30 
-        RTC Alarm Generation: Alarm on Hours, Minutes and Seconds */
+    /* Disable alarm a and b */
 
     if (HAL_RTC_DeactivateAlarm( &RtcHandle, RTC_ALARM_A ) != HAL_OK )
     {
@@ -178,11 +178,11 @@ static void RTC_AlarmConfig( void )
     }
 #endif
     /*##-3- Configure the Date #################################################*/
-    /* Set Date: Monday April 14th 2014 */
-    sdatestructure.Year = 0x00;
-    sdatestructure.Month = RTC_MONTH_JANUARY;
-    sdatestructure.Date = 0x01;
-    sdatestructure.WeekDay = RTC_WEEKDAY_MONDAY;
+    /* Set Date: Saturday January 1th 2000 */
+    sdatestructure.Year = 0;
+    sdatestructure.Month = 1;
+    sdatestructure.Date = 1;
+    sdatestructure.WeekDay = RTC_WEEKDAY_SATURDAY;
 
     if( HAL_RTC_SetDate( &RtcHandle,&sdatestructure,RTC_FORMAT_BIN ) \
         != HAL_OK)
@@ -274,6 +274,7 @@ static void RtcClearStatus( void )
     HAL_RTC_DeactivateAlarm( &RtcHandle, RTC_ALARM_A);
 }
 
+
 static void RtcStartWakeUpAlarm( uint32_t timeoutValue )
 {
     uint16_t rtcSeconds = 0;
@@ -356,11 +357,15 @@ static void RtcStartWakeUpAlarm( uint32_t timeoutValue )
     RTC_AlarmStructure.AlarmTime.TimeFormat     = RTC_TimeStruct.TimeFormat;
     RTC_AlarmStructure.AlarmDateWeekDaySel   = RTC_ALARMDATEWEEKDAYSEL_DATE;  
     RTC_AlarmStructure.AlarmMask             = RTC_ALARMMASK_NONE;
+    RTC_AlarmStructure.AlarmTime.SubSeconds = 0;
+    RTC_AlarmStructure.AlarmSubSecondMask = RTC_ALARMSUBSECONDMASK_ALL;
+    RTC_AlarmStructure.Alarm = RTC_ALARM_A;
 
     HAL_RTC_SetAlarm_IT( &RtcHandle, &RTC_AlarmStructure, RTC_FORMAT_BIN);
-    
+
     /* Wait for RTC APB registers synchronisation */
     HAL_RTC_WaitForSynchro( &RtcHandle );
+    
 
 }
 
@@ -372,20 +377,32 @@ void RtcEnterLowPowerStopMode( void )
         __disable_irq( );
     
         BoardDeInitMcu( );
+        
+            /* Disable GPIOs clock */
+        __GPIOA_CLK_DISABLE();
+        __GPIOB_CLK_DISABLE();
+        __GPIOC_CLK_DISABLE();
+        __GPIOD_CLK_DISABLE();
+        __GPIOH_CLK_DISABLE();
     
         __enable_irq( );
+        
+        
     
         /* Disable the Power Voltage Detector */
-        HAL_PWR_DisablePVD();
+        //HAL_PWR_DisablePVD();
 
         /* Set MCU in ULP (Ultra Low Power) */
         HAL_PWREx_EnableUltraLowPower();
 
         /*Disable fast wakeUp*/
         HAL_PWREx_DisableFastWakeUp();
-
+        
+        /* Select HSI as system clock source after Wake Up from Stop mode */
+        //__HAL_RCC_WAKEUPSTOP_CLK_CONFIG(RCC_StopWakeUpClock_HSI);
+        //SysTick->CTRL &= ~SysTick_CTRL_ENABLE_Msk;
         /* Enter Stop Mode */
-        HAL_PWR_EnterSTOPMode(PWR_LOWPOWERREGULATOR_ON, PWR_SLEEPENTRY_WFI);
+        HAL_PWR_EnterSTOPMode( PWR_LOWPOWERREGULATOR_ON, PWR_SLEEPENTRY_WFI );
     }
 }
 
@@ -398,6 +415,7 @@ void RtcRecoverMcuStatus( void )
     {
         if( ( LowPowerDisableDuringTask == false ) && ( RtcTimerEventAllowsLowPower == true ) )
         {
+            #if 0
             /* Enable Power Control clock */
             __HAL_RCC_PWR_CLK_ENABLE();
 
@@ -437,12 +455,12 @@ void RtcRecoverMcuStatus( void )
             /* update tick */
             HAL_SYSTICK_Config(HAL_RCC_GetHCLKFreq()/1000);
             HAL_SYSTICK_CLKSourceConfig(SYSTICK_CLKSOURCE_HCLK);
-    
+            #endif
             /* Set MCU in ULP (Ultra Low Power) */
             HAL_PWREx_DisableUltraLowPower(); // add up to 3ms wakeup time
             
             /* Enable the Power Voltage Detector */
-            HAL_PWR_EnablePVD();
+            //HAL_PWR_EnablePVD();
                 
             BoardInitMcu( );
         }
@@ -454,15 +472,16 @@ void RtcRecoverMcuStatus( void )
  */
 void RTC_IRQHandler( void )
 {
-    if( __HAL_RTC_ALARM_GET_IT_SOURCE(&RtcHandle, RTC_IT_ALRA) != RESET )
-    {   
-        RtcRecoverMcuStatus( );
-    
-        TimerIrqHandler( );
-
-        __HAL_RTC_ALARM_CLEAR_FLAG(&RtcHandle, RTC_FLAG_ALRAF);
-    }
+    HAL_RTC_AlarmIRQHandler( &RtcHandle );
 }
+
+void HAL_RTC_AlarmAEventCallback(RTC_HandleTypeDef *hrtc)
+{
+    RtcRecoverMcuStatus( );
+    
+    TimerIrqHandler( );
+}
+
 
 void BlockLowPowerDuringTask( bool status )
 {
@@ -488,10 +507,12 @@ void RtcDelayMs( uint32_t delay )
     }
 }
 
+/* 获取RTC时间，并转成“秒”单位，实际上，此处“秒”为最小计时单位 */
+/* 由于年份始终在2000~2099年之间循环，故不会出现需要被400整出判断闰年的情况 */
 TimerTime_t RtcGetCalendarValue( void )
 {
     TimerTime_t calendarValue = 0;
-    uint8_t i = 0;
+    uint16_t i = 0;
 
     RTC_TimeTypeDef RTC_TimeStruct;
     RTC_DateTypeDef RTC_DateStruct;

@@ -60,7 +60,7 @@ Maintainer: Miguel Luis and Gregory Cristian
  *         a pseudo random generator seeded with a value derived from
  *         BoardUniqueId value
  */
-#define LORAWAN_DEVICE_ADDRESS                      ( uint32_t )0x01111101
+#define LORAWAN_DEVICE_ADDRESS                      ( uint32_t )0x03111103
 
 /*!
  * AES encryption/decryption cipher network session key
