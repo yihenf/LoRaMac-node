@@ -15,11 +15,12 @@ Maintainer: Miguel Luis and Gregory Cristian
 #ifndef __BOARD_H__
 #define __BOARD_H__
 
-#include <stdbool.h>
+
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
 #include <stdint.h>
+#include <stdbool.h>
 #include "stm32l0xx_hal.h"
 #include "utilities.h"
 #include "timer.h"

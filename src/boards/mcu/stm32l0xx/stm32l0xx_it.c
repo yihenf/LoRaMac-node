@@ -42,6 +42,7 @@
 #include "stm32l0xx_it.h"
 #include "stm32l0xx_hal.h"
 #include "sx1276-board.h"
+#include "app_cfg.h"
 
 /** @addtogroup STM32L0xx_HAL_Examples
   * @{
@@ -150,6 +151,13 @@ void SysTick_Handler(void)
   */
 void EXTI0_1_IRQHandler(void)
 {
+    if (__HAL_GPIO_EXTI_GET_IT(GPIO_PIN_1) != RESET)
+    {
+        __HAL_GPIO_EXTI_CLEAR_IT(GPIO_PIN_1);
+#if ( defined( APP_USE_DOORSNR ) && ( APP_MODULE_ON == APP_USE_DOORSNR ) )
+        subEXIT1_IRQHandler();
+#endif
+    }
 }
 
 void EXTI2_3_IRQHandler(void)

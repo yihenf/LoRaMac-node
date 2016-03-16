@@ -408,8 +408,8 @@ void RtcEnterLowPowerStopMode( void )
 
 void RtcRecoverMcuStatus( void )
 {
-    RCC_ClkInitTypeDef RCC_ClkInitStruct;
-    RCC_OscInitTypeDef RCC_OscInitStruct;
+    //RCC_ClkInitTypeDef RCC_ClkInitStruct;
+    //RCC_OscInitTypeDef RCC_OscInitStruct;
     
     if( TimerGetLowPowerEnable( ) == true )
     {

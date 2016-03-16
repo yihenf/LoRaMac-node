@@ -15,7 +15,7 @@ Description: LoRa MAC layer implementation
 
 License: Revised BSD License, see LICENSE.TXT file include in the project
 
-Maintainer: Miguel Luis ( Semtech ), Gregory Cristian ( Semtech ) and Daniel Jäckle ( STACKFORCE )
+Maintainer: Miguel Luis ( Semtech ), Gregory Cristian ( Semtech ) and Daniel J鐩瞔kle ( STACKFORCE )
 */
 #include "board.h"
 
@@ -89,13 +89,13 @@ static MulticastParams_t *MulticastChannels = NULL;
 
 /*!
  * Actual device class
- * 设备类型， 初始化时进行赋值
+ * 鐠佹儳顦猾璇茬�烽敍锟� 閸掓繂顫愰崠鏍ㄦ鏉╂稖顢戠挧瀣拷锟�
  */
 static DeviceClass_t LoRaMacDeviceClass;
 
 /*!
  * Indicates if the node is connected to a private or public network
- * 网络类型，分为LoRaWAN网络和其他网络（publicetwork)
+ * 缂冩垹绮剁猾璇茬�烽敍灞藉瀻娑撶瘱oRaWAN缂冩垹绮堕崪灞藉従娴犳牜缍夌紒婊愮礄publicetwork)
  */
 static bool PublicNetwork;
 
@@ -106,7 +106,7 @@ static bool RepeaterSupport;
 
 /*!
  * Buffer containing the data to be sent or received.
- * 直接用于发送与接收
+ * 閻╁瓨甯撮悽銊ょ艾閸欐垿锟戒椒绗岄幒銉︽暪
  */
 static uint8_t LoRaMacBuffer[LORAMAC_PHY_MAXPAYLOAD];
 
@@ -117,8 +117,8 @@ static uint16_t LoRaMacBufferPktLen = 0;
 
 /*!
  * Buffer containing the upper layer data.
- * LoRaMacPayload是编码后的payload
- * LoRaacRxPayload是解码收的Payload
+ * LoRaMacPayload閺勵垳绱惍浣告倵閻ㄥ埦ayload
+ * LoRaacRxPayload閺勵垵袙閻焦鏁归惃鍑盿yload
  */
 static uint8_t LoRaMacPayload[LORAMAC_PHY_MAXPAYLOAD];
 static uint8_t LoRaMacRxPayload[LORAMAC_PHY_MAXPAYLOAD];
@@ -180,7 +180,7 @@ static bool MacCommandsInNextTx = false;
 
 /*!
  * Contains the current MacCommandsBuffer index
- * 实际为macCommand长度
+ * 鐎圭偤妾稉绨僡cCommand闂�鍨
  */
 static uint8_t MacCommandsBufferIndex = 0;
 
@@ -1097,7 +1097,7 @@ static void OnRadioRxDone( uint8_t *payload, uint16_t size, int16_t rssi, int8_t
                         isMicOk = true;
                         downLinkCounter = downLinkCounterTmp;
                     }
-                    else        /* 反转有可能是服务器中的downcount被重置引起 */
+                    else        /* 閸欏秷娴嗛張澶婂讲閼宠姤妲搁張宥呭閸ｃ劋鑵戦惃鍒wncount鐞氼偊鍣哥純顔肩穿鐠э拷 */
                     {
                         downLinkCounterTmp = sequenceCounter;
                         LoRaMacComputeMic( payload, size - LORAMAC_MFR_LEN, nwkSKey, address, DOWN_LINK, downLinkCounterTmp, &mic );
@@ -1741,7 +1741,7 @@ static TimerTime_t SetNextChannel( void )
 }
 
 /**
- * add by liucp: 设置网络类型，通过sync word来设置，用以区分LoRaWan和非LoRaWAN
+ * add by liucp: 鐠佸墽鐤嗙純鎴犵捕缁鐎烽敍宀勶拷姘崇箖sync word閺夈儴顔曠純顕嗙礉閻€劋浜掗崠鍝勫瀻LoRaWan閸滃矂娼狶oRaWAN
  */
 static void SetPublicNetwork( bool enable )
 {
@@ -1761,7 +1761,7 @@ static void SetPublicNetwork( bool enable )
 
 
 /**
- * add by liucp: 设置接收窗口的射频参数与工作模式(单次接收or连续接收)
+ * add by liucp: 鐠佸墽鐤嗛幒銉︽暪缁愭褰涢惃鍕殸妫版垵寮弫棰佺瑢瀹搞儰缍斿Ο鈥崇础(閸楁洘顐奸幒銉︽暪or鏉╃偟鐢婚幒銉︽暪)
  */
 static void RxWindowSetup( uint32_t freq, int8_t datarate, uint32_t bandwidth, uint16_t timeout, bool rxContinuous )
 {
@@ -1813,7 +1813,7 @@ static void RxWindowSetup( uint32_t freq, int8_t datarate, uint32_t bandwidth, u
 
 
 /**
- * add by liucp: 验证payload的长度
+ * add by liucp: 妤犲矁鐦塸ayload閻ㄥ嫰鏆辨惔锟�
  */
 static bool ValidatePayloadLength( uint8_t lenN, int8_t datarate, uint8_t fOptsLen )
 {
@@ -1843,7 +1843,7 @@ static bool ValidatePayloadLength( uint8_t lenN, int8_t datarate, uint8_t fOptsL
 
 #if defined( USE_BAND_915 ) || defined( USE_BAND_915_HYBRID )
 /**
- * add by liucp: 计算使能的125kHz信道数目, 915MHz专用
+ * add by liucp: 鐠侊紕鐣绘担鑳厴閻拷125kHz娣囷繝浜鹃弫鎵窗, 915MHz娑撴挾鏁�
  * 
  */
 static uint8_t CountNbEnabled125kHzChannels( uint16_t *channelsMask )
@@ -1866,9 +1866,9 @@ static uint8_t CountNbEnabled125kHzChannels( uint16_t *channelsMask )
 #endif
 
 /**
- * add by liucp: 限制发送功率，对于915MHz，如果功率低于对应速率下的最高功率，则
- * 限定为该速率下的最高功率，否则，选择输入参数的功率
- * 对于其他频段，则选择输入参数功率
+ * add by liucp: 闂勬劕鍩楅崣鎴︼拷浣稿閻滃浄绱濈�甸�涚艾915MHz閿涘苯顩ч弸婊冨閻滃洣缍嗘禍搴☆嚠鎼存棃锟界喓宸兼稉瀣畱閺堬拷妤傛ê濮涢悳鍥风礉閸掞拷
+ * 闂勬劕鐣炬稉楦款嚉闁喓宸兼稉瀣畱閺堬拷妤傛ê濮涢悳鍥风礉閸氾箑鍨敍宀勶拷澶嬪鏉堟挸鍙嗛崣鍌涙殶閻ㄥ嫬濮涢悳锟�
+ * 鐎甸�涚艾閸忔湹绮０鎴烆唽閿涘苯鍨柅澶嬪鏉堟挸鍙嗛崣鍌涙殶閸旂喓宸�
  */
 static int8_t LimitTxPower( int8_t txPower )
 {
@@ -1891,7 +1891,7 @@ static int8_t LimitTxPower( int8_t txPower )
 }
 
 /**
- * add by liucp: 验证数值是否在给定的范围之内
+ * add by liucp: 妤犲矁鐦夐弫鏉匡拷鍏兼Ц閸氾箑婀紒娆忕暰閻ㄥ嫯瀵栭崶缈犵閸愶拷
  */
 static bool ValueInRange( int8_t value, int8_t min, int8_t max )
 {
@@ -1903,7 +1903,7 @@ static bool ValueInRange( int8_t value, int8_t min, int8_t max )
 }
 
 /**
- * add by liucp: 禁止Mask中的某个信道，注意信道id的范围限制
+ * add by liucp: 缁備焦顒汳ask娑擃厾娈戦弻鎰嚋娣囷繝浜鹃敍灞炬暈閹板繋淇婇柆鎼僤閻ㄥ嫯瀵栭崶鎾閸掞拷
  */
 static bool DisableChannelInMask( uint8_t id, uint16_t* mask )
 {
@@ -1922,7 +1922,7 @@ static bool DisableChannelInMask( uint8_t id, uint16_t* mask )
 }
 
 /**
- * add by liucp: ADR下一个速率，即降低一个速率级别
+ * add by liucp: ADR娑撳绔存稉顏堬拷鐔哄芳閿涘苯宓嗛梽宥勭秵娑擄拷娑擃亪锟界喓宸肩痪褍鍩�
  */
 static bool AdrNextDr( bool adrEnabled, bool updateChannelMask, int8_t* datarateOut )
 {
@@ -2370,7 +2370,7 @@ static void ProcessMacCommands( uint8_t *payload, uint8_t macIndex, uint8_t comm
 }
 
 /**
- * add by liucp: 发送数据，但是不是立即发送，通过scheduleTx来发送 
+ * add by liucp: 閸欐垿锟戒焦鏆熼幑顕嗙礉娴ｅ棙妲告稉宥嗘Ц缁斿宓嗛崣鎴︼拷渚婄礉闁俺绻僺cheduleTx閺夈儱褰傞柅锟�
  */
 LoRaMacStatus_t Send( LoRaMacHeader_t *macHdr, uint8_t fPort, void *fBuffer, uint16_t fBufferSize )
 {
@@ -2404,8 +2404,8 @@ LoRaMacStatus_t Send( LoRaMacHeader_t *macHdr, uint8_t fPort, void *fBuffer, uin
 }
 
 /**
- * add by liucp: 调度发送， 当dutyCycleTimeOff = 0时，发送数据，否则，开启定时
- * 时间到后再调度本接口
+ * add by liucp: 鐠嬪啫瀹抽崣鎴︼拷渚婄礉 瑜版徆utyCycleTimeOff = 0閺冭绱濋崣鎴︼拷浣规殶閹诡噯绱濋崥锕�鍨敍灞界磻閸氼垰鐣鹃弮锟�
+ * 閺冨爼妫块崚鏉挎倵閸愬秷鐨熸惔锔芥拱閹恒儱褰�
  */
 static LoRaMacStatus_t ScheduleTx( )
 {
@@ -2649,7 +2649,7 @@ LoRaMacStatus_t SendFrameOnChannel( ChannelParams_t channel )
     // Send now
     Radio.Send( LoRaMacBuffer, LoRaMacBufferPktLen );
     
-    // add by liucp: 由于ACK timeout与MAC State check是异步的，
+    // add by liucp: 閻㈠彉绨珹CK timeout娑撳懂AC State check閺勵垰绱撳銉ф畱閿涳拷
     if ( McpsConfirm.McpsRequest == MCPS_CONFIRMED )
     {
         LoRaMacState |= MAC_ACK_REQ;
@@ -2797,7 +2797,7 @@ LoRaMacStatus_t LoRaMacInitialization( LoRaMacPrimitives_t *primitives, LoRaMacC
 }
 
 /**
- * add by liucp: 查询发送可能性，实际是对buffer size进行了检查
+ * add by liucp: 閺屻儴顕楅崣鎴︼拷浣稿讲閼宠姤锟窖嶇礉鐎圭偤妾弰顖氼嚠buffer size鏉╂稖顢戞禍鍡橆梾閺岋拷
  * @param size
  * @param txInfo
  * @return 
@@ -3483,7 +3483,7 @@ LoRaMacStatus_t LoRaMacMcpsRequest( McpsReq_t *mcpsRequest )
     }
     if( ( ( LoRaMacState & MAC_TX_RUNNING ) == MAC_TX_RUNNING ) ||
         ( ( LoRaMacState & MAC_TX_DELAYED ) == MAC_TX_DELAYED )
-        || ( ( LoRaMacState & MAC_ACK_REQ ) == MAC_ACK_REQ )    // add by liucp: 19.1 在收到ACK后（或者重传多次失败），节点可以自由发送下一帧
+        || ( ( LoRaMacState & MAC_ACK_REQ ) == MAC_ACK_REQ )    // add by liucp: 19.1 閸︺劍鏁归崚鐧咰K閸氬函绱欓幋鏍拷鍛村櫢娴肩姴顦垮▎鈥炽亼鐠愩儻绱氶敍宀冨Ν閻愮懓褰叉禒銉ㄥ殰閻㈠崬褰傞柅浣风瑓娑擄拷鐢拷
         )
     {
         return LORAMAC_STATUS_BUSY;

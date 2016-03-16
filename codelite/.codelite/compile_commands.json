@@ -283,6 +283,70 @@
   "directory": "F:\\workspace\\Lora-net\\LoRaMac-node\\codelite",
   "command": "gcc -c F:\\workspace\\Lora-net\\LoRaMac-node\\src\\apps\\LoRaMac\\classA\\EliSN-78\\main.c -o F:\\workspace\\Lora-net\\LoRaMac-node\\src\\apps\\LoRaMac\\classA\\EliSN-78\\main.c.o -I. -I."
  }, {
+  "file": "F:\\workspace\\Lora-net\\LoRaMac-node\\src\\apps\\LoRaMac\\classA\\EliSN-78\\dataExchange.c",
+  "directory": "F:\\workspace\\Lora-net\\LoRaMac-node\\codelite",
+  "command": "gcc -c F:\\workspace\\Lora-net\\LoRaMac-node\\src\\apps\\LoRaMac\\classA\\EliSN-78\\dataExchange.c -o F:\\workspace\\Lora-net\\LoRaMac-node\\src\\apps\\LoRaMac\\classA\\EliSN-78\\dataExchange.c.o -I. -I."
+ }, {
+  "file": "F:\\workspace\\Lora-net\\LoRaMac-node\\src\\apps\\sensor\\app_currentlimit.c",
+  "directory": "F:\\workspace\\Lora-net\\LoRaMac-node\\codelite",
+  "command": "gcc -c F:\\workspace\\Lora-net\\LoRaMac-node\\src\\apps\\sensor\\app_currentlimit.c -o F:\\workspace\\Lora-net\\LoRaMac-node\\src\\apps\\sensor\\app_currentlimit.c.o -I. -I."
+ }, {
+  "file": "F:\\workspace\\Lora-net\\LoRaMac-node\\src\\apps\\sensor\\app_distributecurrent.c",
+  "directory": "F:\\workspace\\Lora-net\\LoRaMac-node\\codelite",
+  "command": "gcc -c F:\\workspace\\Lora-net\\LoRaMac-node\\src\\apps\\sensor\\app_distributecurrent.c -o F:\\workspace\\Lora-net\\LoRaMac-node\\src\\apps\\sensor\\app_distributecurrent.c.o -I. -I."
+ }, {
+  "file": "F:\\workspace\\Lora-net\\LoRaMac-node\\src\\apps\\sensor\\app_distributor.c",
+  "directory": "F:\\workspace\\Lora-net\\LoRaMac-node\\codelite",
+  "command": "gcc -c F:\\workspace\\Lora-net\\LoRaMac-node\\src\\apps\\sensor\\app_distributor.c -o F:\\workspace\\Lora-net\\LoRaMac-node\\src\\apps\\sensor\\app_distributor.c.o -I. -I."
+ }, {
+  "file": "F:\\workspace\\Lora-net\\LoRaMac-node\\src\\apps\\sensor\\app_doorsnr.c",
+  "directory": "F:\\workspace\\Lora-net\\LoRaMac-node\\codelite",
+  "command": "gcc -c F:\\workspace\\Lora-net\\LoRaMac-node\\src\\apps\\sensor\\app_doorsnr.c -o F:\\workspace\\Lora-net\\LoRaMac-node\\src\\apps\\sensor\\app_doorsnr.c.o -I. -I."
+ }, {
+  "file": "F:\\workspace\\Lora-net\\LoRaMac-node\\src\\apps\\sensor\\app_electricmeter.c",
+  "directory": "F:\\workspace\\Lora-net\\LoRaMac-node\\codelite",
+  "command": "gcc -c F:\\workspace\\Lora-net\\LoRaMac-node\\src\\apps\\sensor\\app_electricmeter.c -o F:\\workspace\\Lora-net\\LoRaMac-node\\src\\apps\\sensor\\app_electricmeter.c.o -I. -I."
+ }, {
+  "file": "F:\\workspace\\Lora-net\\LoRaMac-node\\src\\apps\\sensor\\app_elevator.c",
+  "directory": "F:\\workspace\\Lora-net\\LoRaMac-node\\codelite",
+  "command": "gcc -c F:\\workspace\\Lora-net\\LoRaMac-node\\src\\apps\\sensor\\app_elevator.c -o F:\\workspace\\Lora-net\\LoRaMac-node\\src\\apps\\sensor\\app_elevator.c.o -I. -I."
+ }, {
+  "file": "F:\\workspace\\Lora-net\\LoRaMac-node\\src\\apps\\sensor\\app_elevatoresaving.c",
+  "directory": "F:\\workspace\\Lora-net\\LoRaMac-node\\codelite",
+  "command": "gcc -c F:\\workspace\\Lora-net\\LoRaMac-node\\src\\apps\\sensor\\app_elevatoresaving.c -o F:\\workspace\\Lora-net\\LoRaMac-node\\src\\apps\\sensor\\app_elevatoresaving.c.o -I. -I."
+ }, {
+  "file": "F:\\workspace\\Lora-net\\LoRaMac-node\\src\\apps\\sensor\\app_pmb.c",
+  "directory": "F:\\workspace\\Lora-net\\LoRaMac-node\\codelite",
+  "command": "gcc -c F:\\workspace\\Lora-net\\LoRaMac-node\\src\\apps\\sensor\\app_pmb.c -o F:\\workspace\\Lora-net\\LoRaMac-node\\src\\apps\\sensor\\app_pmb.c.o -I. -I."
+ }, {
+  "file": "F:\\workspace\\Lora-net\\LoRaMac-node\\src\\apps\\sensor\\app_thermohumidity.c",
+  "directory": "F:\\workspace\\Lora-net\\LoRaMac-node\\codelite",
+  "command": "gcc -c F:\\workspace\\Lora-net\\LoRaMac-node\\src\\apps\\sensor\\app_thermohumidity.c -o F:\\workspace\\Lora-net\\LoRaMac-node\\src\\apps\\sensor\\app_thermohumidity.c.o -I. -I."
+ }, {
+  "file": "F:\\workspace\\Lora-net\\LoRaMac-node\\src\\apps\\sensor\\app_waterlevel.c",
+  "directory": "F:\\workspace\\Lora-net\\LoRaMac-node\\codelite",
+  "command": "gcc -c F:\\workspace\\Lora-net\\LoRaMac-node\\src\\apps\\sensor\\app_waterlevel.c -o F:\\workspace\\Lora-net\\LoRaMac-node\\src\\apps\\sensor\\app_waterlevel.c.o -I. -I."
+ }, {
+  "file": "F:\\workspace\\Lora-net\\LoRaMac-node\\src\\apps\\sensor\\app_watermeter.c",
+  "directory": "F:\\workspace\\Lora-net\\LoRaMac-node\\codelite",
+  "command": "gcc -c F:\\workspace\\Lora-net\\LoRaMac-node\\src\\apps\\sensor\\app_watermeter.c -o F:\\workspace\\Lora-net\\LoRaMac-node\\src\\apps\\sensor\\app_watermeter.c.o -I. -I."
+ }, {
+  "file": "F:\\workspace\\Lora-net\\LoRaMac-node\\src\\apps\\sensor\\app_waterpress.c",
+  "directory": "F:\\workspace\\Lora-net\\LoRaMac-node\\codelite",
+  "command": "gcc -c F:\\workspace\\Lora-net\\LoRaMac-node\\src\\apps\\sensor\\app_waterpress.c -o F:\\workspace\\Lora-net\\LoRaMac-node\\src\\apps\\sensor\\app_waterpress.c.o -I. -I."
+ }, {
+  "file": "F:\\workspace\\Lora-net\\LoRaMac-node\\src\\apps\\sensor\\app_weatherstation.c",
+  "directory": "F:\\workspace\\Lora-net\\LoRaMac-node\\codelite",
+  "command": "gcc -c F:\\workspace\\Lora-net\\LoRaMac-node\\src\\apps\\sensor\\app_weatherstation.c -o F:\\workspace\\Lora-net\\LoRaMac-node\\src\\apps\\sensor\\app_weatherstation.c.o -I. -I."
+ }, {
+  "file": "F:\\workspace\\Lora-net\\LoRaMac-node\\src\\apps\\sensor\\debug_usart.c",
+  "directory": "F:\\workspace\\Lora-net\\LoRaMac-node\\codelite",
+  "command": "gcc -c F:\\workspace\\Lora-net\\LoRaMac-node\\src\\apps\\sensor\\debug_usart.c -o F:\\workspace\\Lora-net\\LoRaMac-node\\src\\apps\\sensor\\debug_usart.c.o -I. -I."
+ }, {
+  "file": "F:\\workspace\\Lora-net\\LoRaMac-node\\src\\apps\\sensor\\app_sample.c",
+  "directory": "F:\\workspace\\Lora-net\\LoRaMac-node\\codelite",
+  "command": "gcc -c F:\\workspace\\Lora-net\\LoRaMac-node\\src\\apps\\sensor\\app_sample.c -o F:\\workspace\\Lora-net\\LoRaMac-node\\src\\apps\\sensor\\app_sample.c.o -I. -I."
+ }, {
   "file": "F:\\workspace\\Lora-net\\LoRaMac-node\\src\\mac\\LoRaMac.c",
   "directory": "F:\\workspace\\Lora-net\\LoRaMac-node\\codelite",
   "command": "gcc -c F:\\workspace\\Lora-net\\LoRaMac-node\\src\\mac\\LoRaMac.c -o F:\\workspace\\Lora-net\\LoRaMac-node\\src\\mac\\LoRaMac.c.o -I. -I."

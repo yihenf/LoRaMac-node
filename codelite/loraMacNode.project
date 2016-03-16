@@ -193,8 +193,42 @@
           <VirtualDirectory Name="EliSN-78">
             <File Name="../src/apps/LoRaMac/classA/EliSN-78/Comissioning.h"/>
             <File Name="../src/apps/LoRaMac/classA/EliSN-78/main.c"/>
+            <File Name="../src/apps/LoRaMac/classA/EliSN-78/dataExchange.c"/>
+            <File Name="../src/apps/LoRaMac/classA/EliSN-78/dataExchange.h"/>
           </VirtualDirectory>
         </VirtualDirectory>
+      </VirtualDirectory>
+      <VirtualDirectory Name="sensor">
+        <File Name="../src/apps/sensor/app_currentlimit.c"/>
+        <File Name="../src/apps/sensor/app_currentlimit.h"/>
+        <File Name="../src/apps/sensor/app_distributecurrent.c"/>
+        <File Name="../src/apps/sensor/app_distributecurrent.h"/>
+        <File Name="../src/apps/sensor/app_distributor.c"/>
+        <File Name="../src/apps/sensor/app_distributor.h"/>
+        <File Name="../src/apps/sensor/app_doorsnr.c"/>
+        <File Name="../src/apps/sensor/app_doorsnr.h"/>
+        <File Name="../src/apps/sensor/app_electricmeter.c"/>
+        <File Name="../src/apps/sensor/app_electricmeter.h"/>
+        <File Name="../src/apps/sensor/app_elevator.c"/>
+        <File Name="../src/apps/sensor/app_elevator.h"/>
+        <File Name="../src/apps/sensor/app_elevatoresaving.c"/>
+        <File Name="../src/apps/sensor/app_elevatoresaving.h"/>
+        <File Name="../src/apps/sensor/app_pmb.c"/>
+        <File Name="../src/apps/sensor/app_pmb.h"/>
+        <File Name="../src/apps/sensor/app_thermohumidity.c"/>
+        <File Name="../src/apps/sensor/app_thermohumidity.h"/>
+        <File Name="../src/apps/sensor/app_waterlevel.c"/>
+        <File Name="../src/apps/sensor/app_waterlevel.h"/>
+        <File Name="../src/apps/sensor/app_watermeter.c"/>
+        <File Name="../src/apps/sensor/app_watermeter.h"/>
+        <File Name="../src/apps/sensor/app_waterpress.c"/>
+        <File Name="../src/apps/sensor/app_waterpress.h"/>
+        <File Name="../src/apps/sensor/app_weatherstation.c"/>
+        <File Name="../src/apps/sensor/app_weatherstation.h"/>
+        <File Name="../src/apps/sensor/debug_usart.c"/>
+        <File Name="../src/apps/sensor/debug_usart.h"/>
+        <File Name="../src/apps/sensor/app_sample.c"/>
+        <File Name="../src/apps/sensor/app_sample.h"/>
       </VirtualDirectory>
     </VirtualDirectory>
     <VirtualDirectory Name="mac">
