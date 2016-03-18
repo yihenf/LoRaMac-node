@@ -53,7 +53,7 @@ void BoardInitPeriph( void )
     /* Init the GPIO extender pins */
     tGpioInit.Mode = GPIO_MODE_OUTPUT_PP;
     tGpioInit.Pull = GPIO_PULLUP;
-    tGpioInit.Speed = GPIO_SPEED_FAST;
+    tGpioInit.Speed = GPIO_SPEED_FREQ_HIGH;
     tGpioInit.Pin = LED1_PIN;
     
     HAL_GPIO_Init( LED1_PORT, &tGpioInit );
@@ -282,7 +282,7 @@ static void BoardUnusedIoInit( void )
     /* Init the GPIO SWDIO and SWDCLK */
     tGpioInit.Mode = GPIO_MODE_ANALOG;
     tGpioInit.Pull = GPIO_NOPULL;
-    tGpioInit.Speed = GPIO_SPEED_LOW;
+    tGpioInit.Speed = GPIO_SPEED_FREQ_LOW;
     
     tGpioInit.Pin = GPIO_PIN_13;
     HAL_GPIO_Init( GPIOA, &tGpioInit );
