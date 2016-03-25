@@ -823,10 +823,13 @@ static LoRaMacStatus_t ScheduleTx( void );
 LoRaMacStatus_t SendFrameOnChannel( ChannelParams_t channel );
 
 
+TimerTime_t TimeOnAir0 = 0;
+TimerTime_t TimeOnAir1 = 0;
 
 static void OnRadioTxDone( void )
 {
     TimerTime_t curTime = TimerGetCurrentTime( );
+    TimeOnAir0 = curTime - TimeOnAir0;
     if( LoRaMacDeviceClass != CLASS_C )
     {
         Radio.Sleep( );
@@ -852,13 +855,13 @@ static void OnRadioTxDone( void )
 
     if( IsRxWindowsEnabled == true )
     {
-        TimerSetValue( &RxWindowTimer1, RxWindow1Delay );
-        TimerStart( &RxWindowTimer1 );
-        if( LoRaMacDeviceClass != CLASS_C )
-        {
-            TimerSetValue( &RxWindowTimer2, RxWindow2Delay );
-            TimerStart( &RxWindowTimer2 );
-        }
+//        TimerSetValue( &RxWindowTimer1, RxWindow1Delay );
+//        TimerStart( &RxWindowTimer1 );
+//        if( LoRaMacDeviceClass != CLASS_C )
+//        {
+//            TimerSetValue( &RxWindowTimer2, RxWindow2Delay );
+//            TimerStart( &RxWindowTimer2 );
+//        }
         if( ( LoRaMacDeviceClass == CLASS_C ) || ( NodeAckRequested == true ) )
         {
             TimerSetValue( &AckTimeoutTimer, RxWindow2Delay + ACK_TIMEOUT +
@@ -1305,6 +1308,9 @@ static void OnRadioRxDone( uint8_t *payload, uint16_t size, int16_t rssi, int8_t
 
 static void OnRadioTxTimeout( void )
 {
+    TimerStop( &RxWindowTimer1 );
+    TimerStop( &RxWindowTimer2 );
+
     if( LoRaMacDeviceClass != CLASS_C )
     {
         Radio.Sleep( );
@@ -2588,7 +2594,7 @@ LoRaMacStatus_t PrepareFrame( LoRaMacHeader_t *macHdr, LoRaMacFrameCtrl_t *fCtrl
 
     return LORAMAC_STATUS_OK;
 }
-
+TimerTime_t testTick = 0;
 LoRaMacStatus_t SendFrameOnChannel( ChannelParams_t channel )
 {
     int8_t datarate = Datarates[ChannelsDatarate];
@@ -2646,10 +2652,26 @@ LoRaMacStatus_t SendFrameOnChannel( ChannelParams_t channel )
 
     // Starts the MAC layer status check timer
     TimerStart( &MacStateCheckTimer );
-
+    testTick = RtcGetTimerValue();
+    TimeOnAir0 = testTick;
+    TimeOnAir1 = TxTimeOnAir;
+    if( IsRxWindowsEnabled == true )
+    {
+        uint32_t delay = (uint32_t)(RxWindow1Delay + TxTimeOnAir);
+        TimerSetValue( &RxWindowTimer1, delay );
+        TimerStart( &RxWindowTimer1 );
+        if( LoRaMacDeviceClass != CLASS_C )
+        {
+            delay = (uint32_t)(RxWindow2Delay + TxTimeOnAir);
+            TimerSetValue( &RxWindowTimer2, delay );
+            TimerStart( &RxWindowTimer2 );
+        }
+    }
     // Send now
     Radio.Send( LoRaMacBuffer, LoRaMacBufferPktLen );
+    testTick = RtcGetTimerValue() - testTick;
     
+
     // add by liucp: 閻㈠彉绨珹CK timeout娑撳懂AC State check閺勵垰绱撳銉ф畱閿涳拷
     if ( McpsConfirm.McpsRequest == MCPS_CONFIRMED )
     {
