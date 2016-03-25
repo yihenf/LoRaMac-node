@@ -26,7 +26,7 @@ Maintainer: Miguel Luis and Gregory Cristian
  * MCU Wake Up Time
  */
 /* @test default = 3400 */
-#define MCU_WAKE_UP_TIME                                5400
+#define MCU_WAKE_UP_TIME                                3400
 #define MCU_WAKE_UP_TICK                                (MCU_WAKE_UP_TIME / RTC_ALARM_TIME_BASE)
 /* MCU最小睡眠时间，如果距离下次任务执行时间长度大于该值，将允许睡眠  */
 /* @test default = 5500 */
@@ -390,6 +390,7 @@ static void RtcStartWakeUpAlarm( uint32_t timeoutValue )
 
 }
 bool bRecoverMcuFlg = true;
+TimerTime_t wakeTime = 0;
 void RtcEnterLowPowerStopMode( void )
 {   
     if( ( LowPowerDisableDuringTask == false ) && ( RtcTimerEventAllowsLowPower == true ) )
@@ -427,8 +428,8 @@ void RtcEnterLowPowerStopMode( void )
         HAL_PWR_EnterSTOPMode( PWR_LOWPOWERREGULATOR_ON, PWR_SLEEPENTRY_WFI );
         __isb(15);
         __NOP();
-        HAL_Init();
-        __enable_irq( );
+        //__enable_irq( );
+        //HAL_Init();
         //RtcRecoverMcuStatus();//add by liucp @ 20160323
         //wait for recovery
         #if 0
@@ -441,8 +442,15 @@ void RtcEnterLowPowerStopMode( void )
             }
         }
         #endif
+        wakeTime = RtcGetTimerValue();
         RtcRecoverMcuStatus();
+        wakeTime = RtcGetTimerValue() - wakeTime;
+        __enable_irq( );
     }
+}
+uint32_t HAL_GetTicqk(void)
+{
+    return 0;
 }
 
 void RtcRecoverMcuStatus( void )

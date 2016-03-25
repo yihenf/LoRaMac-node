@@ -177,11 +177,11 @@ void EXTI2_3_IRQHandler(void)
     {
         __HAL_GPIO_EXTI_CLEAR_IT(GPIO_PIN_2);
 
-//        if ( NULL != g_hDioIrq[5] )
-//        {
-//            g_hDioIrq[5]();
-//        }
-        DioIsr(5);
+        if ( NULL != g_hDioIrq[5] )
+        {
+            g_hDioIrq[5]();
+        }
+//        DioIsr(5);
     }
 }
 
@@ -203,55 +203,55 @@ void EXTI4_15_IRQHandler(void)
     {
         __HAL_GPIO_EXTI_CLEAR_IT(GPIO_PIN_12);
 
-//        if ( NULL != g_hDioIrq[0] )
-//        {
-//            g_hDioIrq[0]();
-//        }
-        DioIsr(0);
+        if ( NULL != g_hDioIrq[0] )
+        {
+            g_hDioIrq[0]();
+        }
+        //DioIsr(0);
     }
     
     if (__HAL_GPIO_EXTI_GET_IT(GPIO_PIN_11) != RESET)
     {
         __HAL_GPIO_EXTI_CLEAR_IT(GPIO_PIN_11);
 
-//        if ( NULL != g_hDioIrq[1] )
-//        {
-//            g_hDioIrq[1]();
-//        }
-        DioIsr(1);
+        if ( NULL != g_hDioIrq[1] )
+        {
+            g_hDioIrq[1]();
+        }
+        //DioIsr(1);
     }
     
     if (__HAL_GPIO_EXTI_GET_IT(GPIO_PIN_10) != RESET)
     {
         __HAL_GPIO_EXTI_CLEAR_IT(GPIO_PIN_10);
 
-//        if ( NULL != g_hDioIrq[2] )
-//        {
-//            g_hDioIrq[2]();
-//        }
-        DioIsr(2);
+        if ( NULL != g_hDioIrq[2] )
+        {
+            g_hDioIrq[2]();
+        }
+//        DioIsr(2);
     }
     
     if (__HAL_GPIO_EXTI_GET_IT(GPIO_PIN_9) != RESET)
     {
         __HAL_GPIO_EXTI_CLEAR_IT(GPIO_PIN_9);
 
-//        if ( NULL != g_hDioIrq[3] )
-//        {
-//            g_hDioIrq[3]();
-//        }
-        DioIsr(3);
+        if ( NULL != g_hDioIrq[3] )
+        {
+            g_hDioIrq[3]();
+        }
+//        DioIsr(3);
     }
     
     if (__HAL_GPIO_EXTI_GET_IT(GPIO_PIN_8) != RESET)
     {
         __HAL_GPIO_EXTI_CLEAR_IT(GPIO_PIN_8);
 
-//        if ( NULL != g_hDioIrq[4] )
-//        {
-//            g_hDioIrq[4]();
-//        }
-        DioIsr(4);
+        if ( NULL != g_hDioIrq[4] )
+        {
+            g_hDioIrq[4]();
+        }
+//        DioIsr(4);
     }
     
     

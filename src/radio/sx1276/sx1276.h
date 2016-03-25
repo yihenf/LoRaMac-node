@@ -22,7 +22,7 @@ Maintainer: Miguel Luis and Gregory Cristian
  * Radio wakeup time from SLEEP mode
  */
 /* @test default = 1000 */
-#define RADIO_WAKEUP_TIME                           5000 // [us]
+#define RADIO_WAKEUP_TIME                           5500 // [us]
 
 /*!
  * Radio FSK modem parameters

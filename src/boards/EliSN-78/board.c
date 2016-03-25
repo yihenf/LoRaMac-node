@@ -66,7 +66,7 @@ void BoardInitMcu( void )
 {
     if( McuInitialized == false )
     {
-        HAL_Init();
+        //HAL_Init();
         
         SystemClock_Config();
 
