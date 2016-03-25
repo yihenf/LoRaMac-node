@@ -32,7 +32,7 @@ extern "C"{
  */
 #define APP_MODULE_ON           (1)
 #define APP_MODULE_OFF          (0)
-#define APP_USE_CLI             (APP_MODULE_OFF)
+#define APP_USE_CLI             (APP_MODULE_ON)
 
 //sdli 调试打印宏
 #define APP_USE_DEBUG_PRINTF    (APP_MODULE_OFF)

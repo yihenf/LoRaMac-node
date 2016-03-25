@@ -40,6 +40,8 @@ void RtcStopTimer( void );
  * \retval minimum value for a timeout
  */
 uint32_t RtcGetMinimumTimeout( void );
+uint32_t RtcGetMinimumTimeoutTick(void);
+uint64_t RtcTimeToTick( uint64_t time );
 
 /*!
  * \brief Start the RTC timer
@@ -48,7 +50,7 @@ uint32_t RtcGetMinimumTimeout( void );
  *
  * \param[IN] timeout       Duration of the Timer
  */
-void RtcSetTimeout( uint32_t timeout );
+void RtcSetTimeout( TimerTime_t timeout );
 
 /*!
  * \brief Get the RTC timer value

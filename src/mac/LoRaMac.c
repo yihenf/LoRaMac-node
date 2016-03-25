@@ -1377,6 +1377,7 @@ static void OnMacStateCheckTimerEvent( void )
             {
                 // Stop transmit cycle due to tx timeout.
                 LoRaMacState &= ~MAC_TX_RUNNING;
+                LoRaMacState &= ~MAC_ACK_REQ;   /* wait to do */
                 McpsConfirm.NbRetries = AckTimeoutRetriesCounter;
                 McpsConfirm.AckReceived = false;
                 McpsConfirm.TxTimeOnAir = 0;

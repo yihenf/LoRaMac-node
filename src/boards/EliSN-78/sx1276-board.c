@@ -141,6 +141,13 @@ void SX1276InitStruct( SX1276_t *a_ptSx1276 )
     a_ptSx1276->hSpiNssLow = SX1276SpiSetNssLow;
     
 }
+TimerHighEvent_t DioEvt[5];
+extern DioIrqHandler *DioIrq[];
+void DioIsr( uint8_t a_ucId )
+{
+    DioEvt[a_ucId].Callback = DioIrq[a_ucId];
+    TimerAddHighEvent( &DioEvt[a_ucId ] );
+}
 
 
 /*!
@@ -149,7 +156,7 @@ void SX1276InitStruct( SX1276_t *a_ptSx1276 )
 
 void SX1276IoInit( void )
 {
-    extern DioIrqHandler *DioIrq[];
+    
     GPIO_InitTypeDef tGpioInit;
 
     g_hDioIrq[0] = DioIrq[0];

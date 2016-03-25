@@ -16,7 +16,7 @@
 					<folderInfo id="cdt.managedbuild.config.gnu.mingw.exe.debug.1631700756." name="/" resourcePath="">
 						<toolChain id="cdt.managedbuild.toolchain.gnu.mingw.base.1796101319" name="MinGW GCC" superClass="cdt.managedbuild.toolchain.gnu.mingw.base">
 							<targetPlatform archList="all" binaryParser="org.eclipse.cdt.core.PE" id="cdt.managedbuild.target.gnu.platform.mingw.base.407512047" name="Debug Platform" osList="win32" superClass="cdt.managedbuild.target.gnu.platform.mingw.base"/>
-							<builder buildPath="${workspace_loc:/loraWanSensor}/Debug" id="cdt.managedbuild.tool.gnu.builder.mingw.base.1558380270" keepEnvironmentInBuildfile="false" name="CDT Internal Builder" superClass="cdt.managedbuild.tool.gnu.builder.mingw.base"/>
+							<builder buildPath="${workspace_loc:/loraWanSensor}/Debug" id="org.eclipse.linuxtools.cdt.autotools.core.toolchain.builder.1300083394" keepEnvironmentInBuildfile="false" superClass="org.eclipse.linuxtools.cdt.autotools.core.toolchain.builder"/>
 							<tool id="cdt.managedbuild.tool.gnu.assembler.mingw.base.426308227" name="GCC Assembler" superClass="cdt.managedbuild.tool.gnu.assembler.mingw.base">
 								<inputType id="cdt.managedbuild.tool.gnu.assembler.input.32025939" superClass="cdt.managedbuild.tool.gnu.assembler.input"/>
 							</tool>
@@ -46,6 +46,7 @@
 								</option>
 								<option id="gnu.c.compiler.option.preprocessor.def.symbols.1925180940" name="Defined symbols (-D)" superClass="gnu.c.compiler.option.preprocessor.def.symbols" valueType="definedSymbols">
 									<listOptionValue builtIn="false" value="STM32L0XX"/>
+									<listOptionValue builtIn="false" value="__enable_irq()"/>
 									<listOptionValue builtIn="false" value="USE_BAND_CN433"/>
 									<listOptionValue builtIn="false" value="USE_HAL_DRIVER"/>
 									<listOptionValue builtIn="false" value="STM32L051xx"/>
@@ -69,7 +70,7 @@
 						</toolChain>
 					</folderInfo>
 					<sourceEntries>
-						<entry excluding="src/boards/EliSN-78/timer-board.c|src/boards/EliSN-78/spi-board.c|src/boards/EliSN-78/gpio-board.c|src/boards/EliSN-78/board.c|src/boards/EliSN-78/uart-board.c|src/boards/EliSN-78/adc-board.c|src/apps/LoRaMac/radioCoverageTest|src/apps/LoRaMac/classC|src/apps/LoRaMac/classB|src/radio/sx1272|src/apps/tx-cw|src/apps/rx-sensi|src/apps/ping-pong|src/apps/BootLoader|sublimePjr|codelite|Doc|Keil" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
+						<entry excluding="src/boards/EliSN-78/timer-board.c|src/boards/EliSN-78/spi-board.c|src/boards/EliSN-78/gpio-board.c|src/boards/EliSN-78/uart-board.c|src/boards/EliSN-78/adc-board.c|src/apps/LoRaMac/radioCoverageTest|src/apps/LoRaMac/classC|src/apps/LoRaMac/classB|src/radio/sx1272|src/apps/tx-cw|src/apps/rx-sensi|src/apps/ping-pong|src/apps/BootLoader|sublimePjr|codelite|Doc|Keil" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
 					</sourceEntries>
 				</configuration>
 			</storageModule>
@@ -114,7 +115,7 @@
 						</toolChain>
 					</folderInfo>
 					<sourceEntries>
-						<entry excluding="src/boards/EliSN-78/timer-board.c|src/boards/EliSN-78/spi-board.c|src/boards/EliSN-78/gpio-board.c|src/boards/EliSN-78/board.c|src/boards/EliSN-78/uart-board.c|src/boards/EliSN-78/adc-board.c|src/apps/LoRaMac/radioCoverageTest|src/apps/LoRaMac/classC|src/apps/LoRaMac/classB|src/radio/sx1272|src/apps/tx-cw|src/apps/rx-sensi|src/apps/ping-pong|src/apps/BootLoader|sublimePjr|codelite|Doc|Keil" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
+						<entry excluding="src/boards/EliSN-78/timer-board.c|src/boards/EliSN-78/spi-board.c|src/boards/EliSN-78/gpio-board.c|src/boards/EliSN-78/uart-board.c|src/boards/EliSN-78/adc-board.c|src/apps/LoRaMac/radioCoverageTest|src/apps/LoRaMac/classC|src/apps/LoRaMac/classB|src/radio/sx1272|src/apps/tx-cw|src/apps/rx-sensi|src/apps/ping-pong|src/apps/BootLoader|sublimePjr|codelite|Doc|Keil" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
 					</sourceEntries>
 				</configuration>
 			</storageModule>

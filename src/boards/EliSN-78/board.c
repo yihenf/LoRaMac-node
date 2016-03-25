@@ -149,7 +149,8 @@ static void SystemClock_Config(void)
   */
 void Error_Handler(void)
 {
-    while(1)
+    HAL_Delay(100);
+    //while(1)
     {
         /* Add a 100ms Delay */
         HAL_Delay(100);
@@ -159,8 +160,8 @@ void Error_Handler(void)
 void BoardDeInitMcu( void )
 {
 
-    SX1276SpiDeInit( );
-    SX1276IoDeInit( );
+    //SX1276SpiDeInit( );
+    //SX1276IoDeInit( );
 
     McuInitialized = false;
 }

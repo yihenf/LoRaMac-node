@@ -20,6 +20,7 @@
 #if (APP_USE_DOORSNR == APP_MODULE_ON)
 #include "stm32l0xx_hal.h"
 #include "dataExchange.h"
+#include "iuUart/iuUart.h"
 
 
 /***************************************************************************************************
@@ -177,9 +178,8 @@ void subEXIT1_IRQHandler( void )
     __disable_irq();
     if ( TASK_SLEEP == s_ucState )
     {
-        TimerStop( &s_tDsTmr );
         TimerSetValue( &s_tDsTmr, DS_TASK_RUN_PERIOD );
-        TimerStart( &s_tDsTmr );
+        TimerStartInIsr( &s_tDsTmr );
     }
     __enable_irq();
 }
@@ -256,6 +256,18 @@ void ds_Tsk__( void )
                 #endif
 
                 loraWanSendRequest( 2, au8Msg, 6 );
+                uint64_t time = TimerGetCurrentTime();
+                uint8_t timeArr[10];
+                time &= 0xFFFFFFFF;
+                for( uint8_t i = 0; i < 10; i ++ )
+                {
+                    timeArr[9 - i] = (time % 10) + '0';
+                    time /= 10;
+                }
+                extern void cli_Send( uint8_t *a_pucBuf, uint16_t a_usLen );
+                cli_Send( timeArr, 10);
+                cli_Send(" - sendReq\r\n", strlen(" - sendReq\r\n"));
+
 
                 s_ucState = TASK_SLEEP_REQUEST;
             }

@@ -25,7 +25,13 @@ Maintainer: Miguel Luis and Gregory Cristian
 /*!
  * MCU Wake Up Time
  */
-#define MCU_WAKE_UP_TIME                                3400
+/* @test default = 3400 */
+#define MCU_WAKE_UP_TIME                                5400
+#define MCU_WAKE_UP_TICK                                (MCU_WAKE_UP_TIME / RTC_ALARM_TIME_BASE)
+/* MCU最小睡眠时间，如果距离下次任务执行时间长度大于该值，将允许睡眠  */
+/* @test default = 5500 */
+#define MCU_MIN_SLEEP_TIME                              (7500)
+#define MCU_MIN_SLEEP_TICK                              (MCU_MIN_SLEEP_TIME / RTC_ALARM_TIME_BASE)
 
 static void RTC_AlarmConfig( void );
 /*!
@@ -205,6 +211,9 @@ static void RTC_AlarmConfig( void )
         /* Initialization Error */
         Error_Handler();
     }
+    
+    /* Wait for RTC APB registers synchronisation */
+    HAL_RTC_WaitForSynchro( &RtcHandle );
 
 }
 
@@ -212,24 +221,35 @@ void RtcStopTimer( void )
 {
     RtcClearStatus( );
 }
-
+uint32_t u32SetTimeDelay = 0;
+/* 最小超时时间太小会导致RTC Alarm不工作  */
 uint32_t RtcGetMinimumTimeout( void )
 {
-    return( ceil( 3 * RTC_ALARM_TIME_BASE ) );
+    return( ceil( 8 * RTC_ALARM_TIME_BASE ) );
 }
 
-void RtcSetTimeout( uint32_t timeout )
+uint64_t RtcTimeToTick( uint64_t time )
+{
+    return ((time << 13) / 1000000);
+}
+
+uint32_t RtcGetMinimumTimeoutTick( void )
+{
+    return 8;
+}
+uint32_t rtcAlarmSet = 0;
+void RtcSetTimeout( TimerTime_t timeout )
 {
     uint32_t timeoutValue = 0;
+    TimerTime_t curTime = RtcGetTimerValue();
 
-    timeoutValue = timeout;
-
-    if( timeoutValue < ( 3 * RTC_ALARM_TIME_BASE ) )
-    {
-        timeoutValue = 3 * RTC_ALARM_TIME_BASE;
+    if ( timeout < ( curTime + RtcGetMinimumTimeoutTick() ) ){
+        timeoutValue = RtcGetMinimumTimeoutTick();
+    }else{
+        timeoutValue = timeout - curTime;
     }
-    
-    if( timeoutValue < 55000 ) 
+
+    if( timeoutValue < MCU_MIN_SLEEP_TICK )
     {
         // we don't go in Low Power mode for delay below 50ms (needed for LEDs)
         RtcTimerEventAllowsLowPower = false;
@@ -241,10 +261,14 @@ void RtcSetTimeout( uint32_t timeout )
 
     if( ( LowPowerDisableDuringTask == false ) && ( RtcTimerEventAllowsLowPower == true ) )
     {
-        timeoutValue = timeoutValue - MCU_WAKE_UP_TIME;
+        timeoutValue = timeoutValue - MCU_WAKE_UP_TICK;
     }
 
+    //__disable_irq();
     RtcStartWakeUpAlarm( timeoutValue );
+    //__enable_irq();
+
+    rtcAlarmSet++;
 }
 
 
@@ -254,7 +278,7 @@ uint32_t RtcGetTimerElapsedTime( void )
 
     CalendarValue = RtcGetCalendarValue( );
 
-    return( ( uint32_t )( ceil ( ( ( CalendarValue - RtcTimerContext ) + 2 ) * RTC_ALARM_TIME_BASE ) ) );
+    return( ( uint32_t )( ( CalendarValue - RtcTimerContext ) + 2 ) );
 }
 
 TimerTime_t RtcGetTimerValue( void )
@@ -263,7 +287,7 @@ TimerTime_t RtcGetTimerValue( void )
 
     CalendarValue = RtcGetCalendarValue( );
 
-    return( ( CalendarValue + 2 ) * RTC_ALARM_TIME_BASE );
+    return(  CalendarValue + 2 );
 }
 
 static void RtcClearStatus( void )
@@ -273,7 +297,6 @@ static void RtcClearStatus( void )
 
     HAL_RTC_DeactivateAlarm( &RtcHandle, RTC_ALARM_A);
 }
-
 
 static void RtcStartWakeUpAlarm( uint32_t timeoutValue )
 {
@@ -292,13 +315,10 @@ static void RtcStartWakeUpAlarm( uint32_t timeoutValue )
     RTC_DateTypeDef RTC_DateStruct;
 
     RtcClearStatus( );
-
     RtcTimerContext = RtcGetCalendarValue( );
+    HAL_RTC_WaitForSynchro( &RtcHandle );
     HAL_RTC_GetTime( &RtcHandle, &RTC_TimeStruct, RTC_FORMAT_BIN );
     HAL_RTC_GetDate( &RtcHandle, &RTC_DateStruct, RTC_FORMAT_BIN );
-    
-       
-    timeoutValue = timeoutValue / RTC_ALARM_TIME_BASE;
 
     if( timeoutValue > 2160000 ) // 25 "days" in tick 
     {                            // drastically reduce the computation time
@@ -310,17 +330,17 @@ static void RtcStartWakeUpAlarm( uint32_t timeoutValue )
         if( ( RTC_DateStruct.Year == 0 ) || ( RTC_DateStruct.Year % 4 == 0 ) )
         {
             if( rtcAlarmDays > DaysInMonthLeapYear[ RTC_DateStruct.Month - 1 ] )
-            {   
+            {
                 rtcAlarmDays = rtcAlarmDays % DaysInMonthLeapYear[ RTC_DateStruct.Month - 1];
             }
         }
         else
         {
             if( rtcAlarmDays > DaysInMonth[ RTC_DateStruct.Month - 1 ] )
-            {   
+            {
                 rtcAlarmDays = rtcAlarmDays % DaysInMonth[ RTC_DateStruct.Month - 1];
             }
-        }   
+        }
     }
     else
     {
@@ -336,7 +356,7 @@ static void RtcStartWakeUpAlarm( uint32_t timeoutValue )
 
         if( ( RTC_DateStruct.Year == 0 ) || ( RTC_DateStruct.Year % 4 == 0 ) )
         {
-            if( rtcAlarmDays > DaysInMonthLeapYear[ RTC_DateStruct.Month - 1 ] )            
+            if( rtcAlarmDays > DaysInMonthLeapYear[ RTC_DateStruct.Month - 1 ] )
             {   
                 rtcAlarmDays = rtcAlarmDays % DaysInMonthLeapYear[ RTC_DateStruct.Month - 1 ];
             }
@@ -349,6 +369,7 @@ static void RtcStartWakeUpAlarm( uint32_t timeoutValue )
             }
         }
     }
+
 
     RTC_AlarmStructure.AlarmTime.Seconds = rtcAlarmSeconds;
     RTC_AlarmStructure.AlarmTime.Minutes = rtcAlarmMinutes;
@@ -368,7 +389,7 @@ static void RtcStartWakeUpAlarm( uint32_t timeoutValue )
     
 
 }
-
+bool bRecoverMcuFlg = true;
 void RtcEnterLowPowerStopMode( void )
 {   
     if( ( LowPowerDisableDuringTask == false ) && ( RtcTimerEventAllowsLowPower == true ) )
@@ -385,10 +406,11 @@ void RtcEnterLowPowerStopMode( void )
         __GPIOD_CLK_DISABLE();
         __GPIOH_CLK_DISABLE();
     
-        __enable_irq( );
         
         
-    
+        bRecoverMcuFlg = false;
+        //SysTick->CTRL &= ~SysTick_CTRL_ENABLE_Msk;
+
         /* Disable the Power Voltage Detector */
         //HAL_PWR_DisablePVD();
 
@@ -397,12 +419,29 @@ void RtcEnterLowPowerStopMode( void )
 
         /*Disable fast wakeUp*/
         HAL_PWREx_DisableFastWakeUp();
-        
+        __dsb(15);
         /* Select HSI as system clock source after Wake Up from Stop mode */
         //__HAL_RCC_WAKEUPSTOP_CLK_CONFIG(RCC_StopWakeUpClock_HSI);
         //SysTick->CTRL &= ~SysTick_CTRL_ENABLE_Msk;
         /* Enter Stop Mode */
         HAL_PWR_EnterSTOPMode( PWR_LOWPOWERREGULATOR_ON, PWR_SLEEPENTRY_WFI );
+        __isb(15);
+        __NOP();
+        HAL_Init();
+        __enable_irq( );
+        //RtcRecoverMcuStatus();//add by liucp @ 20160323
+        //wait for recovery
+        #if 0
+        uint32_t StartTick = HAL_GetTick();
+        while( bRecoverMcuFlg == false)
+        {
+            if( StartTick + 10 <=  HAL_GetTick() )
+            {
+                RtcRecoverMcuStatus();
+            }
+        }
+        #endif
+        RtcRecoverMcuStatus();
     }
 }
 
@@ -410,7 +449,9 @@ void RtcRecoverMcuStatus( void )
 {
     //RCC_ClkInitTypeDef RCC_ClkInitStruct;
     //RCC_OscInitTypeDef RCC_OscInitStruct;
-    
+    if ( bRecoverMcuFlg == true ){
+        //return ;
+    }
     if( TimerGetLowPowerEnable( ) == true )
     {
         if( ( LowPowerDisableDuringTask == false ) && ( RtcTimerEventAllowsLowPower == true ) )
@@ -463,32 +504,70 @@ void RtcRecoverMcuStatus( void )
             //HAL_PWR_EnablePVD();
                 
             BoardInitMcu( );
+            bRecoverMcuFlg = true;
         }
     }
 }
-
+uint32_t rtcAlarmIrq = 0;
 /*!
  * \brief RTC IRQ Handler on the RTC Alarm
  */
 void RTC_IRQHandler( void )
 {
-    HAL_RTC_AlarmIRQHandler( &RtcHandle );
+    //HAL_RTC_AlarmIRQHandler( &RtcHandle );
+  /* Clear the EXTI's line Flag for RTC Alarm */
+  __HAL_RTC_ALARM_EXTI_CLEAR_FLAG();
+      /* Get the AlarmA interrupt source enable status */
+  if(__HAL_RTC_ALARM_GET_IT_SOURCE(&RtcHandle, RTC_IT_ALRA) != RESET)
+  {
+    /* Get the pending status of the AlarmA Interrupt */
+    if(__HAL_RTC_ALARM_GET_FLAG(&RtcHandle, RTC_FLAG_ALRAF) != RESET)
+    {
+
+
+      /* Clear the AlarmA interrupt pending bit */
+      __HAL_RTC_ALARM_CLEAR_FLAG(&RtcHandle, RTC_FLAG_ALRAF);
+
+      /* AlarmA callback */
+      HAL_RTC_AlarmAEventCallback(&RtcHandle);
+    }
+  }
+
+  /* Get the AlarmB interrupt source enable status */
+  if(__HAL_RTC_ALARM_GET_IT_SOURCE(&RtcHandle, RTC_IT_ALRB) != RESET)
+  {
+    /* Get the pending status of the AlarmB Interrupt */
+    if(__HAL_RTC_ALARM_GET_FLAG(&RtcHandle, RTC_FLAG_ALRBF) != RESET)
+    {
+      /* AlarmB callback */
+      HAL_RTCEx_AlarmBEventCallback(&RtcHandle);
+
+      /* Clear the AlarmB interrupt pending bit */
+      __HAL_RTC_ALARM_CLEAR_FLAG(&RtcHandle, RTC_FLAG_ALRBF);
+    }
+  }
+
+  
+
+  /* Change RTC state */
+  RtcHandle.State = HAL_RTC_STATE_READY;
+  rtcAlarmIrq++;
 }
 
 void HAL_RTC_AlarmAEventCallback(RTC_HandleTypeDef *hrtc)
 {
-    RtcRecoverMcuStatus( );
+    //RtcRecoverMcuStatus( );
     
-    TimerIrqHandler( );
+    //TimerIrqHandler( );
 }
 
 
 void BlockLowPowerDuringTask( bool status )
 {
-    if( status == true )
-    {
-        RtcRecoverMcuStatus( );
-    }
+    //if( status == true )
+    //{
+    //    RtcRecoverMcuStatus( );
+    //}
     LowPowerDisableDuringTask = status;
 }
 
@@ -497,7 +576,7 @@ void RtcDelayMs( uint32_t delay )
     TimerTime_t delayValue = 0;
     TimerTime_t timeout = 0;
 
-    delayValue = ( TimerTime_t )( delay * 1000 );
+    delayValue = RtcTimeToTick( delay * 1000 );
 
     // Wait delay ms
     timeout = RtcGetTimerValue( );
@@ -517,6 +596,7 @@ TimerTime_t RtcGetCalendarValue( void )
     RTC_TimeTypeDef RTC_TimeStruct;
     RTC_DateTypeDef RTC_DateStruct;
 
+    HAL_RTC_WaitForSynchro( &RtcHandle );
     HAL_RTC_GetTime( &RtcHandle, &RTC_TimeStruct, RTC_FORMAT_BIN );
     HAL_RTC_GetDate( &RtcHandle, &RTC_DateStruct, RTC_FORMAT_BIN );
 

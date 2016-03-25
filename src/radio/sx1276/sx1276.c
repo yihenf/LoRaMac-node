@@ -1579,7 +1579,7 @@ void SX1276OnDio0Irq( void )
 void SX1276OnDio1Irq( void )
 {
     switch( SX1276.Settings.State )
-    {                
+    {
         case RF_RX_RUNNING:
             switch( SX1276.Settings.Modem )
             {
@@ -1708,7 +1708,7 @@ void SX1276OnDio2Irq( void )
             default:
                 break;
             }
-            break;      
+            break;
         default:
             break;
     }

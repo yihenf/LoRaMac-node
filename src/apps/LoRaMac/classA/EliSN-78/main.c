@@ -308,8 +308,6 @@ static bool SendFrame( void )
 
 /*!
  * \brief Function executed on TxNextPacket Timeout event
- * 瑜版挸褰傞柅浣规闂傜绉撮弮鑸垫閿涘奔楠囬悽鐔活嚉娴滃娆㈤敍锟�
- * 閸忓牓锟芥俺绻僊ib鐠囬攱鐪伴崗銉х秹閻樿埖锟戒緤绱濇俊鍌涚亯瀹歌尙绮￠崗銉х秹閿涘苯鍨拋鎯ь槵閻樿埖锟戒浇顔曠純顔昏礋閸欐垿锟戒胶濮搁幀渚婄礉閸氾箑鍨稉绡攐in閻樿埖锟斤拷
  */
 static void OnTxNextPacketTimerEvent( void )
 {
@@ -622,148 +620,150 @@ int main( void )
     BoardInitPeriph( );
 
     DeviceState = DEVICE_STATE_INIT;
-
+    loraWanUsrAppInit();
     /* delay 5 seconds for connect debuger */
     Delay(5);
     BlockLowPowerDuringTask(false);
 
-    loraWanUsrAppInit();
+    
 
     while ( 1 )
     {
+        TimerIrqHandler( );
         switch ( DeviceState )
         {
-        case DEVICE_STATE_INIT:
-        {
-            LoRaMacPrimitives.MacMcpsConfirm = McpsConfirm;
-            LoRaMacPrimitives.MacMcpsIndication = McpsIndication;
-            LoRaMacPrimitives.MacMlmeConfirm = MlmeConfirm;
-            LoRaMacCallbacks.GetBatteryLevel = BoardGetBatteryLevel;
-            LoRaMacInitialization( &LoRaMacPrimitives, &LoRaMacCallbacks );
+            case DEVICE_STATE_INIT:
+            {
+                LoRaMacPrimitives.MacMcpsConfirm = McpsConfirm;
+                LoRaMacPrimitives.MacMcpsIndication = McpsIndication;
+                LoRaMacPrimitives.MacMlmeConfirm = MlmeConfirm;
+                LoRaMacCallbacks.GetBatteryLevel = BoardGetBatteryLevel;
+                LoRaMacInitialization( &LoRaMacPrimitives, &LoRaMacCallbacks );
 
-            TimerInit( &TxNextPacketTimer, OnTxNextPacketTimerEvent );
+                TimerInit( &TxNextPacketTimer, OnTxNextPacketTimerEvent );
 
-            TimerInit( &Led1Timer, OnLed1TimerEvent );
-            TimerSetValue( &Led1Timer, 25000 );
+                TimerInit( &Led1Timer, OnLed1TimerEvent );
+                TimerSetValue( &Led1Timer, 25000 );
 
-            mibReq.Type = MIB_ADR;
-            mibReq.Param.AdrEnable = LORAWAN_ADR_ON;
-            LoRaMacMibSetRequestConfirm( &mibReq );
+                mibReq.Type = MIB_ADR;
+                mibReq.Param.AdrEnable = LORAWAN_ADR_ON;
+                LoRaMacMibSetRequestConfirm( &mibReq );
 
-            mibReq.Type = MIB_PUBLIC_NETWORK;
-            mibReq.Param.EnablePublicNetwork = LORAWAN_PUBLIC_NETWORK;
-            LoRaMacMibSetRequestConfirm( &mibReq );
+                mibReq.Type = MIB_PUBLIC_NETWORK;
+                mibReq.Param.EnablePublicNetwork = LORAWAN_PUBLIC_NETWORK;
+                LoRaMacMibSetRequestConfirm( &mibReq );
 
 #if defined( USE_BAND_868 )
-            LoRaMacTestSetDutyCycleOn( LORAWAN_DUTYCYCLE_ON );
+                LoRaMacTestSetDutyCycleOn( LORAWAN_DUTYCYCLE_ON );
 #endif
-            DeviceState = DEVICE_STATE_JOIN;
-            break;
-        }
-        case DEVICE_STATE_JOIN:
-        {
-#if( OVER_THE_AIR_ACTIVATION != 0 )
-            MlmeReq_t mlmeReq;
-
-            // Initialize LoRaMac device unique ID
-            BoardGetUniqueId( DevEui );
-
-            mlmeReq.Type = MLME_JOIN;
-
-            mlmeReq.Req.Join.DevEui = DevEui;
-            mlmeReq.Req.Join.AppEui = AppEui;
-            mlmeReq.Req.Join.AppKey = AppKey;
-
-            if ( NextTx == true )
-            {
-                LoRaMacMlmeRequest( &mlmeReq );
+                DeviceState = DEVICE_STATE_JOIN;
+                break;
             }
+            case DEVICE_STATE_JOIN:
+            {
+#if( OVER_THE_AIR_ACTIVATION != 0 )
+                MlmeReq_t mlmeReq;
 
-            // Schedule next packet transmission
-            TxDutyCycleTime = OVER_THE_AIR_ACTIVATION_DUTYCYCLE;
-            DeviceState = DEVICE_STATE_CYCLE;
+                // Initialize LoRaMac device unique ID
+                BoardGetUniqueId( DevEui );
+
+                mlmeReq.Type = MLME_JOIN;
+
+                mlmeReq.Req.Join.DevEui = DevEui;
+                mlmeReq.Req.Join.AppEui = AppEui;
+                mlmeReq.Req.Join.AppKey = AppKey;
+
+                if ( NextTx == true )
+                {
+                    LoRaMacMlmeRequest( &mlmeReq );
+                }
+
+                // Schedule next packet transmission
+                TxDutyCycleTime = OVER_THE_AIR_ACTIVATION_DUTYCYCLE;
+                DeviceState = DEVICE_STATE_CYCLE;
 
 #else
-            // Random seed initialization
-            srand1( BoardGetRandomSeed( ) );
+                // Random seed initialization
+                srand1( BoardGetRandomSeed( ) );
 
-            // Choose a random device address
-            //DevAddr = randr( 0, 0x01FFFFFF );
-            DevAddr = LORAWAN_DEVICE_ADDRESS;
+                // Choose a random device address
+                //DevAddr = randr( 0, 0x01FFFFFF );
+                DevAddr = LORAWAN_DEVICE_ADDRESS;
 
-            mibReq.Type = MIB_NET_ID;
-            mibReq.Param.NetID = LORAWAN_NETWORK_ID;
-            LoRaMacMibSetRequestConfirm( &mibReq );
+                mibReq.Type = MIB_NET_ID;
+                mibReq.Param.NetID = LORAWAN_NETWORK_ID;
+                LoRaMacMibSetRequestConfirm( &mibReq );
 
-            mibReq.Type = MIB_DEV_ADDR;
-            mibReq.Param.DevAddr = DevAddr;
-            LoRaMacMibSetRequestConfirm( &mibReq );
+                mibReq.Type = MIB_DEV_ADDR;
+                mibReq.Param.DevAddr = DevAddr;
+                LoRaMacMibSetRequestConfirm( &mibReq );
 
-            mibReq.Type = MIB_NWK_SKEY;
-            mibReq.Param.NwkSKey = NwkSKey;
-            LoRaMacMibSetRequestConfirm( &mibReq );
+                mibReq.Type = MIB_NWK_SKEY;
+                mibReq.Param.NwkSKey = NwkSKey;
+                LoRaMacMibSetRequestConfirm( &mibReq );
 
-            mibReq.Type = MIB_APP_SKEY;
-            mibReq.Param.AppSKey = AppSKey;
-            LoRaMacMibSetRequestConfirm( &mibReq );
+                mibReq.Type = MIB_APP_SKEY;
+                mibReq.Param.AppSKey = AppSKey;
+                LoRaMacMibSetRequestConfirm( &mibReq );
 
-            mibReq.Type = MIB_NETWORK_JOINED;
-            mibReq.Param.IsNetworkJoined = true;
-            LoRaMacMibSetRequestConfirm( &mibReq );
+                mibReq.Type = MIB_NETWORK_JOINED;
+                mibReq.Param.IsNetworkJoined = true;
+                LoRaMacMibSetRequestConfirm( &mibReq );
 
-            DeviceState = DEVICE_STATE_CYCLE;
+                DeviceState = DEVICE_STATE_CYCLE;
 #endif
-            break;
-        }
-        case DEVICE_STATE_SEND:
-        {
-            if ( true == loraWanIsNextTxEnable() )
+                break;
+            }
+            case DEVICE_STATE_SEND:
             {
-                /* to compliance test, need prepare frame, for user data, prepare data by user app */
-                if (true == loraWanIsComplianceTesting() )
+                if ( true == loraWanIsNextTxEnable() )
                 {
-                    loraWanPrepareComplianceTestFrame();
+                    /* to compliance test, need prepare frame, for user data, prepare data by user app */
+                    if (true == loraWanIsComplianceTesting() )
+                    {
+                        loraWanPrepareComplianceTestFrame();
+                    }
+                    if ( true == SendFrame() )
+                    {
+                        /* control led state when send was accepted  */
+                        BoardCtrlLedSts( LED1_ID,  true );
+                    }
                 }
-                if ( true == SendFrame() )
+
+                if ( true == loraWanIsComplianceTesting() )
                 {
-                    /* control led state when send was accepted  */
-                    BoardCtrlLedSts( LED1_ID,  true );
+                    // Schedule next packet transmission as soon as possible
+                    TxDutyCycleTime = 1000; // 1 ms
                 }
-            }
 
-            if ( true == loraWanIsComplianceTesting() )
+                DeviceState = DEVICE_STATE_CYCLE;
+                break;
+            }
+            case DEVICE_STATE_CYCLE:
             {
-                // Schedule next packet transmission as soon as possible
-                TxDutyCycleTime = 1000; // 1 ms
-            }
+                /* for user data send, no need timer wake up here */
+                if ( ( true == loraWanIsComplianceTesting() ) || ( false == loraWanIsNetworkJoined() ) )
+                {
+                    // Schedule next packet transmission
+                    TimerSetValue( &TxNextPacketTimer, TxDutyCycleTime );
+                    TimerStart( &TxNextPacketTimer );
+                }
 
-            DeviceState = DEVICE_STATE_CYCLE;
-            break;
-        }
-        case DEVICE_STATE_CYCLE:
-        {
-            /* for user data send, no need timer wake up here */
-            if ( ( true == loraWanIsComplianceTesting() ) || ( false == loraWanIsNetworkJoined() ) )
+                DeviceState = DEVICE_STATE_SLEEP;
+                break;
+            }
+            case DEVICE_STATE_SLEEP:
             {
-                // Schedule next packet transmission
-                TimerSetValue( &TxNextPacketTimer, TxDutyCycleTime );
-                TimerStart( &TxNextPacketTimer );
+                // Wake up through events
+                TimerLowPowerHandler( );
+                //RtcRecoverMcuStatus();
+                break;
             }
-
-            DeviceState = DEVICE_STATE_SLEEP;
-            break;
-        }
-        case DEVICE_STATE_SLEEP:
-        {
-            // Wake up through events
-            TimerLowPowerHandler( );
-            break;
-        }
-        default:
-        {
-            DeviceState = DEVICE_STATE_INIT;
-            break;
-        }
+            default:
+            {
+                DeviceState = DEVICE_STATE_INIT;
+                break;
+            }
         }
 
     }

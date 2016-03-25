@@ -68,6 +68,7 @@
 
 void loraWanUsrAppInit( void )
 {
+#if 0
     /* init user app here */
 #if ( defined( APP_USE_SAMPLE ) && ( APP_MODULE_ON == APP_USE_SAMPLE ) )
     sampleInit();
@@ -76,7 +77,10 @@ void loraWanUsrAppInit( void )
 #if ( defined( APP_USE_DOORSNR ) && ( APP_MODULE_ON == APP_USE_DOORSNR ) )
     ds_Init();
 #endif
-
+#endif
+#if ( defined( APP_USE_CLI ) && ( APP_MODULE_ON == APP_USE_CLI ) )
+    cli_Init();
+#endif
 }
 
 
@@ -100,7 +104,7 @@ bool loraWanSendRequest( uint8_t a_ucPort, uint8_t *a_pucData, uint8_t a_ucLen )
     
     if ( false == loraWanIsComplianceTesting() )
     {
-        loraWanSendTrigger();	/* wake */
+        loraWanSendTrigger();       /* wake */
 
         if ( true == loraWanIsNextTxEnable() )
         {
